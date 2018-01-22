@@ -474,16 +474,6 @@ on property:sys.shutdown.requested=*
     write /sys/kernel/shutdown_wlan/shutdown 1
     stop vendor.cnss-daemon
 
-service vendor.cnss_diag /vendor/bin/cnss_diag -q -f -t HELIUM
-    class main
-    user system
-    group system wifi inet sdcard_rw media_rw diag
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
-on property:vold.decrypt=trigger_restart_framework
-    start vendor.cnss_diag
-
 service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system

@@ -1157,7 +1157,6 @@ vendor/lib/libcppf.so
 vendor/lib64/libwvhidl.so
 
 # Wi-Fi
-vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent

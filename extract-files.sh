@@ -43,6 +43,9 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|vendor/bin/hw/btlfpserver|vendor/bin/hw/vendor.display.color@1.0-service|vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
+        vendor/etc/izat.conf)
+            sed -i "216s/PROCESS_STATE=ENABLED/PROCESS_STATE=DISABLED/g" izat.conf
+            ;;
         vendor/lib/hw/camera.msm8998.so)
             sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
             ;;

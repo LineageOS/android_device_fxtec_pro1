@@ -182,7 +182,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8998 \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
     libdisplayconfig \

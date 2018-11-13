@@ -508,27 +508,29 @@ on property:vendor.ims.DATA_DAEMON_STATUS=1
 on property:sys.shutdown.requested=*
     stop vendor.ims_rtp_daemon
 
+# imsdatadaemon starts with root and UID will be downgraded to RADIO.
 service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
     class main
-    user system
+    user radio
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
+    group radio wifi inet log diag
     writepid /dev/cpuset/system-background/tasks
     disabled
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start vendor.imsdatadaemon
 
+# imsdatadaemon starts with root and UID will be downgraded to RADIO.
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
-    user system
+    user radio
     socket ims_qmid stream 0660 system radio
     group radio log diag
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.imsrcsservice /vendor/bin/imsrcsd
     class main
-    user system
+    user radio
     group radio diag inet log wakelock
     writepid /dev/cpuset/system-background/tasks
 

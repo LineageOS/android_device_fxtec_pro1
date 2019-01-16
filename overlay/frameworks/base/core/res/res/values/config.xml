@@ -602,4 +602,6 @@
 
     <dimen name="status_bar_height_landscape">32.0dp</dimen>
 
+    <!-- True if the firmware supports connected MAC randomization -->
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
 </resources>

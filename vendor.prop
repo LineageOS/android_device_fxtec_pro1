@@ -47,6 +47,9 @@ persist.vendor.camera.HAL3.enabled=1
 # CNE
 persist.vendor.cne.feature=1
 
+# Codec2
+debug.media.codec2=2
+
 # Dalvik
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=256m

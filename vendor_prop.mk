@@ -72,6 +72,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
+# Codec2
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.media.codec2=2
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true

@@ -46,6 +46,9 @@ persist.vendor.camera.HAL3.enabled=1
 # CNE
 persist.vendor.cne.feature=1
 
+# Codec2
+debug.media.codec2=2
+
 # DRM
 drm.service.enabled=true
 

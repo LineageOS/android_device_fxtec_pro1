@@ -177,6 +177,11 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     Snap
 
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
 # Device settings
 PRODUCT_PACKAGES += \
     DeviceSettings

@@ -3,6 +3,9 @@ audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
 
+# Codec2
+debug.media.codec2=2
+
 # DRM
 drm.service.enabled=true
 

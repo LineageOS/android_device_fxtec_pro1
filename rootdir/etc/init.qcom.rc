@@ -455,12 +455,6 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     group system radio
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.cnd /vendor/bin/cnd
-    class main
-    user system
-    group system wifi inet radio wakelock net_admin
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -471,12 +465,6 @@ service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
 on property:sys.shutdown.requested=*
     write /sys/kernel/shutdown_wlan/shutdown 1
     stop vendor.cnss-daemon
-
-service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group system
-    writepid /dev/cpuset/system-background/tasks
 
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main

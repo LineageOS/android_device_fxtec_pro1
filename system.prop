@@ -15,6 +15,7 @@ debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 persist.debug.wfd.enable=1
 persist.hwc.enable_vds=1
+ro.surface_flinger.protected_contents=true
 
 # Location
 ro.location.osnlp.package=com.google.android.gms

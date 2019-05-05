@@ -46,11 +46,5 @@ write_headers "pro1"
 # The standard blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
-cat << EOF >> "$ANDROIDMK"
-
-\$(shell mkdir -p \$(TARGET_OUT_VENDOR)/lib/egl && pushd \$(TARGET_OUT_VENDOR)/lib > /dev/null && ln -sf egl/libEGL_adreno.so libEGL_adreno.so && popd > /dev/null)
-\$(shell mkdir -p \$(TARGET_OUT_VENDOR)/lib64/egl && pushd \$(TARGET_OUT_VENDOR)/lib64 > /dev/null && ln -sf egl/libEGL_adreno.so libEGL_adreno.so && popd > /dev/null)
-EOF
-
-# We are done!
+# Finish
 write_footers

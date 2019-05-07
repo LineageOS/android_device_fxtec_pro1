@@ -69,6 +69,16 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    system \
+    vendor \
+    vbmeta
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 

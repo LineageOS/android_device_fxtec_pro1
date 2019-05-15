@@ -158,8 +158,10 @@ PRODUCT_PACKAGES += \
 # Boot
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-impl.recovery \
     android.hardware.boot@1.0-service \
-    bootctrl.msm8998
+    bootctrl.msm8998 \
+    bootctrl.msm8998.recovery
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -431,11 +433,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msm8998 \
-    libcutils \
-    libgptutils
 
 # USB
 PRODUCT_PACKAGES += \

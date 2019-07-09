@@ -21,25 +21,25 @@
         android:key="keyboard_settings"
         android:title="@string/keyboard_settings_title" >
 
-        <android.support.v7.preference.ListPreference
+        <androidx.preference.ListPreference
             android:key="keyboard_layout"
             android:title="@string/keyboard_layout_title"
             android:entries="@array/keyboard_layout_titles"
             android:entryValues="@array/keyboard_layout_values" />
 
-        <android.support.v14.preference.SwitchPreference
+        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_custom"
             android:title="@string/keyboard_keymap_custom_title"/>
 
-        <android.support.v14.preference.SwitchPreference
+        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_spacepower"
             android:title="@string/keyboard_keymap_spacepower_title"/>
 
-        <android.support.v14.preference.SwitchPreference
+        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_fnkeys"
             android:title="@string/keyboard_keymap_fnkeys_title"/>
 
-        <android.support.v14.preference.SwitchPreference
+        <androidx.preference.SwitchPreference
             android:key="keyboard_fastpoll"
             android:title="@string/keyboard_fastpoll_title"/>
     </PreferenceCategory>

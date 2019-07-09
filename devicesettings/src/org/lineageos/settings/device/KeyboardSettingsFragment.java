@@ -21,11 +21,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
-import android.support.v14.preference.PreferenceFragment;
-import android.support.v14.preference.SwitchPreference;
-import android.support.v7.preference.ListPreference;
 import android.util.Log;
 import android.view.MenuItem;
+
+import androidx.preference.PreferenceFragment;
+import androidx.preference.SwitchPreference;
+import androidx.preference.ListPreference;
 
 import java.io.File;
 import java.io.FileReader;

@@ -61,6 +61,10 @@ vidc.enc.dcvs.extra-buff-count=2
 # NFC
 ro.hardware.nfc_nci=nqx.default
 
+# OMX
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+
 # RIL
 ro.telephony.default_network=22,20
 persist.radio.multisim.config=dsds

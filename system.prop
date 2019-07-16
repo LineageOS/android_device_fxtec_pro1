@@ -44,6 +44,10 @@ ro.hardware.nfc_nci=nqx.default
 # OEM Unlock reporting
 ro.oem_unlock_supported=1
 
+# OMX
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 

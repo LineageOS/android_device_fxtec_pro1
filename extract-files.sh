@@ -58,6 +58,9 @@ function blob_fixup() {
         vendor/lib/hw/camera.msm8998.so)
             sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
             ;;
+        product/lib64/lib-imsvideocodec.so)
+            patchelf --add-needed "libui_shim.so" "${2}"
+            ;;
     esac
 }
 

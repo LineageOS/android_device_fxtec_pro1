@@ -42,6 +42,9 @@ function blob_fixup() {
         product/etc/permissions/telephonyservice.xml)
             sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
             ;;
+        product/lib64/lib-imsvideocodec.so)
+            patchelf --add-needed "libui_shim.so" "${2}"
+            ;;
         vendor/etc/permissions/qti_libpermissions.xml)
             sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
             ;;

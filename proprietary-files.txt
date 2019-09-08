@@ -717,7 +717,6 @@ lib/com.qualcomm.qti.imscmservice@1.0.so:product/lib/com.qualcomm.qti.imscmservi
 lib/com.qualcomm.qti.imscmservice@2.0.so:product/lib/com.qualcomm.qti.imscmservice@2.0.so
 lib/com.qualcomm.qti.imscmservice@2.1.so:product/lib/com.qualcomm.qti.imscmservice@2.1.so
 lib/lib-imscamera.so:product/lib/lib-imscamera.so
-lib/lib-imsvideocodec.so:product/lib/lib-imsvideocodec.so
 lib/lib-imsvtextutils.so:product/lib/lib-imsvtextutils.so
 lib/lib-imsvtutils.so:product/lib/lib-imsvtutils.so
 lib/libimsmedia_jni.so:product/lib/libimsmedia_jni.so
@@ -727,7 +726,7 @@ lib64/com.qualcomm.qti.imscmservice@1.0.so:product/lib64/com.qualcomm.qti.imscms
 lib64/com.qualcomm.qti.imscmservice@2.0.so:product/lib64/com.qualcomm.qti.imscmservice@2.0.so
 lib64/com.qualcomm.qti.imscmservice@2.1.so:product/lib64/com.qualcomm.qti.imscmservice@2.1.so
 lib64/lib-imscamera.so:product/lib64/lib-imscamera.so
-lib64/lib-imsvideocodec.so:product/lib64/lib-imsvideocodec.so
+lib64/lib-imsvideocodec.so:product/lib64/lib-imsvideocodec.so|54a7e58981db90231e9af80fd2b2dd7484fa5758
 lib64/lib-imsvt.so:product/lib64/lib-imsvt.so
 lib64/lib-imsvtextutils.so:product/lib64/lib-imsvtextutils.so
 lib64/lib-imsvtutils.so:product/lib64/lib-imsvtutils.so

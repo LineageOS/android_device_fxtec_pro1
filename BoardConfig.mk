@@ -216,7 +216,6 @@ endif
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
-TARGET_RIL_VARIANT := caf
 
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist

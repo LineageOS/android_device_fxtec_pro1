@@ -39,6 +39,9 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 ro.location.osnlp.package=com.google.android.gms
 ro.location.osnlp.region.package=com.google.android.gms
 
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
 # NFC
 ro.hardware.nfc_nci=nqx.default
 

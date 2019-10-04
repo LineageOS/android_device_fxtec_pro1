@@ -375,9 +375,6 @@ on boot
     start vendor.qcrild
     start vendor.qcrild2
 
-on charger
-    load_system_props
-
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 

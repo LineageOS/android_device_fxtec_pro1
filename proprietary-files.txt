@@ -570,25 +570,6 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/gatekeeper.msm8998.so
 
 # GPS
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml|1d36e7cf8e16813aa13ee6b3fca8d8687b543828
-etc/permissions/izat.xt.srv.xml
-framework/com.qti.location.sdk.jar|5dcbf27bd7709a111985e9660b5b61b5fb7a22b1
-framework/izat.xt.srv.jar|5d48ba7a65ca6f62afd3e0dc886f590e2ad18bc3
-lib/vendor.qti.gnss@1.0.so
-lib/vendor.qti.gnss@1.1.so
-lib/vendor.qti.gnss@1.2.so
-lib/vendor.qti.gnss@2.0.so
-lib/vendor.qti.gnss@2.1.so
-lib64/liblocationservice_jni.so|67a0cf23dada00aaef70df443658a2c6041d797d
-lib64/libxt_native.so
-lib64/vendor.qti.gnss@1.0.so
-lib64/vendor.qti.gnss@1.1.so
-lib64/vendor.qti.gnss@1.2.so
-lib64/vendor.qti.gnss@2.0.so
-lib64/vendor.qti.gnss@2.1.so
-lib64/vendor.qti.gnss@3.0.so|c5ed668d324e7c898ca026fc12dad8829cd8a944
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|81f1c0d0a899ea64a3cadcf04a126e86cc911ebc
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -627,7 +608,6 @@ vendor/lib64/vendor.qti.gnss@1.1.so
 vendor/lib64/vendor.qti.gnss@1.2.so
 vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
-vendor/lib64/vendor.qti.gnss@3.0.so|ff1733d10abd97fa4381c798ae74b4cc5dac39e8
 
 # Graphics
 vendor/lib/egl/eglSubDriverAndroid.so

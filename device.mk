@@ -495,6 +495,7 @@ PRODUCT_PACKAGES += \
     hostapd_cli \
     libqsap_sdk \
     libwifi-hal-qcom \
+    libwpa_client \
     macplugin \
     WifiOverlay \
     wpa_supplicant \

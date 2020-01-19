@@ -18,6 +18,10 @@
 
 #include "Light.h"
 
+#include <fcntl.h>
+#include <linux/input.h>
+#include <sys/inotify.h>
+
 #include <android-base/logging.h>
 
 namespace {
@@ -184,6 +188,31 @@ void Light::setLcdBacklight(const LightState& state) {
     }
 
     mLcdBacklight.first << brightness << std::endl;
+
+    // Get keyboard slider state
+    int got_state = 0;
+    uint16_t swState = 0;
+    int fd = TEMP_FAILURE_RETRY(open("/dev/input/event2", O_RDONLY | O_NONBLOCK | O_CLOEXEC));
+    if (fd < 0) {
+        LOG(ERROR) << "could not open evdev device /dev/input/event2. err=" << errno;
+    } else {
+        if (TEMP_FAILURE_RETRY(ioctl(fd, EVIOCGSW(1), &swState)) >= 0) {
+            got_state = 1;
+        } else {
+            LOG(ERROR) << "could not read switch state from /dev/input/event2. err=" << errno;
+        }
+        close(fd);
+    }
+
+    if (got_state) {
+        if (!(swState & (1 << SW_LID))) {
+            // Keyboard backlight follows display when the slider is open
+            mKeyboardBacklight.first << brightness << std::endl;
+        }
+    } else {
+        // Keyboard backlight follows display if we can't determine the slider state
+        mKeyboardBacklight.first << brightness << std::endl;
+    }
 }
 
 void Light::setKeyboardBacklight(const LightState& state) {

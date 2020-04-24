@@ -493,6 +493,7 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwifi-hal-qcom \
     macplugin \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 

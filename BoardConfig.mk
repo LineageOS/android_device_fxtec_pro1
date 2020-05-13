@@ -22,6 +22,8 @@
 # definition file).
 #
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 DEVICE_PATH := device/fxtec/pro1
 
 # Bootloader

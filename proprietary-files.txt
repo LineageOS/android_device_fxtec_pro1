@@ -720,7 +720,6 @@ lib/lib-imscamera.so:product/lib/lib-imscamera.so
 lib/lib-imsvideocodec.so:product/lib/lib-imsvideocodec.so
 lib/lib-imsvtextutils.so:product/lib/lib-imsvtextutils.so
 lib/lib-imsvtutils.so:product/lib/lib-imsvtutils.so
-lib/libimscamera_jni.so:product/lib/libimscamera_jni.so
 lib/libimsmedia_jni.so:product/lib/libimsmedia_jni.so
 lib/librcc.so:product/lib/librcc.so
 lib/vendor.qti.imsrtpservice@1.0.so:product/lib/vendor.qti.imsrtpservice@1.0.so
@@ -732,11 +731,12 @@ lib64/lib-imsvideocodec.so:product/lib64/lib-imsvideocodec.so
 lib64/lib-imsvt.so:product/lib64/lib-imsvt.so
 lib64/lib-imsvtextutils.so:product/lib64/lib-imsvtextutils.so
 lib64/lib-imsvtutils.so:product/lib64/lib-imsvtutils.so
-lib64/libimscamera_jni.so:product/lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so:product/lib64/libimsmedia_jni.so
 lib64/librcc.so:product/lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so:product/lib64/vendor.qti.imsrtpservice@1.0.so
--priv-app/ims/ims.apk:product/priv-app/ims/ims.apk
+product/lib/libimscamera_jni.so|5cf40c68b8d6928e8f1ce5752077746325be6b41
+product/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
+-product/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon

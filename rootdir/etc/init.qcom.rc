@@ -117,9 +117,9 @@ on init
     write /sys/devices/soc/soc:qcom,memlat-cpu0/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
     write /sys/devices/soc/soc:qcom,memlat-cpu0/devfreq/soc:qcom,memlat-cpu0/mem_latency/ratio_ceil 400
 
-    write /sys/devices/soc/soc:qcom,memlat-cpu0/devfreq/soc:qcom,memlat-cpu4/governor mem_latency
-    write /sys/devices/soc/soc:qcom,memlat-cpu0/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
-    write /sys/devices/soc/soc:qcom,memlat-cpu0/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
+    write /sys/devices/soc/soc:qcom,memlat-cpu4/devfreq/soc:qcom,memlat-cpu4/governor mem_latency
+    write /sys/devices/soc/soc:qcom,memlat-cpu4/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
+    write /sys/devices/soc/soc:qcom,memlat-cpu4/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
 
     write /sys/devices/soc/soc:qcom,mincpubw/devfreq/soc:qcom,mincpubw/governor cpufreq
 

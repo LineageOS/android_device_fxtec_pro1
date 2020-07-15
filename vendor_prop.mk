@@ -81,7 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=560 \
+    ro.sf.lcd_density=480 \
     ro.opengles.version=196610 \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.gralloc.disable_wb_ubwc=1 \

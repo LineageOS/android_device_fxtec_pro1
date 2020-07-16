@@ -22,6 +22,30 @@
       "revId": "220fdb912cbe7cd971beb7e63e7e8aaa61b349d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "005d6015_60a4b1b8",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-07-16T22:22:32Z",
+      "side": 0,
+      "message": "We currently have most of the handling in the lights HAL - but that specific feature doesn\u0027t work (yet). I\u0027ll take a look.",
+      "parentUuid": "bc9f81d5_7e3ff076",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 295,
+        "endChar": 68
+      },
+      "revId": "220fdb912cbe7cd971beb7e63e7e8aaa61b349d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

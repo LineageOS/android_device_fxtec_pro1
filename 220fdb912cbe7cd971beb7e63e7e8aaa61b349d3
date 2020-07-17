@@ -46,6 +46,30 @@
       "revId": "220fdb912cbe7cd971beb7e63e7e8aaa61b349d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b7b49a1_359005e7",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-07-17T15:57:03Z",
+      "side": 0,
+      "message": "Silently removed. XD",
+      "parentUuid": "005d6015_60a4b1b8",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 295,
+        "endChar": 68
+      },
+      "revId": "220fdb912cbe7cd971beb7e63e7e8aaa61b349d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

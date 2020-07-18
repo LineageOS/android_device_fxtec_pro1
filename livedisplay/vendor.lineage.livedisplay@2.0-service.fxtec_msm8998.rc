@@ -1,7 +1,0 @@
-on post-fs-data
-    mkdir /data/vendor/display 0770 system graphics
-
-service livedisplay-hal-2-0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.fxtec_msm8998
-    class hal
-    user system
-    group system

@@ -32,9 +32,6 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
-    <!-- Enable system navigation keys. -->
-    <bool name="config_supportSystemNavigationKeys">true</bool>
-
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)

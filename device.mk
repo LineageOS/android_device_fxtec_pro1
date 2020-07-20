@@ -22,6 +22,9 @@
 # definition file).
 #
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 $(call inherit-product, vendor/fxtec/pro1/pro1-vendor.mk)
 
 # Overlays

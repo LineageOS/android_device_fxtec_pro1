@@ -161,7 +161,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor \
-    libbthost_if
+    libbthost_if \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl
 

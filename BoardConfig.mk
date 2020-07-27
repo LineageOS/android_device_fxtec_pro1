@@ -66,7 +66,7 @@ TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC_OVERLAY_TEST_EXT=ufdt_apply_overlay_host
+    DTC_OVERLAY_TEST_EXT="$(abspath prebuilts/misc/linux-x86/libufdt/ufdt_apply_overlay)"
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true

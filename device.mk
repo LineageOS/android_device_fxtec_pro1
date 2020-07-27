@@ -227,6 +227,7 @@ PRODUCT_PACKAGES += \
 
 # GPS / Location
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl-qti \
     libgnss \
     libgnsspps \
     libgps.utils \

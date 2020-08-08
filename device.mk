@@ -213,7 +213,8 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-    FM2
+    FM2 \
+    qcom.fmradio
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio

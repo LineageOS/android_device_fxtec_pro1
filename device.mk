@@ -437,6 +437,10 @@ PRODUCT_SOONG_NAMESPACES += \
 # Shipping API
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
+
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \

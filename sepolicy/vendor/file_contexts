@@ -44,6 +44,9 @@
 # Ril
 /(vendor|system/vendor)/bin/init\.radio\.sh                     u:object_r:init-radio-sh_exec:s0
 
+# Root files
+/persist(/.*)?        u:object_r:mnt_vendor_file:s0
+
 # Sysfs
 /sys/devices/soc/8c0000.qcom,msm-cam/video4linux(/.*)?          u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb0(/.*)?                         u:object_r:sysfs_graphics:s0

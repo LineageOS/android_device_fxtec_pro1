@@ -315,14 +315,15 @@ PRODUCT_PACKAGES += \
     com.nxp.nfc.nq \
     com.nxp.nfc.nq.xml \
     libnqnfc-nci \
-    libnqp61-jcop-kit \
-    nfc_nci.nqx.default \
-    nfc_nci.nqx.default.hw \
+    libnqnfc_nci_jni \
     NQNfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     Tag \
-    vendor.nxp.hardware.nfc@1.1-service
+    vendor.nxp.hardware.nfc@1.2-service
+
+PRODUCT_BOOT_JARS += \
+    com.nxp.nfc.nq
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
@@ -427,7 +428,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    vendor/nxp/opensource/pn5xx
 
 # Shipping API
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)

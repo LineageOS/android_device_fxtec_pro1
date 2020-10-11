@@ -403,7 +403,7 @@ framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar:product/framework/ve
 framework/vendor.qti.hardware.data.latency-V1.0-java.jar:product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar:product/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 framework/vendor.qti.latency-V2.0-java.jar:product/framework/vendor.qti.latency-V2.0-java.jar
--priv-app/CNEService/CNEService.apk:product/priv-app/CNEService/CNEService.apk
+-product/priv-app/CNEService/CNEService.apk|d8579ab4633111f5473b3be8c9da487504908167
 vendor/bin/cnd
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml

@@ -82,4 +82,22 @@ if [ -f "$RECOVERY_QSEECOMD" ]; then
     mv "$RECOVERY_QSEECOMD.tmp" "$RECOVERY_QSEECOMD"
 fi
 
+#
+# Fix product framework path
+#
+function fix_product_framework_path () {
+    sed -i \
+        's/\/system\/framework\//\/system\/product\/framework\//g' \
+        "$BLOB_ROOT"/"$1"
+}
+
+fix_product_path product/etc/permissions/cneapiclient.xml
+fix_product_path product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
+fix_product_path product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
+fix_product_path product/etc/permissions/com.qualcomm.qti.imscmservice.xml
+fix_product_path product/etc/permissions/com.quicinc.cne.xml
+fix_product_path product/etc/permissions/embms.xml
+fix_product_path product/etc/permissions/qcrilhook.xml
+fix_product_path product/etc/permissions/telephonyservice.xml
+
 "${MY_DIR}/setup-makefiles.sh"

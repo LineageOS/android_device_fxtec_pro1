@@ -93,5 +93,6 @@ It allows additional grants on top of privapp-permissions-platform.xml
 
     <privapp-permissions package="com.qualcomm.location">
         <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
     </privapp-permissions>
 </permissions>

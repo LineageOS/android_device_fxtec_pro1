@@ -19,6 +19,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.debug.wfd.enable=1 \
     persist.hwc.enable_vds=1
 
+# Location
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.location.osnlp.package=com.google.android.gms \
+    ro.location.osnlp.region.package=com.google.android.gms
+
 # RIL
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \

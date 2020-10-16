@@ -216,9 +216,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += \
-    qcom.fmradio
-
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files

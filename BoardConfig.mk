@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Open Source Project
+# Copyright (C) 2017,2020 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -133,9 +133,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 WITH_LINEAGE_CHARGER := true
 
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-
 # Display
 BOARD_USES_ADRENO := true
 
@@ -187,10 +184,6 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_fxtec_msm8998
 
-# Keystore
-TARGET_PROVIDES_KEYMASTER := true
-VENDOR_SECURITY_PATCH := 2020-04-05
-
 # NFC
 BOARD_NFC_CHIPSET := pn553
 TARGET_USES_NQ_NFC := true
@@ -232,6 +225,9 @@ TARGET_RIL_VARIANT := caf
 
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-04-05
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

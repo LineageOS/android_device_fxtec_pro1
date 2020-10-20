@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Open Source Project
+# Copyright (C) 2017,2020 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -454,10 +454,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.1-service.pro1
-
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2019-06-05
 
 # Vibrator
 PRODUCT_PACKAGES += \

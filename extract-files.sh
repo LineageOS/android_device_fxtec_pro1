@@ -55,6 +55,9 @@ function blob_fixup() {
         vendor/etc/permissions/qti_libpermissions.xml)
             sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
             ;;
+        vendor/lib/hw/camera.msm8998.so)
+            sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
+            ;;
     esac
 }
 

@@ -111,9 +111,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# Haters gonna hate..
-PRODUCT_CHARACTERISTICS := nosdcard
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \

@@ -22,10 +22,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=2 \
     vendor.audio_hal.period_size=192 \
-
-# Audio new
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio_hal.period_size=192 \
     ro.vendor.audio.sdk.fluencetype=none \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
@@ -64,7 +60,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.camerakey.action=yes \
     persist.vendor.camera.HAL3.enabled=1
 
 # CNE
@@ -106,7 +101,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dataroaming=true \
     ro.telephony.call_ring.multiple=false \
-    persist.sys.oem_smooth=1 \
     persist.radio.multisim.config=dsds \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
@@ -118,13 +112,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.dropset_feature=0 \
     persist.vendor.radio.add_power_save=1 \
     persist.radio.VT_ENABLE=1 \
-    persist.radio.VT_HYBRID_ENABLE=1 \
-    persist.radio.videopause.mode=1 \
-    persist.dbg.ims_volte_enable=1 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1 \
-    persist.radio.calls.on.ims=1
+    persist.dbg.wfc_avail_ovr=1
 
 # WLAN
 PRODUCT_PROPERTY_OVERRIDES += \

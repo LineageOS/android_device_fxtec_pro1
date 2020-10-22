@@ -4,6 +4,14 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     audio.offload.video=true \
     audio.offload.min.duration.secs=30
 
+# DRM
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    drm.service.enabled=true
+
+# FRP
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
 # Gboard
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_l=10 \
@@ -26,7 +34,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # RIL
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    keyguard.no_require_sim=true \
     ril.subscription.types=NV,RUIM \
+    ro.com.android.dataroaming=true \
+    ro.telephony.call_ring.multiple=false \
+    telephony.lteOnCdmaDevice=1
 
 # Voice assistant
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

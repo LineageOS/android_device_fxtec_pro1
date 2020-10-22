@@ -66,14 +66,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
-# DRM
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
-# FRP
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
@@ -98,10 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.default_network=22,20 \
-    telephony.lteOnCdmaDevice=1 \
-    keyguard.no_require_sim=true \
-    ro.com.android.dataroaming=true \
-    ro.telephony.call_ring.multiple=false \
     persist.radio.multisim.config=dsds \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \

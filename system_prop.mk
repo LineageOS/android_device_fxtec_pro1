@@ -2,7 +2,17 @@
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     audio.deep_buffer.media=true \
     audio.offload.video=true \
-    audio.offload.min.duration.secs=30
+    audio.offload.min.duration.secs=30 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=11
+
+# DRM
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    drm.service.enabled=true
+
+# FRP
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Gboard
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -24,9 +34,17 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.location.osnlp.package=com.google.android.gms \
     ro.location.osnlp.region.package=com.google.android.gms
 
+# NFC
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.hardware.nfc_nci=nqx.default
+
 # RIL
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    keyguard.no_require_sim=true \
     ril.subscription.types=NV,RUIM \
+    ro.com.android.dataroaming=true \
+    ro.telephony.call_ring.multiple=false \
+    telephony.lteOnCdmaDevice=1
 
 # Voice assistant
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

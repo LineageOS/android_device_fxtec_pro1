@@ -1,0 +1,46 @@
+# Audio
+audio.deep_buffer.media=true
+audio.offload.min.duration.secs=30
+audio.offload.video=true
+
+# DRM
+drm.service.enabled=true
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Gboard
+ro.com.google.ime.kb_pad_port_l=10
+ro.com.google.ime.kb_pad_port_r=10
+ro.com.google.ime.key_border=true
+ro.com.google.ime.bs_theme=true
+
+# Graphics
+debug.hwui.use_buffer_age=false
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+persist.debug.wfd.enable=1
+persist.hwc.enable_vds=1
+
+# Location
+ro.location.osnlp.package=com.google.android.gms
+ro.location.osnlp.region.package=com.google.android.gms
+
+# NFC
+ro.hardware.nfc_nci=nqx.default
+
+# OEM Unlock reporting
+ro.oem_unlock_supported=1
+
+# QC framework value-adds
+ro.vendor.qti.va_aosp.support=1
+
+# RIL
+keyguard.no_require_sim=true
+ro.com.android.dataroaming=true
+ro.telephony.call_ring.multiple=false
+ril.subscription.types=NV,RUIM
+telephony.lteOnCdmaDevice=1
+
+# Voice assistant
+ro.opa.eligible_device=true

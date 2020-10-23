@@ -37,6 +37,33 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
+    product/etc/permissions/cneapiclient.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/com.qualcomm.qti.imscmservice.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/com.quicinc.cne.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/embms.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/qcrilhook.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    product/etc/permissions/telephonyservice.xml)
+        sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        ;;
+    vendor/etc/permissions/qti_libpermissions.xml)
+        sed -i "s/name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java/g" "${2}"
+        ;;
     vendor/lib/hw/camera.msm8998.so)
         sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
         ;;
@@ -75,12 +102,6 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-#
-# Correct android.hidl.manager@1.0-java jar name
-#
-sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" \
-    "$BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
-
 # qseecomd linkage for recovery
 RECOVERY_QSEECOMD="$BLOB_ROOT/recovery/root/sbin/qseecomd"
 if [ -f "$RECOVERY_QSEECOMD" ]; then
@@ -89,23 +110,5 @@ if [ -f "$RECOVERY_QSEECOMD" ]; then
         > "$RECOVERY_QSEECOMD.tmp"
     mv "$RECOVERY_QSEECOMD.tmp" "$RECOVERY_QSEECOMD"
 fi
-
-#
-# Fix product framework path
-#
-function fix_product_framework_path () {
-    sed -i \
-        's/\/system\/framework\//\/system\/product\/framework\//g' \
-        "$BLOB_ROOT"/"$1"
-}
-
-fix_product_framework_path product/etc/permissions/cneapiclient.xml
-fix_product_framework_path product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
-fix_product_framework_path product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
-fix_product_framework_path product/etc/permissions/com.qualcomm.qti.imscmservice.xml
-fix_product_framework_path product/etc/permissions/com.quicinc.cne.xml
-fix_product_framework_path product/etc/permissions/embms.xml
-fix_product_framework_path product/etc/permissions/qcrilhook.xml
-fix_product_framework_path product/etc/permissions/telephonyservice.xml
 
 "${MY_DIR}/setup-makefiles.sh"

@@ -102,13 +102,4 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-# qseecomd linkage for recovery
-RECOVERY_QSEECOMD="$BLOB_ROOT/recovery/root/sbin/qseecomd"
-if [ -f "$RECOVERY_QSEECOMD" ]; then
-    sed 's@/system/bin/linker64@/sbin/linker64\x0\x0\x0\x0\x0\x0@' \
-        < "$RECOVERY_QSEECOMD" \
-        > "$RECOVERY_QSEECOMD.tmp"
-    mv "$RECOVERY_QSEECOMD.tmp" "$RECOVERY_QSEECOMD"
-fi
-
 "${MY_DIR}/setup-makefiles.sh"

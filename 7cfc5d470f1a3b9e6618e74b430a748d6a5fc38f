@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cbd7fbf9_97f3653a",
+        "filename": "extract-files.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-10-23T18:03:55Z",
+      "side": 1,
+      "message": "No longer used.",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 64
+      },
+      "revId": "7cfc5d470f1a3b9e6618e74b430a748d6a5fc38f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

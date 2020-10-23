@@ -1161,8 +1161,6 @@ vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
-vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-vendor/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
 # Wi-Fi Firmware
 vendor/etc/wifi/aoa_cldb_falcon.bin

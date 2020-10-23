@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eebe1209_10904a02",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-10-23T17:56:41Z",
+      "side": 1,
+      "message": "discern",
+      "range": {
+        "startLine": 9,
+        "startChar": 68,
+        "endLine": 10,
+        "endChar": 5
+      },
+      "revId": "b8a6eba4b6d85e88a9dbf8a75c7615bcb105c146",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df2fe1ca_8113b7e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-10-23T17:56:41Z",
+      "side": 1,
+      "message": "state",
+      "range": {
+        "startLine": 13,
+        "startChar": 50,
+        "endLine": 13,
+        "endChar": 56
+      },
+      "revId": "b8a6eba4b6d85e88a9dbf8a75c7615bcb105c146",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3efb80a3_3a5d72fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-10-23T17:56:41Z",
+      "side": 1,
+      "message": "into believing that",
+      "range": {
+        "startLine": 15,
+        "startChar": 58,
+        "endLine": 15,
+        "endChar": 62
+      },
+      "revId": "b8a6eba4b6d85e88a9dbf8a75c7615bcb105c146",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

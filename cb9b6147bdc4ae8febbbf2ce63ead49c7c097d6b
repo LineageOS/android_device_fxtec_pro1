@@ -22,6 +22,30 @@
       "revId": "cb9b6147bdc4ae8febbbf2ce63ead49c7c097d6b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52430e22_13772785",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-10-24T07:34:09Z",
+      "side": 1,
+      "message": "IIRC it was only added for 18.0. But I think you can ditch it anyway.",
+      "parentUuid": "c9e8637f_ba791786",
+      "range": {
+        "startLine": 16,
+        "startChar": 46,
+        "endLine": 16,
+        "endChar": 66
+      },
+      "revId": "cb9b6147bdc4ae8febbbf2ce63ead49c7c097d6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

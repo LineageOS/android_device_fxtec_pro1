@@ -74,6 +74,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 

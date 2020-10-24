@@ -22,6 +22,30 @@
       "revId": "e187c014e48235477e93d46f9e832df696558536",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aea0c294_2ba3c5f8",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-10-24T15:09:23Z",
+      "side": 0,
+      "message": "Of course, it\u0027s no used anywhere.",
+      "parentUuid": "72711adf_f01e06b9",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 23
+      },
+      "revId": "e187c014e48235477e93d46f9e832df696558536",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

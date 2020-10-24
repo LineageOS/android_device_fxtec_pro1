@@ -20,8 +20,6 @@ set -e
 export DEVICE=pro1
 export VENDOR=fxtec
 
-export DEVICE_BRINGUP_YEAR=2020
-
 INITIAL_COPYRIGHT_YEAR=2020
 
 # Load extract_utils and do some sanity checks

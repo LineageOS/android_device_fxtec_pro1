@@ -189,7 +189,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     libvulkan \
-    memtrack.msm8998 \
+    memtrack.msm8998
 
 # Doze
 PRODUCT_PACKAGES += \

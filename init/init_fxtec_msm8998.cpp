@@ -49,7 +49,17 @@
 
 using android::base::Trim;
 using android::base::ReadFileToString;
-using android::init::property_set;
+
+void property_override(char const prop[], char const value[], bool add = true)
+{
+    auto pi = (prop_info *) __system_property_find(prop);
+
+    if (pi != nullptr) {
+        __system_property_update(pi, value, strlen(value));
+    } else if (add) {
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+    }
+}
 
 void init_alarm_boot_properties()
 {
@@ -73,41 +83,41 @@ void init_alarm_boot_properties()
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
         if (Trim(boot_reason) == "0") {
-            property_set("ro.boot.bootreason", "invalid");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "invalid");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "1") {
-            property_set("ro.boot.bootreason", "hard_reset");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "hard_reset");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "2") {
-            property_set("ro.boot.bootreason", "smpl");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "smpl");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "3") {
-            property_set("ro.alarm_boot", "true");
+            property_override("ro.alarm_boot", "true");
             // disable boot animation for RTC wakeup
-            property_set("debug.sf.nobootanimation", "1");
+            property_override("debug.sf.nobootanimation", "1");
         }
         else if (Trim(boot_reason) == "4") {
-            property_set("ro.boot.bootreason", "dc_chg");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "dc_chg");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "5") {
-            property_set("ro.boot.bootreason", "usb_chg");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "usb_chg");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "6") {
-            property_set("ro.boot.bootreason", "pon1");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "pon1");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "7") {
-            property_set("ro.boot.bootreason", "cblpwr");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "cblpwr");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "8") {
-            property_set("ro.boot.bootreason", "kpdpwr");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "kpdpwr");
+            property_override("ro.alarm_boot", "false");
         }
     }
     else {

@@ -141,6 +141,9 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_fxtec_msm8998
 
+# IPA
+TARGET_USES_NO_MTU_IPACM := true
+
 # NFC
 BOARD_NFC_CHIPSET := pn553
 TARGET_USES_NQ_NFC := true

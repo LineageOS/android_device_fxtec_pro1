@@ -413,7 +413,6 @@ service btlfpserver /vendor/bin/hw/btlfpserver
     class late_start
     user system
     group system
-    interface vendor.hardware.betterlife.fingerprint@1.0::IBtlFingerprint default
     writepid /dev/cpuset/system-background/tasks
 
 service charger /system/bin/charger

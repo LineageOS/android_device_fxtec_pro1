@@ -69,13 +69,11 @@ struct Light : public ILight {
     Return<Status> setLight(Type type, const LightState& state) override;
     Return<void> getSupportedTypes(getSupportedTypes_cb _hidl_cb) override;
 
-    void onSliderChanged(bool open);
-
   private:
     void setAttentionLight(const LightState& state);
     void setBatteryLight(const LightState& state);
+    void setKeyboardBacklight(const LightState& state);
     void setLcdBacklight(const LightState& state);
-    void setKeyboardBacklightLocked();
     void setNotificationLight(const LightState& state);
     void setSpeakerBatteryLightLocked();
     void setSpeakerLightLocked(const LightState& state);
@@ -95,7 +93,6 @@ struct Light : public ILight {
     std::mutex mLock;
 
     bool mLcdBacklightOn;
-    bool mSliderOpen;
 };
 
 }  // namespace implementation

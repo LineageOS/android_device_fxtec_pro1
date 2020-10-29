@@ -98,39 +98,6 @@ namespace light {
 namespace V2_0 {
 namespace implementation {
 
-static void* sliderMonitorThread(void* arg) {
-    Light* owner = (Light*)arg;
-    int fd;
-
-restart:
-    fd = openInputDeviceByName("gpio-keys");
-    if (fd < 0) {
-        LOG(ERROR) << "Cannot open slider input device";
-        sleep(1);
-        goto restart;
-    }
-
-    LOG(INFO) << "sliderMonitorThread enter loop";
-    while (1) {
-        struct input_event ev;
-        if (!readEvent(fd, ev)) {
-            LOG(ERROR) << "Failed to read slider event";
-            close(fd);
-            sleep(1);
-            goto restart;
-        }
-        // Ignore unwanted event types and codes (eg. EV_SYN)
-        if (ev.type != EV_SW || ev.code != SW_LID) {
-            continue;
-        }
-        bool open = (ev.value == 0);
-        owner->onSliderChanged(open);
-    }
-    close(fd);
-
-    return nullptr;
-}
-
 static const std::string kSysLedPath = "/sys/class/leds";
 
 Led::Led(int index, const std::string& name) :
@@ -198,19 +165,19 @@ Light::Light(std::pair<std::ofstream, uint32_t>&& lcd_backlight,
       mGreenLed(std::move(green_led)),
       mBlueLed(std::move(blue_led)),
       mRgbBlink(std::move(rgb_blink)),
-      mLcdBacklightOn(false),
-      mSliderOpen(false) {
+      mLcdBacklightOn(false) {
     auto attnFn(std::bind(&Light::setAttentionLight, this, std::placeholders::_1));
-    auto backlightFn(std::bind(&Light::setLcdBacklight, this, std::placeholders::_1));
+    auto keyboardBacklightFn(std::bind(&Light::setKeyboardBacklight, this, std::placeholders::_1));
+    auto lcdBacklightFn(std::bind(&Light::setLcdBacklight, this, std::placeholders::_1));
     auto batteryFn(std::bind(&Light::setBatteryLight, this, std::placeholders::_1));
     auto notifFn(std::bind(&Light::setNotificationLight, this, std::placeholders::_1));
     mLights.emplace(std::make_pair(Type::ATTENTION, attnFn));
-    mLights.emplace(std::make_pair(Type::BACKLIGHT, backlightFn));
+    mLights.emplace(std::make_pair(Type::BACKLIGHT, lcdBacklightFn));
     mLights.emplace(std::make_pair(Type::BATTERY, batteryFn));
+    mLights.emplace(std::make_pair(Type::KEYBOARD, keyboardBacklightFn));
     mLights.emplace(std::make_pair(Type::NOTIFICATIONS, notifFn));
 
     pthread_t th;
-    (void)pthread_create(&th, nullptr, sliderMonitorThread, this);
 }
 
 // Methods from ::android::hardware::light::V2_0::ILight follow.
@@ -238,16 +205,17 @@ Return<void> Light::getSupportedTypes(getSupportedTypes_cb _hidl_cb) {
     return Void();
 }
 
-void Light::onSliderChanged(bool open) {
-    std::lock_guard<std::mutex> lock(mLock);
-    mSliderOpen = open;
-    setKeyboardBacklightLocked();
-}
-
 void Light::setAttentionLight(const LightState& state) {
     std::lock_guard<std::mutex> lock(mLock);
     mAttentionState = state;
     setSpeakerBatteryLightLocked();
+}
+
+void Light::setKeyboardBacklight(const LightState& state) {
+    std::lock_guard<std::mutex> lock(mLock);
+
+    uint32_t brightness = isLit(state) ? 1 : 0;
+    mKeyboardBacklight.first << brightness << std::endl;
 }
 
 void Light::setLcdBacklight(const LightState& state) {
@@ -266,18 +234,6 @@ void Light::setLcdBacklight(const LightState& state) {
     }
 
     mLcdBacklight.first << brightness << std::endl;
-
-    setKeyboardBacklightLocked();
-}
-
-void Light::setKeyboardBacklightLocked() {
-    mKeyboardBacklight.second = (mSliderOpen && mLcdBacklightOn)
-                                ? MAX_BRIGHTNESS
-                                : 0;
-    LOG(INFO) << "setKeyboardBacklightLocked:" <<
-                 " mSliderOpen=" << (mSliderOpen ? "true" : "false") <<
-                 " mLcdBacklightOn=" << (mLcdBacklightOn ? "true" : "false");
-    mKeyboardBacklight.first << mKeyboardBacklight.second << std::endl;
 }
 
 void Light::setBatteryLight(const LightState& state) {

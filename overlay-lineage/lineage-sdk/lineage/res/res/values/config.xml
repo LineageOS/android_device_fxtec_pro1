@@ -69,6 +69,13 @@
          pulsating and RGB control would set this config to 107. -->
     <integer name="config_deviceLightCapabilities">107</integer>
 
+    <!-- Keyboard backlight control. Possible values are:
+            0 - Not supported
+            1 - Supported, but only on/off mode
+            2 - Supported with variable brightness control
+    -->
+    <integer name="config_deviceSupportsKeyboardBrightnessControl">1</integer>
+
     <!-- Color temperature settings for LiveDisplay. These were obtained by
          measuring the display at various color balance levels. -->
     <integer name="config_minColorTemperature">2500</integer>

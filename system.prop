@@ -8,6 +8,7 @@ ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=11
 
 # Charger
+ro.charger.disable_init_blank=true
 ro.charger.enable_suspend=true
 
 # DRM

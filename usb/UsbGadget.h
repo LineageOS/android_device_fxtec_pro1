@@ -19,7 +19,7 @@
 #include <android-base/file.h>
 #include <android-base/properties.h>
 #include <android-base/unique_fd.h>
-#include <android/hardware/usb/gadget/1.1/IUsbGadget.h>
+#include <android/hardware/usb/gadget/1.0/IUsbGadget.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <sys/epoll.h>
@@ -35,7 +35,7 @@ namespace android {
 namespace hardware {
 namespace usb {
 namespace gadget {
-namespace V1_1 {
+namespace V1_0 {
 namespace implementation {
 
 using ::android::sp;
@@ -51,7 +51,6 @@ using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::hardware::usb::gadget::V1_0::GadgetFunction;
 using ::android::hardware::usb::gadget::V1_0::Status;
-using ::android::hardware::usb::gadget::V1_1::IUsbGadget;
 using ::std::lock_guard;
 using ::std::move;
 using ::std::mutex;

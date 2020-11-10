@@ -19,8 +19,7 @@ package org.lineageos.settings.device;
 public class Constants {
     // Keyboard layout
     public static final String KEYBOARD_LAYOUT_KEY = "keyboard_layout";
-    public static final String KEYBOARD_LAYOUT_DEFAULT = "qwerty";
-    public static final String KEYBOARD_LAYOUT_CFG_FILE = "/persist/data/keyboard/layout";
+    public static final String KEYBOARD_LAYOUT_PROPERTY = "sys.keyboard.layout";
     public static final String KEYBOARD_LAYOUT_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout";
 
     // Keyboard keymap

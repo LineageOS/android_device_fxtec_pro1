@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,13 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         mKeymapFnKeysPref = (SwitchPreference) findPreference(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY);
         mFastPollPref = (SwitchPreference) findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
 
+        String value = readFile(Constants.KEYBOARD_LAYOUT_SYS_FILE);
+        int idx = value.indexOf(" ");
+        if (idx != -1) {
+            value = value.substring(0, idx);
+        }
+        mLayoutPref.setValue(value);
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         doUpdateLayoutPreference(prefs);
         doUpdateKeymapPreference(prefs);
@@ -113,7 +120,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
     private void doUpdateLayoutPreference(SharedPreferences prefs) {
         String value = mLayoutPref.getValue();
-        writeFile(Constants.KEYBOARD_LAYOUT_SYS_FILE, value);
+        SystemProperties.set(Constants.KEYBOARD_LAYOUT_PROPERTY, value);
         mLayoutPref.setSummary(value);
     }
 
@@ -155,8 +162,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         try {
             FileReader reader = new FileReader(filename);
             char[] buffer = new char[4096];
-            reader.read(buffer);
-            result = new String(buffer);
+            int len = reader.read(buffer);
+            result = new String(buffer, 0, len);
         }
         catch (Exception e) { /* Ignore */ }
         return result;

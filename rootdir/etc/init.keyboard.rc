@@ -1,0 +1,15 @@
+on boot
+  mkdir /mnt/vendor/persist/keyboard
+  # The following three lines migrate the layout file
+  copy /mnt/vendor/persist/data/keyboard/layout /mnt/vendor/persist/keyboard/layout
+  rm /mnt/vendor/persist/data/keyboard/layout
+  rmdir /mnt/vendor/persist/data/keyboard
+  copy /mnt/vendor/persist/keyboard/layout /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout
+
+service init-keyboard /vendor/bin/init-keyboard.sh
+  class main
+  oneshot
+
+on property:sys.keyboard.layout=*
+  write /mnt/vendor/persist/keyboard/layout ${sys.keyboard.layout}
+  write /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout ${sys.keyboard.layout}

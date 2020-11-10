@@ -269,6 +269,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
     $(LOCAL_PATH)/rootdir/etc/init.btlfp.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.btlfp.sh \
     $(LOCAL_PATH)/rootdir/etc/init.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.devstart.sh \
+    $(LOCAL_PATH)/rootdir/etc/init.keyboard.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.keyboard.rc \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
     $(LOCAL_PATH)/rootdir/etc/init.radio.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.radio.sh \

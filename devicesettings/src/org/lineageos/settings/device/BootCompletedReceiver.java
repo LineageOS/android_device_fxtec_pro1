@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.SystemProperties;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileReader;
@@ -33,23 +31,9 @@ import org.lineageos.settings.device.R;
 public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        setKeyboardLayout(context);
         setKeyboardKeymap(context);
         setKeyboardPollInterval(context);
         setTouchscreenMargin(context);
-    }
-
-    private void setKeyboardLayout(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        if (!prefs.contains(Constants.KEYBOARD_LAYOUT_KEY)) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            if (text == null) {
-                text = Constants.KEYBOARD_LAYOUT_DEFAULT;
-            }
-            prefs.edit().putString(Constants.KEYBOARD_LAYOUT_KEY, text).commit();
-        }
-        String layout = prefs.getString(Constants.KEYBOARD_LAYOUT_KEY, Constants.KEYBOARD_LAYOUT_DEFAULT);
-        writeFile(Constants.KEYBOARD_LAYOUT_SYS_FILE, layout);
     }
 
     private void setKeyboardKeymap(Context context) {

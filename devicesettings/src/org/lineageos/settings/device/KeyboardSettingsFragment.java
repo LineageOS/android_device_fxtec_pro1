@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,6 +114,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     private void doUpdateLayoutPreference(SharedPreferences prefs) {
         String value = mLayoutPref.getValue();
         writeFile(Constants.KEYBOARD_LAYOUT_SYS_FILE, value);
+        writeFile(Constants.KEYBOARD_LAYOUT_CFG_FILE, value);
         mLayoutPref.setSummary(value);
     }
 

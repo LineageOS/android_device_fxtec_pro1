@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private void setKeyboardLayout(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         if (!prefs.contains(Constants.KEYBOARD_LAYOUT_KEY)) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+            String text = readFile(Constants.KEYBOARD_LAYOUT_CFG_FILE);
             if (text == null) {
                 text = Constants.KEYBOARD_LAYOUT_DEFAULT;
             }

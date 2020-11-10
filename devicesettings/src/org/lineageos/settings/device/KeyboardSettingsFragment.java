@@ -114,6 +114,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     private void doUpdateLayoutPreference(SharedPreferences prefs) {
         String value = mLayoutPref.getValue();
         writeFile(Constants.KEYBOARD_LAYOUT_SYS_FILE, value);
+        writeFile(Constants.KEYBOARD_LAYOUT_CFG_FILE, value);
         mLayoutPref.setSummary(value);
     }
 

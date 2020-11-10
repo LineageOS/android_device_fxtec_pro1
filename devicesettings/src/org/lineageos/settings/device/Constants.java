@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ public class Constants {
     // Keyboard layout
     public static final String KEYBOARD_LAYOUT_KEY = "keyboard_layout";
     public static final String KEYBOARD_LAYOUT_DEFAULT = "qwerty";
-    public static final String KEYBOARD_LAYOUT_CFG_FILE = "/persist/data/keyboard/layout";
+    public static final String KEYBOARD_LAYOUT_CFG_FILE = "/mnt/vendor/persist/keyboard_layout";
     public static final String KEYBOARD_LAYOUT_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout";
 
     // Keyboard keymap

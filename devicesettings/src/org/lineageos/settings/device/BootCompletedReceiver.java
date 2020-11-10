@@ -42,7 +42,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private void setKeyboardLayout(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         if (!prefs.contains(Constants.KEYBOARD_LAYOUT_KEY)) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+            String text = readFile(Constants.KEYBOARD_LAYOUT_CFG_FILE);
             if (text == null) {
                 text = Constants.KEYBOARD_LAYOUT_DEFAULT;
             }

@@ -23,11 +23,3 @@ cc_library_shared {
     compile_multilib: "64",
 
 }
-
-java_library {
-    name: "ims-ext-common_system",
-    installable: true,
-    static_libs: [
-        "ims-ext-common",
-    ],
-}

@@ -736,7 +736,7 @@ lib64/libimscamera_jni.so:product/lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so:product/lib64/libimsmedia_jni.so
 lib64/librcc.so:product/lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so:product/lib64/vendor.qti.imsrtpservice@1.0.so
--priv-app/ims/ims.apk:product/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon

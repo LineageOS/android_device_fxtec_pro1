@@ -119,14 +119,23 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     }
 
     private void doUpdateKeymapPreference(SharedPreferences prefs) {
-        boolean custom = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY, false);
-        mKeymapSpacePowerPref.setEnabled(!custom);
-        mKeymapFnKeysPref.setEnabled(!custom);
-        if (custom) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
-        }
-        else {
+        File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+        if (customKeymapFile.exists()) {
+            mKeymapCustomPref.setEnabled(true);
+
+            if (mKeymapCustomPref.isChecked()) {
+                mKeymapFnKeysPref.setEnabled(false);
+                mKeymapSpacePowerPref.setEnabled(false);
+
+                String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
+            }
+        } else {
+            mKeymapCustomPref.setEnabled(false);
+            mKeymapCustomPref.setChecked(false);
+            mKeymapFnKeysPref.setEnabled(true);
+            mKeymapSpacePowerPref.setEnabled(true);
+
             boolean value;
             int i;
             value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY, false);

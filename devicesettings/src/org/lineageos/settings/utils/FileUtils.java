@@ -36,6 +36,23 @@ public final class FileUtils {
     }
 
     /**
+     * Reads the content of the given file.
+     *
+     * @return the read file contents, or null on failure
+     */
+    public static String readFile(String filename) {
+        String result = null;
+        try {
+            FileReader reader = new FileReader(filename);
+            char[] buffer = new char[4096];
+            reader.read(buffer);
+            result = new String(buffer);
+        }
+        catch (Exception e) { /* Ignore */ }
+        return result;
+    }
+
+    /**
      * Reads the first line of text from the given file.
      * Reference {@link BufferedReader#readLine()} for clarification on what a line is
      *

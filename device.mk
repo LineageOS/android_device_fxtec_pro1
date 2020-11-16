@@ -180,7 +180,7 @@ PRODUCT_COPY_FILES += \
 
 # Device settings
 PRODUCT_PACKAGES += \
-    DeviceSettings
+    FxtecParts
 
 # Display
 PRODUCT_PACKAGES += \
@@ -197,10 +197,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libvulkan \
     memtrack.msm8998
-
-# Doze
-PRODUCT_PACKAGES += \
-    Doze
 
 # DRM
 PRODUCT_PACKAGES += \

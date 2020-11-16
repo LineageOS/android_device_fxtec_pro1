@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,9 @@ import android.view.MenuItem;
 
 import androidx.preference.PreferenceFragment;
 
-import org.lineageos.internal.util.FileUtils;
-
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.widget.SeekBarPreference;
+import org.lineageos.settings.utils.LocalFileUtils;
 
 public class TouchscreenSettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -84,7 +83,7 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
                 mPrefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
                         context.getResources().getInteger(R.integer.touchscreen_margin_default));
 
-        FileUtils.writeLine(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(margin));
+        LocalFileUtils.writeLine(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(margin));
         mMarginSeekBar.setSummary(getString(R.string.touchscreen_margin_summary, margin));
     }
 }

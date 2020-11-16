@@ -17,9 +17,9 @@
 package org.lineageos.settings.device;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
@@ -37,7 +37,7 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
 
     private final boolean DEBUG = false;
 
-    private SeekBarPreference mMarginSeekBar;
+    private SharedPreferences mPrefs;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -45,24 +45,20 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mMarginSeekBar = (SeekBarPreference) findPreference(Constants.TOUCHSCREEN_MARGIN_KEY);
-
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        doUpdateMarginPreference(prefs);
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        doUpdateMarginPreference();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        prefs.registerOnSharedPreferenceChangeListener(this);
+        mPrefs.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        prefs.unregisterOnSharedPreferenceChangeListener(this);
+        mPrefs.unregisterOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -79,14 +75,20 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
         if (DEBUG) Log.d(TAG, "onSharedPreferenceChanged: " + key);
 
         if (Constants.TOUCHSCREEN_MARGIN_KEY.equals(key)) {
-            doUpdateMarginPreference(sharedPrefs);
+            doUpdateMarginPreference();
         }
     }
 
-    private void doUpdateMarginPreference(SharedPreferences sharedPrefs) {
-        int margin = Constants.TOUCHSCREEN_MARGIN_STEP * sharedPrefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY, 0);
+    private void doUpdateMarginPreference() {
+        final Context context = getContext();
+        int margin = Constants.TOUCHSCREEN_MARGIN_STEP *
+                mPrefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
+                        context.getResources().getInteger(R.integer.touchscreen_margin_default));
+
         if (DEBUG) Log.d(TAG, "doUpdateMarginPreference: " + Integer.toString(margin));
         FileUtils.writeLine(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(margin));
-        mMarginSeekBar.setSummary(getString(R.string.touchscreen_margin_summary, margin));
+
+        SeekBarPreference marginSeekBar = findPreference(Constants.TOUCHSCREEN_MARGIN_KEY);
+        marginSeekBar.setSummary(getString(R.string.touchscreen_margin_summary, margin));
     }
 }

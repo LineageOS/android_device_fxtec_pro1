@@ -20,10 +20,8 @@ import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.MenuItem;
 
-import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
@@ -87,10 +85,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     }
 
     private void doUpdateLayoutPreference() {
-        ListPreference layoutPref = findPreference(Constants.KEYBOARD_LAYOUT_KEY);
-        String value = layoutPref.getValue();
-        FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_SYS_FILE, value);
-        FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_CFG_FILE, value);
+        KeyboardUtils.setLayout(mPrefs);
     }
 
     private void doUpdateKeymapPreference() {
@@ -105,37 +100,18 @@ public class KeyboardSettingsFragment extends PreferenceFragment
             if (customKeymapPref.isChecked()) {
                 remapFnKeysPref.setEnabled(false);
                 remapFnSpacePowerPref.setEnabled(false);
-
-                String text = FileUtils.readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-                FileUtils.writeLine(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
             }
         } else {
             customKeymapPref.setEnabled(false);
             customKeymapPref.setChecked(false);
             remapFnKeysPref.setEnabled(true);
             remapFnSpacePowerPref.setEnabled(true);
-
-            int i;
-            if (remapFnSpacePowerPref.isChecked()) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
-                    FileUtils.writeLine(Constants.KEYBOARD_KEYMAP_SYS_FILE,
-                            Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
-                }
-            }
-            if (remapFnKeysPref.isChecked()) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
-                    FileUtils.writeLine(Constants.KEYBOARD_KEYMAP_SYS_FILE,
-                            Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
-                }
-            }
         }
+
+        KeyboardUtils.setKeymap(mPrefs);
     }
 
     private void doUpdateFastPollPreference() {
-        SwitchPreference fastPollPref = findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
-        int value = fastPollPref.isChecked()
-                    ? Constants.KEYBOARD_POLL_INTERVAL_FAST
-                    : Constants.KEYBOARD_POLL_INTERVAL_SLOW;
-        FileUtils.writeLine(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE, Integer.toString(value));
+        KeyboardUtils.setPollInterval(mPrefs);
     }
 }

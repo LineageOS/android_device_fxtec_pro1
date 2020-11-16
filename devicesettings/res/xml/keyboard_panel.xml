@@ -30,17 +30,14 @@
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_custom"
-            android:disableDependentsState="true"
             android:title="@string/keyboard_keymap_custom_title"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_spacepower"
-            android:dependency="keyboard_keymap_custom"
             android:title="@string/keyboard_keymap_spacepower_title"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_fnkeys"
-            android:dependency="keyboard_keymap_custom"
             android:title="@string/keyboard_keymap_fnkeys_title"/>
 
         <androidx.preference.SwitchPreference

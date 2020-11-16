@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "208cc824_6d86698a",
+        "filename": "devicesettings/src/org/lineageos/settings/device/KeyboardSettingsFragment.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-11-16T22:46:00Z",
+      "side": 1,
+      "message": "I\u0027d rather move this to doUpdateLayoutPreference method.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 36
+      },
+      "revId": "1295d041a7aa9d62bf58ad936ea3983888e5ff0b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8af52f75_3faf1082",
+        "filename": "devicesettings/src/org/lineageos/settings/device/KeyboardSettingsFragment.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-11-16T22:46:00Z",
+      "side": 1,
+      "message": "This seems redundant if you move the above mentioned block here.",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 46
+      },
+      "revId": "1295d041a7aa9d62bf58ad936ea3983888e5ff0b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb4ee8ff_28a0b306",
+        "filename": "rootdir/etc/init.keyboard.rc",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-11-16T22:46:00Z",
+      "side": 1,
+      "message": "Make it 4 spaces everywhere.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 2
+      },
+      "revId": "1295d041a7aa9d62bf58ad936ea3983888e5ff0b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

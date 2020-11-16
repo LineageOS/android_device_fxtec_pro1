@@ -104,11 +104,23 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         SwitchPreference remapFnSpacePowerPref =
                 findPreference(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY);
 
-        if (customKeymapPref.isChecked()) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
-        }
-        else {
+        File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+        if (customKeymapFile.exists()) {
+            customKeymapPref.setEnabled(true);
+
+            if (customKeymapPref.isChecked()) {
+                remapFnKeysPref.setEnabled(false);
+                remapFnSpacePowerPref.setEnabled(false);
+
+                String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
+            }
+        } else {
+            customKeymapPref.setEnabled(false);
+            customKeymapPref.setChecked(false);
+            remapFnKeysPref.setEnabled(true);
+            remapFnSpacePowerPref.setEnabled(true);
+
             int i;
             if (remapFnSpacePowerPref.isChecked()) {
                 for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {

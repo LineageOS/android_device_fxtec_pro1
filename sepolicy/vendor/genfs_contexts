@@ -1,6 +1,3 @@
-genfscon proc /touchpanel              u:object_r:proc_touchpanel:s0
-genfscon proc /s1302                   u:object_r:proc_touchpanel:s0
-genfscon proc /tri-state-key           u:object_r:proc_touchpanel:s0
 genfscon proc /sys/kernel/boot_reason  u:object_r:proc_alarm_boot:s0
 
 genfscon debugfs /p2p0/power_stats     u:object_r:debugfs_power_stats:s0

@@ -22,11 +22,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-
 import org.lineageos.settings.device.R;
+import org.lineageos.settings.utils.FileUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
@@ -39,27 +36,28 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private void setKeyboardKeymap(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         if (!prefs.contains(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY)) {
-            File f = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            prefs.edit().putBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY, f.exists()).commit();
+            prefs.edit().putBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY,
+                    FileUtils.fileExists(Constants.KEYBOARD_KEYMAP_CFG_FILE)).commit();
         }
         boolean custom = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY, false);
         if (custom) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
+            String text = FileUtils.readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+            FileUtils.writeLine(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
         }
         else {
             boolean value;
-            int i;
             value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY, false);
             if (value) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
-                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
+                for (int i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
+                    FileUtils.writeLine(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                            Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i]);
                 }
             }
             value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY, false);
             if (value) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
-                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
+                for (int i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
+                    FileUtils.writeLine(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                            Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i]);
                 }
             }
         }
@@ -70,37 +68,13 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         int value = prefs.getBoolean(Constants.KEYBOARD_FASTPOLL_KEY, false)
                 ? Constants.KEYBOARD_POLL_INTERVAL_FAST
                 : Constants.KEYBOARD_POLL_INTERVAL_SLOW;
-        writeFile(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE, Integer.toString(value));
+        FileUtils.writeLine(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE, Integer.toString(value));
     }
 
     private void setTouchscreenMargin(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         int value = Constants.TOUCHSCREEN_MARGIN_STEP * prefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
                 context.getResources().getInteger(R.integer.touchscreen_margin_default));
-        writeFile(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(value));
-    }
-
-    private String readFile(String filename) {
-        String result = null;
-        try {
-            FileReader reader = new FileReader(filename);
-            char[] buffer = new char[4096];
-            reader.read(buffer);
-            result = new String(buffer);
-        }
-        catch (Exception e) { /* Ignore */ }
-        return result;
-    }
-
-    private boolean writeFile(String filename, String text) {
-        boolean result = false;
-        try {
-            FileWriter writer = new FileWriter(filename);
-            writer.write(text);
-            writer.flush();
-            result = true;
-        }
-        catch (Exception e) { /* Ignore */ }
-        return result;
+        FileUtils.writeLine(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(value));
     }
 }

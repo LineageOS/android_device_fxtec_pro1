@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ *               2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +34,23 @@ public final class FileUtils {
 
     private FileUtils() {
         // This class is not supposed to be instantiated
+    }
+
+    /**
+     * Reads the whole content of the given file.
+     *
+     * @return the read file contents, or null on failure
+     */
+    public static String readFile(String filename) {
+        String result = null;
+        try {
+            FileReader reader = new FileReader(filename);
+            char[] buffer = new char[4096];
+            reader.read(buffer);
+            result = new String(buffer);
+        }
+        catch (Exception e) { /* Ignore */ }
+        return result;
     }
 
     /**

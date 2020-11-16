@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ *               2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +17,7 @@
 
 package org.lineageos.settings.utils;
 
+import android.os.FileUtils;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -33,6 +35,22 @@ public final class LocalFileUtils {
 
     private LocalFileUtils() {
         // This class is not supposed to be instantiated
+    }
+
+    /**
+     * Reads the whole content of the given file.
+     *
+     * @return the read file contents, or null on failure
+     */
+    public static String readFile(String fileName) {
+        final File file = new File(fileName);
+        String result = null;
+        try {
+            result = FileUtils.readTextFile(file, 0, null);
+        } catch (IOException e) {
+            // Ignored, not much we can do anyway
+        }
+        return result;
     }
 
     /**

@@ -28,7 +28,6 @@ import androidx.preference.PreferenceFragment;
 
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.widget.SeekBarPreference;
-import org.lineageos.settings.utils.FileUtils;
 
 public class TouchscreenSettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -86,7 +85,7 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
                         context.getResources().getInteger(R.integer.touchscreen_margin_default));
 
         if (DEBUG) Log.d(TAG, "doUpdateMarginPreference: " + Integer.toString(margin));
-        FileUtils.writeLine(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(margin));
+        TouchscreenUtils.setMargin(context, mPrefs);
 
         SeekBarPreference marginSeekBar = findPreference(Constants.TOUCHSCREEN_MARGIN_KEY);
         marginSeekBar.setSummary(getString(R.string.touchscreen_margin_summary, margin));

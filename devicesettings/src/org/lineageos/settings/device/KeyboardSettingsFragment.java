@@ -59,10 +59,9 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         mFastPollPref = (SwitchPreference) findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
 
         String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
-        mLayoutPref.setValue(value);
+        mLayoutPref.setValue(value.substring(0, 6));
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        doUpdateLayoutPreference(prefs);
         doUpdateKeymapPreference(prefs);
         doUpdateFastPollPreference(prefs);
     }
@@ -92,24 +91,18 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (Constants.KEYBOARD_LAYOUT_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_KEYMAP_CUSTOM_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_KEYMAP_FNKEYS_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_FASTPOLL_KEY.equals(key)) {
-            doUpdateFastPollPreference(prefs);
+        switch (key) {
+            case Constants.KEYBOARD_LAYOUT_KEY:
+                doUpdateLayoutPreference(prefs);
+                break;
+            case Constants.KEYBOARD_KEYMAP_CUSTOM_KEY:
+            case Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY:
+            case Constants.KEYBOARD_KEYMAP_FNKEYS_KEY:
+                doUpdateKeymapPreference(prefs);
+                break;
+            case Constants.KEYBOARD_FASTPOLL_KEY:
+                doUpdateFastPollPreference(prefs);
+                break;
         }
     }
 
@@ -119,6 +112,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     }
 
     private void doUpdateKeymapPreference(SharedPreferences prefs) {
+        FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_SYS_FILE, mLayoutPref.getValue());
+
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
             mKeymapCustomPref.setEnabled(true);

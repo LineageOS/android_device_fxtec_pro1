@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56dd5e2d_1722f3a3",
+        "filename": "devicesettings/src/org/lineageos/settings/device/KeyboardSettingsFragment.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-11-17T00:12:07Z",
+      "side": 0,
+      "message": "This still needs to be called in order to set the pref summary.",
+      "range": {
+        "startLine": 63,
+        "startChar": 8,
+        "endLine": 63,
+        "endChar": 40
+      },
+      "revId": "5a9a31097df84b541e2805a039700a26f6022a4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c377c023_01b32655",
+        "filename": "devicesettings/src/org/lineageos/settings/device/KeyboardSettingsFragment.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-11-17T00:12:07Z",
+      "side": 0,
+      "message": "With the code as is, this is the only call that we can remove. But that\u0027s for a different change.",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 65,
+        "endChar": 42
+      },
+      "revId": "5a9a31097df84b541e2805a039700a26f6022a4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

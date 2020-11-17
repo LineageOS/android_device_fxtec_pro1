@@ -41,6 +41,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     private static final String TAG = KeyboardSettingsFragment.class.getSimpleName();
 
     private ListPreference mLayoutPref;
+    private SharedPreferences mPrefs;
     private SwitchPreference mKeymapCustomPref;
     private SwitchPreference mKeymapSpacePowerPref;
     private SwitchPreference mKeymapFnKeysPref;
@@ -52,33 +53,31 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mLayoutPref = (ListPreference) findPreference(Constants.KEYBOARD_LAYOUT_KEY);
-        mKeymapCustomPref = (SwitchPreference) findPreference(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY);
-        mKeymapSpacePowerPref = (SwitchPreference) findPreference(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY);
-        mKeymapFnKeysPref = (SwitchPreference) findPreference(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY);
-        mFastPollPref = (SwitchPreference) findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
+        mLayoutPref = findPreference(Constants.KEYBOARD_LAYOUT_KEY);
+        mKeymapCustomPref = findPreference(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY);
+        mKeymapSpacePowerPref = findPreference(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY);
+        mKeymapFnKeysPref = findPreference(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY);
+        mFastPollPref = findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
+
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
         mLayoutPref.setValue(value);
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        doUpdateLayoutPreference(prefs);
-        doUpdateKeymapPreference(prefs);
-        doUpdateFastPollPreference(prefs);
+        doUpdateLayoutPreference();
+        doUpdateKeymapPreferences();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        prefs.registerOnSharedPreferenceChangeListener(this);
+        mPrefs.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        prefs.unregisterOnSharedPreferenceChangeListener(this);
+        mPrefs.unregisterOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -92,33 +91,26 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (Constants.KEYBOARD_LAYOUT_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_KEYMAP_CUSTOM_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_KEYMAP_FNKEYS_KEY.equals(key)) {
-            doUpdateLayoutPreference(prefs);
-            doUpdateKeymapPreference(prefs);
-        }
-        else if (Constants.KEYBOARD_FASTPOLL_KEY.equals(key)) {
-            doUpdateFastPollPreference(prefs);
+        switch (key) {
+            case Constants.KEYBOARD_LAYOUT_KEY:
+            case Constants.KEYBOARD_KEYMAP_CUSTOM_KEY:
+            case Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY:
+            case Constants.KEYBOARD_KEYMAP_FNKEYS_KEY:
+                doUpdateLayoutPreference();
+                doUpdateKeymapPreferences();
+                break;
+            case Constants.KEYBOARD_FASTPOLL_KEY:
+                doUpdateFastPollPreference();
+                break;
         }
     }
 
-    private void doUpdateLayoutPreference(SharedPreferences prefs) {
+    private void doUpdateLayoutPreference() {
         String value = mLayoutPref.getValue();
         SystemProperties.set(Constants.KEYBOARD_LAYOUT_PROPERTY, value);
     }
 
-    private void doUpdateKeymapPreference(SharedPreferences prefs) {
+    private void doUpdateKeymapPreferences() {
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
             mKeymapCustomPref.setEnabled(true);
@@ -136,16 +128,13 @@ public class KeyboardSettingsFragment extends PreferenceFragment
             mKeymapFnKeysPref.setEnabled(true);
             mKeymapSpacePowerPref.setEnabled(true);
 
-            boolean value;
             int i;
-            value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY, false);
-            if (value) {
+            if (mKeymapSpacePowerPref.isChecked()) {
                 for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
                     writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
                 }
             }
-            value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY, false);
-            if (value) {
+            if (mKeymapFnKeysPref.isChecked()) {
                 for (i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
                     writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
                 }
@@ -153,7 +142,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         }
     }
 
-    private void doUpdateFastPollPreference(SharedPreferences prefs) {
+    private void doUpdateFastPollPreference() {
         int value = mFastPollPref.isChecked()
                     ? Constants.KEYBOARD_POLL_INTERVAL_FAST
                     : Constants.KEYBOARD_POLL_INTERVAL_SLOW;

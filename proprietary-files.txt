@@ -686,6 +686,11 @@ vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
+# IMS - from jasmine - V11.0.15.0.QDIMIXM
+-product/priv-app/ims/ims.apk|fe11b3fe75a52e586ca6390adbd1b234f4f565ed
+product/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
+product/lib64/libimsmedia_jni.so|3540752cc3658261ea3c909f03018eea4398f84e
+
 # IMS
 -app/imssettings/imssettings.apk:product/app/imssettings/imssettings.apk
 etc/permissions/com.qualcomm.qti.imscmservice.xml:product/etc/permissions/com.qualcomm.qti.imscmservice.xml
@@ -703,8 +708,6 @@ lib/lib-imscamera.so:product/lib/lib-imscamera.so
 lib/lib-imsvideocodec.so:product/lib/lib-imsvideocodec.so
 lib/lib-imsvtextutils.so:product/lib/lib-imsvtextutils.so
 lib/lib-imsvtutils.so:product/lib/lib-imsvtutils.so
-lib/libimscamera_jni.so:product/lib/libimscamera_jni.so
-lib/libimsmedia_jni.so:product/lib/libimsmedia_jni.so
 lib/librcc.so:product/lib/librcc.so
 lib/vendor.qti.imsrtpservice@1.0.so:product/lib/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so:product/lib64/com.qualcomm.qti.imscmservice@1.0.so
@@ -715,11 +718,8 @@ lib64/lib-imsvideocodec.so:product/lib64/lib-imsvideocodec.so
 lib64/lib-imsvt.so:product/lib64/lib-imsvt.so
 lib64/lib-imsvtextutils.so:product/lib64/lib-imsvtextutils.so
 lib64/lib-imsvtutils.so:product/lib64/lib-imsvtutils.so
-lib64/libimscamera_jni.so:product/lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so:product/lib64/libimsmedia_jni.so
 lib64/librcc.so:product/lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so:product/lib64/vendor.qti.imsrtpservice@1.0.so
--priv-app/ims/ims.apk:product/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -946,7 +946,10 @@ vendor/bin/qrtr-ns
 vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
 
-# Radio
+# RIL - from jasmine - V11.0.15.0.QDIMIXM
+product/framework/qti-telephony-common.jar|5b1c23ce0d42e1b666d387eedde3444dd07e61bc
+
+# RIL
 -app/datastatusnotification/datastatusnotification.apk:product/app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk:product/app/embms/embms.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk:product/app/QtiTelephonyService/QtiTelephonyService.apk
@@ -955,9 +958,7 @@ etc/permissions/qcrilhook.xml:product/etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml:product/etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar:product/framework/embmslibrary.jar
 framework/qcrilhook.jar:product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar|11d6b89b31a9bf65218b3676c2bbd296275b1932
 framework/QtiTelephonyServicelibrary.jar:product/framework/QtiTelephonyServicelibrary.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/qcrild
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd

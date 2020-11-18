@@ -82,9 +82,6 @@ persist.vendor.camera.HAL3.enabled=1
 # CNE
 persist.vendor.cne.feature=1
 
-# DPM
-persist.vendor.dpm.feature=0
-
 # Graphics
 ro.opengles.version=196610
 vendor.gralloc.enable_fb_ubwc=1

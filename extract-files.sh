@@ -35,16 +35,6 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
-        product/etc/permissions/cneapiclient.xml)
-            ;&
-        product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml)
-            ;&
-        product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml)
-            ;&
-        product/etc/permissions/com.qualcomm.qti.imscmservice.xml)
-            ;&
-        product/etc/permissions/com.quicinc.cne.xml)
-            ;&
         product/etc/permissions/embms.xml)
             ;&
         product/etc/permissions/qcrilhook.xml)

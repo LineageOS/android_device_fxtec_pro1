@@ -47,7 +47,6 @@
 # Sysfs
 /sys/devices/soc/8c0000.qcom,msm-cam/video4linux(/.*)?          u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb0(/.*)?                         u:object_r:sysfs_graphics:s0
-/sys/kernel/boot_wlan(/.*)?                                     u:object_r:sysfs_wifi:s0
 
 # USB
 /vendor/bin/hw/android\.hardware\.usb@1\.1-service\.pro1        u:object_r:hal_usb_impl_exec:s0

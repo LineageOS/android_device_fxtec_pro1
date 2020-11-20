@@ -372,9 +372,6 @@ on boot
 
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
 
-    start vendor.qcrild
-    start vendor.qcrild2
-
 on charger
     load_system_props
 
@@ -612,6 +609,12 @@ service vendor.qseecomd /vendor/bin/qseecomd
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+
+service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
+    class main
+    user radio
+    group radio cache inet misc audio log readproc wakelock oem_2901
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core

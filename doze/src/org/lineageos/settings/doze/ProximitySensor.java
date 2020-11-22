@@ -72,8 +72,6 @@ public class ProximitySensor implements SensorEventListener {
         long delta = timestamp - mInPocketTime;
 
         if (Utils.isPocketGestureEnabled(mContext)) {
-            return true;
-        } else if (Utils.isPocketGestureEnabled(mContext)) {
             return delta >= POCKET_MIN_DELTA_NS;
         }
         return false;

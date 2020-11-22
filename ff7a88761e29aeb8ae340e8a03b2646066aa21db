@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9131a1a8_51512f12",
+        "filename": "doze/src/org/lineageos/settings/doze/ProximitySensor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2020-11-22T12:27:46Z",
+      "side": 1,
+      "message": "This doesn\u0027t look correct",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 9
+      },
+      "revId": "ff7a88761e29aeb8ae340e8a03b2646066aa21db",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,9 @@
 # definition file).
 #
 
+$(call enforce-product-packages-exist,)
+
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -207,7 +210,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
     libdisplayconfig \
-    liboverlay \
     libqdMetaData.system \
     libtinyxml \
     libvulkan \
@@ -225,9 +227,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.fxtec_msm8998 \
-    FxTecPocketMode
-
+    android.hardware.biometrics.fingerprint@2.1-service.fxtec_msm8998
 # FM Radio
 PRODUCT_PACKAGES += \
     FM2 \
@@ -247,9 +247,7 @@ PRODUCT_PACKAGES += \
     libgnsspps \
     libgps.utils \
     liblocation_api \
-    libloc_core \
-    libloc_pla \
-    libvehiclenetwork-native
+    libloc_core
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
@@ -336,8 +334,6 @@ PRODUCT_PACKAGES += \
     libnqnfc-nci \
     libnqnfc_nci_jni \
     NQNfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
     Tag \
     vendor.nxp.hardware.nfc@2.0-service
 
@@ -348,7 +344,6 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libextmedia_jni \
     libhypv_intercept \
     libmm-omxcore \
     libOmxAacEnc \
@@ -451,10 +446,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# TextClassifier smart selection model files
-PRODUCT_PACKAGES += \
-    textclassifier.bundle1
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
@@ -506,7 +497,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwifi-hal-qcom \
     macplugin \
     WifiOverlay \

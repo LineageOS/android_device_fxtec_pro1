@@ -35,12 +35,20 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
-        product/etc/permissions/embms.xml)
+        system_ext/etc/init/dpmd.rc)
+            sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/com.qti.dpmframework.xml)
             ;&
-        product/etc/permissions/qcrilhook.xml)
+        system_ext/etc/permissions/dpmapi.xml)
+            sed -i "s/\/system\/product\/framework\//\/system\/system_ext\/framework\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/embms.xml)
             ;&
-        product/etc/permissions/telephonyservice.xml)
-            sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
+        system_ext/etc/permissions/qcrilhook.xml)
+            ;&
+        system_ext/etc/permissions/telephonyservice.xml)
+            sed -i "s/\/system\/framework\//\/system\/system_ext\/framework\//g" "${2}"
             ;;
         product/lib64/lib-imsvideocodec.so)
             patchelf --add-needed "libui_shim.so" "${2}"

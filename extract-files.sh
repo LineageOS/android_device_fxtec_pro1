@@ -35,20 +35,28 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
-        product/etc/permissions/embms.xml)
-            ;&
-        product/etc/permissions/qcrilhook.xml)
-            ;&
-        product/etc/permissions/telephonyservice.xml)
-            sed -i "s/\/system\/framework\//\/system\/product\/framework\//g" "${2}"
-            ;;
         product/lib64/lib-imsvideocodec.so)
             patchelf --add-needed "libui_shim.so" "${2}"
             ;;
         product/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
             ;;
-        vendor/etc/permissions/qti_libpermissions.xml)
+        system_ext/etc/init/dpmd.rc)
+            sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/com.qti.dpmframework.xml)
+            ;&
+        system_ext/etc/permissions/dpmapi.xml)
+            sed -i "s/\/system\/product\/framework\//\/system\/system_ext\/framework\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/embms.xml)
+            ;&
+        system_ext/etc/permissions/qcrilhook.xml)
+            ;&
+        system_ext/etc/permissions/telephonyservice.xml)
+            sed -i "s/\/system\/framework\//\/system\/system_ext\/framework\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/qti_libpermissions.xml)
             sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
             ;;
         vendor/lib/hw/camera.msm8998.so)

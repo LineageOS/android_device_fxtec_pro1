@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a83935d1_3fdd29e4",
+        "filename": "device.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-11-25T02:34:06Z",
+      "side": 1,
+      "message": "oof, my bad",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 2
+      },
+      "revId": "ad2988b386102406d9a2499a0af0722abf0f0cde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

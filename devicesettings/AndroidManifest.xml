@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2020 The LineageOS Project
+     Copyright (C) 2018-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -54,14 +54,19 @@
 
         <activity
             android:name=".KeyboardSettingsActivity"
-            android:label="@string/button_panel_title"
+            android:label="@string/keyboard_settings_title"
+            android:icon="@drawable/ic_settings_additional_buttons"
             android:theme="@style/Theme.Main">
             <intent-filter>
-                <action android:name="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/keyboard_settings_summary" />
         </activity>
-
         <activity
             android:name=".TouchscreenSettingsActivity"
             android:label="@string/touchscreen_settings_title"

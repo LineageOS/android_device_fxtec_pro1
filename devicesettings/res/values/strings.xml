@@ -16,7 +16,7 @@
 -->
 
 <resources>
-    <string name="keyboard_settings_title">Hardware keyboard</string>
+    <string name="keyboard_settings_title">Advanced keyboard settings</string>
 
     <string name="keyboard_layout_title">Layout</string>
 

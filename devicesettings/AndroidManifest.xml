@@ -54,10 +54,10 @@
 
         <activity
             android:name=".KeyboardSettingsActivity"
-            android:label="@string/button_panel_title"
+            android:label="@string/keyboard_settings_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
-                <action android:name="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
+                <action android:name="org.lineageos.settings.device.ADVANCED_KEYBOARD_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -167,6 +167,10 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     vendor.qti.hardware.camera.device@1.0:64
 
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Device settings
 PRODUCT_PACKAGES += \
     DeviceSettings

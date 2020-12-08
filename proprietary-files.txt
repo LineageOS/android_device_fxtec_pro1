@@ -98,27 +98,18 @@ vendor/lib64/libbtnv.so
 vendor/lib64/libbt-hidlclient.so
 
 # Camera
-framework/com.qualcomm.qti.camera.jar
-vendor/etc/camera/camera_config.xml
-vendor/etc/camera/gc5025_chromatix.xml
-vendor/etc/camera/imx350_chromatix.xml
-vendor/etc/camera/imx363_chromatix.xml
-vendor/etc/camera/s5k4h7_chromatix.xml
 vendor/etc/scve/facereco/gModel.dat
 vendor/lib/hw/camera.msm8998.so
-vendor/lib/libhal_dbg.so
-vendor/lib/libmm-qcamera.so
-vendor/lib/libmmcamera_interface.so
-vendor/lib/libmmjpeg_interface.so
-vendor/lib/libmmlib2d_interface.so
-vendor/lib/libqomx_core.so
-vendor/lib/libmmcamera_bokeh.so
-vendor/lib/libcdsprpc.so
+vendor/lib/libdepthmapwrapper.so
 vendor/lib/libflash_pmic.so
+vendor/lib/libhal_dbg.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
+vendor/lib/libmm-qcamera.so
+vendor/lib/libmmcamera_bokeh.so
 vendor/lib/libmmcamera_dbg.so
+vendor/lib/libmmcamera_depth_map.so
 vendor/lib/libmmcamera_dummyalgo.so
 vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_util.so
@@ -126,20 +117,18 @@ vendor/lib/libmmcamera_eztune_module.so
 vendor/lib/libmmcamera_facedetection_lib.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_faceproc2.so
-vendor/lib/libmmcamera_gc5025_otp_eeprom.so
-vendor/lib/libmmcamera_gc5025.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hvx_add_constant.so
 vendor/lib/libmmcamera_hvx_grid_sum.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_imglib_faceproc_adspstub.so
-vendor/lib/libmmcamera_imx363.so
+vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
+vendor/lib/libmmcamera_ppeiscore.so
 vendor/lib/libmmcamera_quadracfa.so
-vendor/lib/libmmcamera_s5k4h7yx.so
 vendor/lib/libmmcamera_sw2d_lib.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
@@ -162,13 +151,17 @@ vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_lib.so
 vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmjpeg_interface.so
 vendor/lib/libmmjpeg.so
+vendor/lib/libmmlib2d_interface.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
 vendor/lib/libpi_still_feature.so
+vendor/lib/libqomx_core.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
+vendor/lib/libremosaic_daemon.so
 vendor/lib/libscveBlobDescriptor.so
 vendor/lib/libscveFaceRecognition.so
 vendor/lib/libscvePanorama_lite.so
@@ -185,52 +178,9 @@ vendor/lib/libUBWC.so
 vendor/lib/libvideoutils.so
 vendor/lib/libxapi_bokeh.so
 vendor/lib/libxapi_mfe.so
-vendor/lib64/libcdsprpc.so
-vendor/lib64/libmmcamera2_frame_algorithm.so
-vendor/lib64/libmmcamera2_is.so
-vendor/lib64/libmmcamera2_q3a_core.so
-vendor/lib64/libmmcamera2_stats_algorithm.so
-vendor/lib64/libmmcamera2_stats_lib.so
-vendor/lib64/libmmcamera_dbg.so
-vendor/lib64/libmmcamera_faceproc.so
-vendor/lib64/libmmcamera_faceproc2.so
-vendor/lib64/libmmcamera_tintless_algo.so
-vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib64/libscveBlobDescriptor.so
-vendor/lib64/libscveFaceRecognition.so
-vendor/lib64/libscvePanorama_lite.so
-vendor/lib64/libscveCommon_stub.so
-vendor/lib64/libscveBlobDescriptor_stub.so
-vendor/lib64/libscveFaceLandmarks.so
-vendor/lib64/libscvePanorama.so
-vendor/lib64/libscveCommon.so
-vendor/lib64/libscveObjectTracker.so
-vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libscveObjectSegmentation.so
-vendor/lib64/libscveObjectSegmentation_stub.so
-vendor/lib64/libUBWC.so
-vendor/lib64/libvideoutils.so
 
-# Camera actuators (XXX: prune)
-vendor/lib/libactuator_dw9763b.so
-vendor/lib/libactuator_dw9763.so
-vendor/lib/libactuator_ak7345.so
-vendor/lib/libactuator_ad5816g.so
-vendor/lib/libactuator_lc898212xd_qc2002.so
-vendor/lib/libactuator_rohm_bu64243gwz.so
-vendor/lib/libactuator_dw9714.so
-vendor/lib/libactuator_pseudo.so
-vendor/lib/libactuator_bu64297.so
+# Camera actuators
 vendor/lib/libactuator_lc898217xc.so
-vendor/lib/libactuator_lc898212xd.so
-vendor/lib/libactuator_dw9800.so
-vendor/lib/libactuator_lc898122.so
-vendor/lib/libactuator_ad5823.so
-vendor/lib/libactuator_dw9790a.so
-vendor/lib/libactuator_bu64244gwz.so
-vendor/lib/libactuator_ak7371.so
-vendor/lib/libactuator_dw9761b.so
-vendor/lib/libactuator_dw9716.so
 
 # Camera chromatix
 vendor/lib/libchromatix_gc5025_common.so
@@ -305,20 +255,20 @@ vendor/lib/libchromatix_s5k4h7_cpp_snapshot.so
 vendor/lib/libchromatix_s5k4h7_cpp_preview.so
 vendor/lib/libchromatix_s5k4h7_snapshot.so
 
-# Camera firmware
-etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_1.fw:vendor/firmware/cpp_firmware_v1_5_1.fw
-etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
-etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
+# Camera configs
+vendor/etc/camera/camera_config.xml
+vendor/etc/camera/gc5025_chromatix.xml
+vendor/etc/camera/imx363_chromatix.xml
+vendor/etc/camera/s5k4h7_chromatix.xml
 
-# Camera sensors
+# Camera eeproms
+vendor/lib/libmmcamera_gc5025_otp_eeprom.so
+vendor/lib/libmmcamera_sunny_bl24sa64cs_imx363_eeprom.so
+
+# Camera firmware
+vendor/firmware/cpp_firmware_v1_12_0.fw
+
+# Camera ISP
 vendor/lib/libmmcamera_isp_abf48.so
 vendor/lib/libmmcamera_isp_aec_bg_stats47.so
 vendor/lib/libmmcamera_isp_bf_stats47.so
@@ -363,6 +313,12 @@ vendor/lib/libmmcamera_isp_scaler_viewfinder46.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
+
+# Camera sensors
+vendor/lib/libmmcamera_gc5025.so
+vendor/lib/libmmcamera_imx363.so
+vendor/lib/libmmcamera_s5k4h7.so
+vendor/lib/libmmcamera_s5k4h7yx.so
 
 # Charger
 vendor/bin/hvdcp_opti

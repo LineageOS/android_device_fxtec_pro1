@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020 The LineageOS Open Source Project
+# Copyright (C) 2017,2020-2021 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -65,11 +65,6 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC_OVERLAY_TEST_EXT="$(abspath prebuilts/misc/linux-x86/libufdt/ufdt_apply_overlay)"
-
-# Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true

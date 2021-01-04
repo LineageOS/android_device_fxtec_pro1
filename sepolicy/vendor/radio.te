@@ -1,1 +1,6 @@
+allow radio hal_datafactory_hwservice:hwservice_manager find;
+
+binder_call(radio, cnd)
+binder_call(radio, hal_imsrtp)
+
 get_prop(radio, qcom_ims_prop)

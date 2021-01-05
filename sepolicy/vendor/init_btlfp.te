@@ -9,3 +9,6 @@ allow init-btlfp-sh vendor_shell_exec:file rx_file_perms;
 allow init-btlfp-sh vendor_toolbox_exec:file rx_file_perms;
 
 allow init-btlfp-sh system_data_file:file r_file_perms;
+allow init-btlfp-sh mnt_vendor_file:dir search;
+allow init-btlfp-sh persist_drm_file:dir { rw_dir_perms rmdir };
+allow init-btlfp-sh persist_drm_file:file { rw_file_perms unlink };

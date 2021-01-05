@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2018,2020-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.fxtec_msm8998"
+#define LOG_TAG "android.hardware.light@2.0-service.pro1"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>

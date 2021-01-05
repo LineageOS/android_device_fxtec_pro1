@@ -1,7 +1,7 @@
 #!/vendor/bin/sh
 
 fwfile="/data/system/users/0/settings_fingerprint.xml"
-hwdir="/persist/data/fingerprint"
+hwdir="/mnt/vendor/persist/data/fingerprint"
 
 logmsg() {
     /vendor/bin/log -t "fingerprint" "$@"

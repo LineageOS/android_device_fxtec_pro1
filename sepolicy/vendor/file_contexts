@@ -20,7 +20,7 @@
 /(vendor|system/vendor)/bin/init\.devstart\.sh                  u:object_r:init-devstart-sh_exec:s0
 
 # Lights
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.fxtec_msm8998    u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.pro1    u:object_r:hal_light_default_exec:s0
 
 # Keylayout
 /vendor/usr/idc(/.*?)                                           u:object_r:vendor_keylayout_file:s0

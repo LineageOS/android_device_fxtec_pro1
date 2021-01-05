@@ -302,7 +302,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.fxtec_msm8998
+    android.hardware.light@2.0-service.pro1
 
 # LiveDisplay
 PRODUCT_PACKAGES += \

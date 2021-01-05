@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020 The LineageOS Open Source Project
+# Copyright (C) 2017,2020-2021 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -219,7 +219,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.fxtec_msm8998
+    android.hardware.biometrics.fingerprint@2.1-service.pro1
 
 # FM Radio
 PRODUCT_PACKAGES += \

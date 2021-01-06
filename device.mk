@@ -200,7 +200,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    Doze
+    FxtecDoze
 
 # DRM
 PRODUCT_PACKAGES += \

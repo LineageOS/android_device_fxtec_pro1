@@ -13,6 +13,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+cc_library {
+    name: "libadpf",
+    relative_install_path: "hw",
+    proprietary: true,
+    vendor: true,
+    srcs: [
+        "adpf/PowerHintSession.cpp",
+    ],
+    shared_libs: [
+        "android.hardware.power-V2-ndk_platform",
+        "libbase",
+        "libbinder_ndk",
+        "libcutils",
+        "liblog",
+        "libutils",
+    ],
+}
+
 cc_binary {
     name: "android.hardware.power-service.pro1-libperfmgr",
     relative_install_path: "hw",
@@ -20,7 +38,8 @@ cc_binary {
     vintf_fragments: ["android.hardware.power-service.pro1.xml"],
     vendor: true,
     shared_libs: [
-        "android.hardware.power-V1-ndk_platform",
+        "android.hardware.power-V2-ndk_platform",
+        "libadpf",
         "libbase",
         "libcutils",
         "liblog",

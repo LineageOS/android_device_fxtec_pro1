@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2020 The LineageOS Project
+     Copyright (C) 2018-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,18 +16,25 @@
 -->
 
 <resources>
-    <string name="keyboard_settings_title">Hardware keyboard</string>
+    <!-- Keyboard setting strings -->
+    <string name="keyboard_settings_title">Advanced keyboard settings</string>
 
-    <string name="keyboard_layout_title">Layout</string>
+    <string name="keyboard_layout_title">Physical layout</string>
 
     <string name="keyboard_keymap_custom_title">Custom keymap</string>
+    <string name="keyboard_keymap_custom_summary_enabled">Using user customized keymap</string>
+    <string name="keyboard_keymap_custom_summary_disabled">No custom keymap available</string>
 
-    <string name="keyboard_keymap_spacepower_title">FN+SPACE sends POWER</string>
+    <string name="keyboard_keymap_spacepower_title">FN + SPACE sends POWER</string>
+    <string name="keyboard_keymap_spacepower_summary">Emulate power key with function and space keys</string>
 
-    <string name="keyboard_keymap_fnkeys_title">FN+toprow sends F1-F12</string>
+    <string name="keyboard_keymap_fnkeys_title">FN + top row sends F1-F12</string>
+    <string name="keyboard_keymap_fnkeys_summary">Emulate F1-F12 keys with function and the top row keys</string>
 
-    <string name="keyboard_fastpoll_title">Fast Poll</string>
+    <string name="keyboard_fastpoll_title">Fast poll</string>
+    <string name="keyboard_fastpoll_summary">Poll the keyboard at a faster rate (\"Gaming mode\")</string>
 
+    <!-- Touchscreen settings strings -->
     <string name="touchscreen_settings_title">Touchscreen</string>
     <string name="touchscreen_settings_summary">Margin</string>
 

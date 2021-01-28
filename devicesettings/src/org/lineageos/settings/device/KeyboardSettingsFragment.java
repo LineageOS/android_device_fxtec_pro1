@@ -124,9 +124,13 @@ public class KeyboardSettingsFragment extends PreferenceFragment
                 mKeymapSpacePowerPref.setEnabled(false);
                 CustomKeymap.install();
             }
+            mKeymapCustomPref.setSummary(getResources().getString(
+                    R.string.keyboard_keymap_custom_summary_enabled));
         } else {
             mKeymapCustomPref.setEnabled(false);
             mKeymapCustomPref.setChecked(false);
+            mKeymapCustomPref.setSummary(getResources().getString(
+                    R.string.keyboard_keymap_custom_summary_disabled));
             mKeymapFnKeysPref.setEnabled(true);
             mKeymapSpacePowerPref.setEnabled(true);
 

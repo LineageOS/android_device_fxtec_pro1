@@ -29,19 +29,23 @@
             android:summary="%s" />
 
         <androidx.preference.SwitchPreference
-            android:key="keyboard_keymap_custom"
-            android:title="@string/keyboard_keymap_custom_title"/>
-
-        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_spacepower"
-            android:title="@string/keyboard_keymap_spacepower_title"/>
+            android:title="@string/keyboard_keymap_spacepower_title"
+            android:summary="@string/keyboard_keymap_spacepower_summary"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_fnkeys"
-            android:title="@string/keyboard_keymap_fnkeys_title"/>
+            android:title="@string/keyboard_keymap_fnkeys_title"
+            android:summary="@string/keyboard_keymap_fnkeys_summary"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_fastpoll"
-            android:title="@string/keyboard_fastpoll_title"/>
+            android:title="@string/keyboard_fastpoll_title"
+            android:summaryOn="@string/keyboard_fastpoll_summary"
+            android:summaryOff="@string/keyboard_fastpoll_summary"/>
+
+        <androidx.preference.SwitchPreference
+            android:key="keyboard_keymap_custom"
+            android:title="@string/keyboard_keymap_custom_title"/>
     </PreferenceCategory>
 </PreferenceScreen>

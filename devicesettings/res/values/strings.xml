@@ -16,18 +16,25 @@
 -->
 
 <resources>
+    <!-- Keyboard setting strings -->
     <string name="keyboard_settings_title">Hardware keyboard</string>
 
-    <string name="keyboard_layout_title">Layout</string>
+    <string name="keyboard_layout_title">Physical layout</string>
 
     <string name="keyboard_keymap_custom_title">Custom keymap</string>
+    <string name="keyboard_keymap_custom_summary_enabled">Enable your custom keymap</string>
+    <string name="keyboard_keymap_custom_summary_disabled">No custom keymap found</string>
 
-    <string name="keyboard_keymap_spacepower_title">FN+SPACE sends POWER</string>
+    <string name="keyboard_keymap_spacepower_title">FN + SPACE sends POWER</string>
+    <string name="keyboard_keymap_spacepower_summary">Function key and space emulate the power key</string>
 
-    <string name="keyboard_keymap_fnkeys_title">FN+toprow sends F1-F12</string>
+    <string name="keyboard_keymap_fnkeys_title">FN + top row sends F1-F12</string>
+    <string name="keyboard_keymap_fnkeys_summary">Function key and the top row emulate F1-F12 keys</string>
 
     <string name="keyboard_fastpoll_title">Fast Poll</string>
+    <string name="keyboard_fastpoll_summary">Poll the keyboard at a faster rate (\"Gaming mode\")</string>
 
+    <!-- Touchscreen settings strings -->
     <string name="touchscreen_settings_title">Touchscreen</string>
     <string name="touchscreen_settings_summary">Margin</string>
 

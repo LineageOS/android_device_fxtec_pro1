@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2020 The LineageOS Project
+     Copyright (C) 2018-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,19 +28,23 @@
             android:summary="%s" />
 
         <androidx.preference.SwitchPreference
-            android:key="keyboard_keymap_custom"
-            android:title="@string/keyboard_keymap_custom_title"/>
-
-        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_spacepower"
-            android:title="@string/keyboard_keymap_spacepower_title"/>
+            android:title="@string/keyboard_keymap_spacepower_title"
+            android:summary="@string/keyboard_keymap_spacepower_summary"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_fnkeys"
-            android:title="@string/keyboard_keymap_fnkeys_title"/>
+            android:title="@string/keyboard_keymap_fnkeys_title"
+            android:summary="@string/keyboard_keymap_fnkeys_summary"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_fastpoll"
-            android:title="@string/keyboard_fastpoll_title"/>
+            android:title="@string/keyboard_fastpoll_title"
+            android:summaryOn="@string/keyboard_fastpoll_summary"
+            android:summaryOff="@string/keyboard_fastpoll_summary"/>
+
+        <androidx.preference.SwitchPreference
+            android:key="keyboard_keymap_custom"
+            android:title="@string/keyboard_keymap_custom_title"/>
     </PreferenceCategory>
 </PreferenceScreen>

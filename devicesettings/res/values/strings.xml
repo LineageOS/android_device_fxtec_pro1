@@ -19,7 +19,7 @@
     <!-- Keyboard setting strings -->
     <string name="keyboard_settings_title">Advanced keyboard settings</string>
 
-    <string name="keyboard_layout_title">Physical layout</string>
+    <string name="keyboard_layout_dialog_title">Select the device\'s keyboard layout</string>
 
     <string name="keyboard_keymap_custom_title">Custom keymap</string>
     <string name="keyboard_keymap_custom_summary_enabled">Enable your custom keymap</string>

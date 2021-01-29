@@ -40,7 +40,6 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
     private static final String TAG = KeyboardSettingsFragment.class.getSimpleName();
 
-    private ListPreference mLayoutPref;
     private SharedPreferences mPrefs;
     private SwitchPreference mKeymapCustomPref;
     private SwitchPreference mKeymapSpacePowerPref;
@@ -53,14 +52,10 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mLayoutPref = findPreference(Constants.KEYBOARD_LAYOUT_KEY);
         mKeymapCustomPref = findPreference(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY);
         mKeymapSpacePowerPref = findPreference(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY);
         mKeymapFnKeysPref = findPreference(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY);
         mFastPollPref = findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
-
-        String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
-        mLayoutPref.setValue(value.substring(0, 6));
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         doUpdateKeymapPreferences();
@@ -90,9 +85,6 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         switch (key) {
-            case Constants.KEYBOARD_LAYOUT_KEY:
-                doUpdateLayoutPreference();
-                break;
             case Constants.KEYBOARD_KEYMAP_CUSTOM_KEY:
             case Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY:
             case Constants.KEYBOARD_KEYMAP_FNKEYS_KEY:
@@ -104,14 +96,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         }
     }
 
-    private void doUpdateLayoutPreference() {
-        String value = mLayoutPref.getValue();
-        SystemProperties.set(Constants.KEYBOARD_LAYOUT_PROPERTY, value);
-    }
-
     private void doUpdateKeymapPreferences() {
-        FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_SYS_FILE, mLayoutPref.getValue());
-
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
             mKeymapCustomPref.setEnabled(true);

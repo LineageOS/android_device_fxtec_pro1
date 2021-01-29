@@ -63,6 +63,15 @@
         </activity>
 
         <activity
+            android:name=".PhysicalLayoutDialog"
+            android:theme="@style/Theme.Main.Dialog">
+            <intent-filter>
+                <action android:name="org.lineageos.settings.device.PHYSICAL_LAYOUT_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".TouchscreenSettingsActivity"
             android:label="@string/touchscreen_settings_title"
             android:icon="@drawable/ic_settings_additional_buttons"

@@ -56,4 +56,70 @@
     <style name="Theme.Main.SwitchPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
+
+    <style name="Theme.SetupWizard" parent="@android:style/Theme.Material.Light">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColorLink">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimations</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="ActivityAnimations" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+
+    <style name="PageTitle">
+        <item name="android:id">@android:id/title</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="PageContent">
+        <item name="android:background">@color/page_background</item>
+        <item name="android:paddingTop">@dimen/content_margin_top</item>
+    </style>
+
+    <style name="PageSummaryText">
+        <item name="android:id">@android:id/summary</item>
+        <item name="android:lineSpacingExtra">@dimen/setup_line_spacing</item>
+    </style>
+
+    <style name="SpinnerItem">
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingLeft">@dimen/content_margin_left</item>
+    </style>
+
+    <style name="NavBarButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:drawablePadding">@dimen/sud_navbar_button_drawable_padding</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingLeft">@dimen/sud_navbar_button_padding_sides</item>
+        <item name="android:paddingRight">@dimen/sud_navbar_button_padding_sides</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/sud_navbar_text_size</item>
+    </style>
+
+    <style name="NavBarTheme">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:paddingLeft">@dimen/sud_navbar_padding_sides</item>
+        <item name="android:paddingRight">@dimen/sud_navbar_padding_sides</item>
+    </style>
 </resources>

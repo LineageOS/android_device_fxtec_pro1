@@ -40,4 +40,9 @@
 
     <string name="touchscreen_margin_title">Margin</string>
     <string name="touchscreen_margin_summary">Margin level: %d</string>
+
+    <!-- Setup wizard integration -->
+    <string name="setupwizard_title">Keyboard settings</string>
+    <string name="setupwizard_summary">This device is available with different hardware keyboard layouts.
+In order for the device to be able to send the correct keys, please set the actual keyboard layout below.</string>
 </resources>

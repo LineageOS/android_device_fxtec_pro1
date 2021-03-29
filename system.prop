@@ -45,9 +45,6 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
-# NFC
-ro.hardware.nfc_nci=nqx.default
-
 # OEM Unlock reporting
 ro.oem_unlock_supported=1
 

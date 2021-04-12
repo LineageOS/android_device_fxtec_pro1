@@ -190,4 +190,4 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 
 # inherit from the proprietary version
--include vendor/fxtec/pro1/BoardConfigVendor.mk
+include vendor/fxtec/pro1/BoardConfigVendor.mk

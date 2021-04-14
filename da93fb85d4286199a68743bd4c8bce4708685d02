@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0030c68a_f38933d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2021-04-14T15:33:44Z",
+      "side": 1,
+      "message": "Replace \"[pro1]\" by \"pro1:\".",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "da93fb85d4286199a68743bd4c8bce4708685d02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b6323c0_c6ee5d32",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2021-04-14T15:33:44Z",
+      "side": 1,
+      "message": "Edit these lines instead.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 55
+      },
+      "revId": "da93fb85d4286199a68743bd4c8bce4708685d02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

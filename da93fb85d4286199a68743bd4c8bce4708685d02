@@ -45,6 +45,30 @@
       "revId": "da93fb85d4286199a68743bd4c8bce4708685d02",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1483349_db55c409",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 26764
+      },
+      "writtenOn": "2021-04-14T15:37:29Z",
+      "side": 1,
+      "message": "I left it that way, because they were left commented for OnePlus3, I thought there was a reason :) https://github.com/LineageOS/android_device_oneplus_oneplus3/blob/6477615862d282973bd465a86fb863a95fba33fd/gps/etc/gps.conf",
+      "parentUuid": "3b6323c0_c6ee5d32",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 55
+      },
+      "revId": "da93fb85d4286199a68743bd4c8bce4708685d02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

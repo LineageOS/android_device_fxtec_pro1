@@ -6,7 +6,7 @@ vendor.oem.device.imeicache1           u:object_r:radio_prop:s0
 camera.on                              u:object_r:camera_prop:s0
 ro.camera.                             u:object_r:camera_prop:s0
 
-ro.build.software.version              u:object_r:qcom_ims_prop:s0
+ro.build.software.version              u:object_r:vendor_qcom_ims_prop:s0
 
 sdm.disable_hdr_lut_gen                u:object_r:vendor_display_prop:s0
 

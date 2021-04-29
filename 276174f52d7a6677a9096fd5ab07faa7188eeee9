@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96257ca1_9d26f5f0",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2021-04-29T07:56:52Z",
+      "side": 1,
+      "message": "are you sure forced injection is necessary?",
+      "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

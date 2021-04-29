@@ -16,6 +16,24 @@
       "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c8b892b_7d19ce33",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 26764
+      },
+      "writtenOn": "2021-04-29T10:31:44Z",
+      "side": 1,
+      "message": "That\u0027s why I asked in my previous if it\u0027s possible to confirm in any way that Qualcomm XTRA is actually used. Logcat is silent about it in either case. (and is also silent about the use of AGPS)\n\nHowever, https://github.com/LineageOS/android_device_oneplus_oneplus3 uses the explicit XTRA URLs.",
+      "parentUuid": "96257ca1_9d26f5f0",
+      "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

@@ -34,6 +34,24 @@
       "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04fb5955_b7fac8ec",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2021-04-29T12:55:27Z",
+      "side": 1,
+      "message": "did you try increasing DEBUG_LEVEL?",
+      "parentUuid": "2c8b892b_7d19ce33",
+      "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

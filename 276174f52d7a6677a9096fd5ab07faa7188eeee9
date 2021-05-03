@@ -52,6 +52,23 @@
       "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94fa21cd_bd76a3e7",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 26764
+      },
+      "writtenOn": "2021-05-03T15:44:33Z",
+      "side": 1,
+      "message": "It appears that this supl serves is not being used anyway. SUPL provider from my carrier APN is used instead. From my logcat:\n```\n05-03 17:20:39.498   803  1940 D LocSvc_Agps: AgpsManager::requestATL(): connHandle 0, agpsType 1\n05-03 17:20:39.498   803  1940 D LocSvc_Agps: AgpsManager::getAgpsStateMachine(): agpsType 1\n05-03 17:20:39.498   803  1940 D LocSvc_Agps: processAgpsEvent(): SM 0x7a3f23a140, Event 1, State 1\n05-03 17:20:39.498   803  1940 D LocSvc_Agps: addSubscriber(): SM 0x7a3f23a140, Subscriber 0x7a3ded0c38\n05-03 17:20:39.498   803  1940 D LocSvc_Agps: addSubscriber(): cloned subscriber: 0x7a3f2052c0\n05-03 17:20:39.498   803  1940 D LocSvc_Agps: AGPS Data Conn Request\n05-03 17:20:39.499   803  1940 D LocSvc_Agps: transitionState(): SM 0x7a3f23a140, old 1, new 2\n05-03 17:20:39.516   803  1940 D LocSvc_Agps: AgpsManager::reportAtlOpenSuccess(): AgpsType 1, APN [www.mova.pl], Len 11, BearerType 1\n05-03 17:20:39.516   803  1940 D LocSvc_Agps: AgpsManager::getAgpsStateMachine(): agpsType 1\n05-03 17:20:39.516   803  1940 D LocSvc_Agps: processAgpsEvent(): SM 0x7a3f23a140, Event 3, State 2\n05-03 17:20:39.516   803  1940 D LocSvc_Agps: transitionState(): SM 0x7a3f23a140, old 2, new 3\n05-03 17:20:39.516   803  1940 D LocSvc_Agps: notifyAllSubscribers(): SM 0x7a3f23a140, Event 3 Delete 0 Notification Type 3\n05-03 17:20:39.516   803  1940 D LocSvc_Agps: notifyEventToSubscriber(): SM 0x7a3f23a140, Event 3 Subscriber 0x7a3f2052c0 Delete 0\n05-03 17:20:39.920   803  1940 D LocSvc_Agps: AgpsManager::releaseATL(): connHandle 0\n05-03 17:20:39.920   803  1940 D LocSvc_Agps: processAgpsEvent(): SM 0x7a3f23a140, Event 2, State 3\n05-03 17:20:39.920   803  1940 D LocSvc_Agps: notifyEventToSubscriber(): SM 0x7a3f23a140, Event 2 Subscriber 0x7a3f2052c0 Delete 1\n05-03 17:20:39.921   803  1940 D LocSvc_Agps: deleteSubscriber(): SM 0x7a3f23a140, Subscriber 0x7a3f2052c0\n05-03 17:20:39.921   803  1940 D LocSvc_Agps: transitionState(): SM 0x7a3f23a140, old 3, new 1\n05-03 17:20:39.921   803  1940 D LocSvc_Agps: AGPS Data Conn Release\n05-03 17:20:39.921   803  1940 D LocSvc_Agps: AgpsManager::reportAtlClosed(): AgpsType 1\n05-03 17:20:39.921   803  1940 D LocSvc_Agps: AgpsManager::getAgpsStateMachine(): agpsType 1\n05-03 17:20:39.921   803  1940 D LocSvc_Agps: processAgpsEvent(): SM 0x7a3f23a140, Event 4, State 1\n```",
+      "revId": "276174f52d7a6677a9096fd5ab07faa7188eeee9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

@@ -187,7 +187,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # inherit from the proprietary version
 include vendor/fxtec/pro1/BoardConfigVendor.mk

@@ -29,8 +29,8 @@ vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # ANT+
-lib64/com.qualcomm.qti.ant@1.0.so
--lib64/libantradio.so
+system/lib64/com.qualcomm.qti.ant@1.0.so
+-system/lib64/libantradio.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 
@@ -46,8 +46,8 @@ vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Speaker_cal
 vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_workspaceFile.qwsp
 
 # Audio
-lib64/libldacBT_abr.so:vendor/lib64/libldacBT_abr.so
-lib64/libldacBT_enc.so:vendor/lib64/libldacBT_enc.so
+system/lib64/libldacBT_abr.so:vendor/lib64/libldacBT_abr.so
+system/lib64/libldacBT_enc.so:vendor/lib64/libldacBT_enc.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -289,9 +289,9 @@ vendor/lib/libmmcamera_s5k4h7yx.so
 vendor/bin/hvdcp_opti
 
 # CNE - from jasmine - V11.0.28.0.QDIMIXM
-etc/cne/Nexus/ATT/ATT_profiles.xml|a0039cb3a4c5a4ca1adf897904b61c91e32d06f7|33e568627fd3f94dc45bca1c01ad10e6d8fb5b52
-etc/cne/Nexus/ROW/ROW_profiles.xml|e3907ff71cbbe0f1073ec1bf0223d26c8282aa35|238e785e9674b27c4b2365958d127533d7293132
-etc/cne/Nexus/VZW/VZW_profiles.xml|0d35b3266ea656d8868ae8f5d7e938f4859e9b0a|0f63b632e3a3f114def7aeadaabd13851c8ceec5
+system/etc/cne/Nexus/ATT/ATT_profiles.xml|a0039cb3a4c5a4ca1adf897904b61c91e32d06f7|33e568627fd3f94dc45bca1c01ad10e6d8fb5b52
+system/etc/cne/Nexus/ROW/ROW_profiles.xml|e3907ff71cbbe0f1073ec1bf0223d26c8282aa35|238e785e9674b27c4b2365958d127533d7293132
+system/etc/cne/Nexus/VZW/VZW_profiles.xml|0d35b3266ea656d8868ae8f5d7e938f4859e9b0a|0f63b632e3a3f114def7aeadaabd13851c8ceec5
 vendor/app/CneApp/CneApp.apk|2356a0335ab8e0106832a9325f972467654fd1f0
 vendor/app/IWlanService/IWlanService.apk|450aa6da382446125d06f328f8c1a0e2e33e52bb
 vendor/bin/cnd|ca653a8064fe83a12a12798a73c9cc8c1fecf758
@@ -421,9 +421,9 @@ vendor/firmware/btlap64.b07
 vendor/firmware/btlap64.mdt
 
 # FM Radio
-lib64/fm_helium.so
-lib64/libfm-hci.so
--lib64/vendor.qti.hardware.fm@1.0.so
+system/lib64/fm_helium.so
+system/lib64/libfm-hci.so
+-system/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
@@ -559,15 +559,15 @@ product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc36
 product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|fe11b3fe75a52e586ca6390adbd1b234f4f565ed
 
 # IMS
-app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
-lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so|962ecdf49ffb97896545e11cfcc594cb50f3b8f8|7e643d125354591b0a5036885835578524322610
-lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so|e443e35b754650de7c38529c20fca50746e41d94|fc6f0f1ac035ec7cca160116e8cef8d0942ed4a6
-lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
-lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
-lib64/librcc.so:system_ext/lib64/librcc.so
-lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
+system/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
+system/lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so|962ecdf49ffb97896545e11cfcc594cb50f3b8f8|7e643d125354591b0a5036885835578524322610
+system/lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so|e443e35b754650de7c38529c20fca50746e41d94|fc6f0f1ac035ec7cca160116e8cef8d0942ed4a6
+system/lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
+system/lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
+system/lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
+system/lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
+system/lib64/librcc.so:system_ext/lib64/librcc.so
+system/lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -684,8 +684,8 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|f2b57130987c65a1dc596bf83a
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|74675e4f720d75db031a0db4ca21463ebd331f34
 
 # QMI
-etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml:system_ext/etc/permissions/qti_permissions.xml
+system/etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml
+system/etc/permissions/qti_permissions.xml:system_ext/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/lib/libdiag.so
@@ -731,16 +731,16 @@ vendor/lib64/libqrtr.so
 product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|5b1c23ce0d42e1b666d387eedde3444dd07e61bc
 
 # RIL
-app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
-app/datastatusnotification/datastatusnotification.apk:system_ext/app/datastatusnotification/datastatusnotification.apk
-app/embms/embms.apk:system_ext/app/embms/embms.apk
-etc/permissions/embms.xml:system_ext/etc/permissions/embms.xml
-etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
-framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
-framework/embmslibrary.jar:system_ext/framework/embmslibrary.jar
-framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+system/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system/app/datastatusnotification/datastatusnotification.apk:system_ext/app/datastatusnotification/datastatusnotification.apk
+system/app/embms/embms.apk:system_ext/app/embms/embms.apk
+system/etc/permissions/embms.xml:system_ext/etc/permissions/embms.xml
+system/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml
+system/etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
+system/framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
+system/framework/embmslibrary.jar:system_ext/framework/embmslibrary.jar
+system/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
+system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/qcrild
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd

@@ -12,14 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# Generic key layout file for full alphabetic US English PC style external keyboards.
-#
-# This file is intentionally very generic and is intended to support a broad range of keyboards.
-# Do not edit the generic key layout to support a specific keyboard; instead, create
-# a new key layout file with the required keyboard configuration.
-#
-
 key 1     ESCAPE
 key 2     1
 key 3     2
@@ -173,7 +165,7 @@ key 150   EXPLORER
 # key 151 "KEY_MSDOS"
 key 152   POWER
 # key 153 "KEY_DIRECTION"
-# key 154 "KEY_CYCLEWINDOWS"
+key 154   APP_SWITCH
 key 155   ENVELOPE
 key 156   BOOKMARK
 # key 157 "KEY_COMPUTER"

@@ -28,6 +28,11 @@
             android:summary="%s" />
 
         <androidx.preference.SwitchPreference
+            android:key="keyboard_fnload"
+            android:title="@string/keyboard_fnload_title"
+            android:summary="@string/keyboard_fnload_summary"/>
+
+        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_spacepower"
             android:title="@string/keyboard_keymap_spacepower_title"
             android:summary="@string/keyboard_keymap_spacepower_summary"/>
@@ -36,6 +41,32 @@
             android:key="keyboard_keymap_fnkeys"
             android:title="@string/keyboard_keymap_fnkeys_title"
             android:summary="@string/keyboard_keymap_fnkeys_summary"/>
+
+        <androidx.preference.SwitchPreference
+            android:key="keyboard_keymap_pageinsertkeys"
+            android:title="@string/keyboard_keymap_pageinsertkeys_title"
+            android:summary="@string/keyboard_keymap_pageinsertkeys_summary"/>
+
+        <androidx.preference.ListPreference
+            android:key="keyboard_fn_l_key"
+            android:title="@string/keyboard_fn_l_key_title"
+            android:entries="@array/keyboard_expose_titles"
+            android:entryValues="@array/keyboard_expose_values"
+            android:summary="%s" />
+
+        <androidx.preference.ListPreference
+            android:key="keyboard_fn_r_key"
+            android:title="@string/keyboard_fn_r_key_title"
+            android:entries="@array/keyboard_expose_titles"
+            android:entryValues="@array/keyboard_expose_values"
+            android:summary="%s" />
+
+        <androidx.preference.ListPreference
+            android:key="keyboard_fx_key"
+            android:title="@string/keyboard_fx_key_title"
+            android:entries="@array/keyboard_expose_titles"
+            android:entryValues="@array/keyboard_expose_values"
+            android:summary="%s" />
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_fastpoll"

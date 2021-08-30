@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileReader;
@@ -35,6 +36,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         setKeyboardPollInterval(context);
         setTouchscreenMargin(context);
     }
+    private static final String TAG = BootCompletedReceiver.class.getSimpleName();
+    private static final boolean DEBUG = false;
 
     private void setKeyboardKeymap(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
@@ -44,8 +47,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
         boolean custom = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY, false);
         if (custom) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
+            CustomKeymap.install();
         }
         else {
             boolean value;

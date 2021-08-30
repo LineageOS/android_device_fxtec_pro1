@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23734a_b630f076",
+        "filename": "devicesettings/src/org/lineageos/settings/device/BootCompletedReceiver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2021-08-30T20:12:06Z",
+      "side": 1,
+      "message": "This won\u0027t work. Fixed in 315298",
+      "revId": "7f8d4da88871f0cac2ba2df87e9c23fcda33e610",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6480f7d0_7a3746db",
+        "filename": "devicesettings/src/org/lineageos/settings/device/KeyboardSettingsFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2021-08-30T20:12:06Z",
+      "side": 1,
+      "message": "This won\u0027t work. Fixed in 315298",
+      "revId": "7f8d4da88871f0cac2ba2df87e9c23fcda33e610",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

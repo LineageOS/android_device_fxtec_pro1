@@ -25,4 +25,26 @@
         <item>qwerty</item>
         <item>qwertz</item>
     </string-array>
+
+    <string-array name="keyboard_expose_titles">
+        <item>Disabled</item>
+        <item>FN</item>
+        <item>AltGr</item>
+        <item>Alt</item>
+        <item>Left Meta</item>
+        <item>Right Meta</item>
+        <item>Left FN</item>
+        <item>Right FN</item>
+    </string-array>
+
+    <string-array name="keyboard_expose_values" translatable="false">
+        <item>0</item>
+        <item>464</item>
+        <item>100</item>
+        <item>56</item>
+        <item>125</item>
+        <item>126</item>
+        <item>195</item>
+        <item>196</item>
+    </string-array>
 </resources>

@@ -22,6 +22,10 @@ public class Constants {
     public static final String KEYBOARD_LAYOUT_PROPERTY = "sys.keyboard.layout";
     public static final String KEYBOARD_LAYOUT_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout";
 
+    // Keyboard enable/disable loading fn array
+    public static final String KEYBOARD_FNLOAD_KEY = "keyboard_fnload";
+    public static final String KEYBOARD_FNLOAD_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/load_fn_array";
+
     // Keyboard keymap
     public static final String KEYBOARD_KEYMAP_CUSTOM_KEY = "keyboard_keymap_custom";
     public static final String KEYBOARD_KEYMAP_CFG_FILE = "/data/system/keyboard/keymap";
@@ -44,7 +48,27 @@ public class Constants {
         "29:000c:0057",
         "37:000d:0058"
     };
+    public static final String KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_KEY = "keyboard_keymap_pageinsertkeys";
+    public static final String[] KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_TEXT = {
+        "16:0069:0066",
+        "20:006a:006b",
+        "4:0067:0068",
+        "43:006c:006d",
+        "21:006f:006e"
+    };
     public static final String KEYBOARD_KEYMAP_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap";
+
+    // Expose left FN key for system
+    public static final String KEYBOARD_EXPOSE_FN_L_KEY = "keyboard_fn_l_key";
+    public static final String KEYBOARD_EXPOSE_FN_L_KEY_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fn_l";
+
+    // Expose right FN key for system
+    public static final String KEYBOARD_EXPOSE_FN_R_KEY = "keyboard_fn_r_key";
+    public static final String KEYBOARD_EXPOSE_FN_R_KEY_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fn_r";
+
+    // Expose FX key for system
+    public static final String KEYBOARD_EXPOSE_FX_KEY = "keyboard_fx_key";
+    public static final String KEYBOARD_EXPOSE_FX_KEY_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fx";
 
     // Keyboard poll interval
     public static final String KEYBOARD_FASTPOLL_KEY = "keyboard_fastpoll";

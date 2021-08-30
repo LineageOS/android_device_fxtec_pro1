@@ -34,35 +34,70 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         setKeyboardKeymap(context);
         setKeyboardPollInterval(context);
         setTouchscreenMargin(context);
+        setExposeSettings(context);
     }
 
     private void setKeyboardKeymap(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         if (!prefs.contains(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY)) {
             File f = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            prefs.edit().putBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY, f.exists()).commit();
-        }
-        boolean custom = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY, false);
-        if (custom) {
-            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-            writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
-        }
-        else {
-            boolean value;
-            int i;
-            value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY, false);
-            if (value) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
-                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
-                }
-            }
-            value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY, false);
-            if (value) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
-                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
-                }
+            if (f.exists()){
+                String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
             }
         }
+
+        boolean value;
+        int i;
+        value = prefs.getBoolean(Constants.KEYBOARD_FNLOAD_KEY, true);
+        if (value) {
+            if (!prefs.getBoolean(Constants.KEYBOARD_FNLOAD_KEY, false)) {
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean(Constants.KEYBOARD_FNLOAD_KEY, true);
+                editor.apply();
+            }
+            writeFile(Constants.KEYBOARD_FNLOAD_SYS_FILE, "1\n");
+        } else {
+            writeFile(Constants.KEYBOARD_FNLOAD_SYS_FILE, "0\n");
+        }
+        value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY, false);
+        if (value) {
+            for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
+            }
+        }
+        value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY, false);
+        if (value) {
+            for (i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
+            }
+        }
+        value = prefs.getBoolean(Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_KEY, false);
+        if (value) {
+            for (i = 0; i < Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_TEXT.length; ++i) {
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_TEXT[i] + "\n");
+            }
+        }
+    }
+
+    private void setExposeSettings(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        String str = prefs.getString(Constants.KEYBOARD_EXPOSE_FN_L_KEY, "0");
+        writeFile(Constants.KEYBOARD_EXPOSE_FN_L_KEY_SYS_FILE, str + "\n");
+
+        str = prefs.getString(Constants.KEYBOARD_EXPOSE_FN_R_KEY, "0");
+        writeFile(Constants.KEYBOARD_EXPOSE_FN_R_KEY_SYS_FILE, str + "\n");
+
+        str = prefs.getString(Constants.KEYBOARD_EXPOSE_FX_KEY, "0");
+        writeFile(Constants.KEYBOARD_EXPOSE_FX_KEY_SYS_FILE, str + "\n");
+    }
+
+    private void setTouchscreenMargin(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        int value = Constants.TOUCHSCREEN_MARGIN_STEP * prefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
+                context.getResources().getInteger(R.integer.touchscreen_margin_default));
+        writeFile(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(value));
     }
 
     private void setKeyboardPollInterval(Context context) {
@@ -71,13 +106,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
                 ? Constants.KEYBOARD_POLL_INTERVAL_FAST
                 : Constants.KEYBOARD_POLL_INTERVAL_SLOW;
         writeFile(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE, Integer.toString(value));
-    }
-
-    private void setTouchscreenMargin(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        int value = Constants.TOUCHSCREEN_MARGIN_STEP * prefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
-                context.getResources().getInteger(R.integer.touchscreen_margin_default));
-        writeFile(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(value));
     }
 
     private String readFile(String filename) {

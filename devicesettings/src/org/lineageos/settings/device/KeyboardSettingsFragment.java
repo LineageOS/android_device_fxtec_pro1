@@ -27,6 +27,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -42,9 +43,14 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
     private ListPreference mLayoutPref;
     private SharedPreferences mPrefs;
+    private SwitchPreference mFnloadPref;
     private SwitchPreference mKeymapCustomPref;
     private SwitchPreference mKeymapSpacePowerPref;
     private SwitchPreference mKeymapFnKeysPref;
+    private SwitchPreference mKeymapPageInsertKeysPref;
+    private ListPreference mFnLkeyPref;
+    private ListPreference mFnRkeyPref;
+    private ListPreference mFxkeyPref;
     private SwitchPreference mFastPollPref;
 
     @Override
@@ -54,9 +60,14 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         mLayoutPref = findPreference(Constants.KEYBOARD_LAYOUT_KEY);
+        mFnloadPref = findPreference(Constants.KEYBOARD_FNLOAD_KEY);
         mKeymapCustomPref = findPreference(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY);
         mKeymapSpacePowerPref = findPreference(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY);
         mKeymapFnKeysPref = findPreference(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY);
+        mKeymapPageInsertKeysPref = findPreference(Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_KEY);
+        mFnLkeyPref = findPreference(Constants.KEYBOARD_EXPOSE_FN_L_KEY);
+        mFnRkeyPref = findPreference(Constants.KEYBOARD_EXPOSE_FN_R_KEY);
+        mFxkeyPref = findPreference(Constants.KEYBOARD_EXPOSE_FX_KEY);
         mFastPollPref = findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
 
         String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
@@ -64,6 +75,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         doUpdateKeymapPreferences();
+        doUpdateFnkeyPreference();
+        doUpdateFxkeyPreference();
     }
 
     @Override
@@ -93,10 +106,19 @@ public class KeyboardSettingsFragment extends PreferenceFragment
             case Constants.KEYBOARD_LAYOUT_KEY:
                 doUpdateLayoutPreference();
                 break;
+            case Constants.KEYBOARD_FNLOAD_KEY:
             case Constants.KEYBOARD_KEYMAP_CUSTOM_KEY:
             case Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY:
             case Constants.KEYBOARD_KEYMAP_FNKEYS_KEY:
+            case Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_KEY:
                 doUpdateKeymapPreferences();
+                break;
+            case Constants.KEYBOARD_EXPOSE_FN_L_KEY:
+            case Constants.KEYBOARD_EXPOSE_FN_R_KEY:
+                doUpdateFnkeyPreference();
+                break;
+            case Constants.KEYBOARD_EXPOSE_FX_KEY:
+                doUpdateFxkeyPreference();
                 break;
             case Constants.KEYBOARD_FASTPOLL_KEY:
                 doUpdateFastPollPreference();
@@ -110,27 +132,34 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     }
 
     private void doUpdateKeymapPreferences() {
+        if (mFnloadPref.isChecked()) {
+            writeFile(Constants.KEYBOARD_FNLOAD_SYS_FILE, "1\n");
+        } else {
+            writeFile(Constants.KEYBOARD_FNLOAD_SYS_FILE, "0\n");
+        }
         FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_SYS_FILE, mLayoutPref.getValue());
 
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
             mKeymapCustomPref.setEnabled(true);
-
-            if (mKeymapCustomPref.isChecked()) {
-                mKeymapFnKeysPref.setEnabled(false);
-                mKeymapSpacePowerPref.setEnabled(false);
-
-                String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
-            }
             mKeymapCustomPref.setSummary(getResources().getString(
                     R.string.keyboard_keymap_custom_summary_enabled));
         } else {
-            mKeymapCustomPref.setEnabled(false);
             mKeymapCustomPref.setChecked(false);
+            mKeymapCustomPref.setEnabled(false);
             mKeymapCustomPref.setSummary(getResources().getString(
                     R.string.keyboard_keymap_custom_summary_disabled));
+        }
+        if (mKeymapCustomPref.isChecked()) {
+            mKeymapFnKeysPref.setEnabled(false);
+            mKeymapPageInsertKeysPref.setEnabled(false);
+            mKeymapSpacePowerPref.setEnabled(false);
+
+            String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+            writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
+        } else {
             mKeymapFnKeysPref.setEnabled(true);
+            mKeymapPageInsertKeysPref.setEnabled(true);
             mKeymapSpacePowerPref.setEnabled(true);
 
             int i;
@@ -144,7 +173,21 @@ public class KeyboardSettingsFragment extends PreferenceFragment
                     writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
                 }
             }
+            if (mKeymapPageInsertKeysPref.isChecked()) {
+                for (i = 0; i < Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_TEXT.length; ++i) {
+                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_PAGE_INSERT_KEYS_TEXT[i] + "\n");
+                }
+            }
         }
+    }
+
+    private void doUpdateFnkeyPreference() {
+        writeFile(Constants.KEYBOARD_EXPOSE_FN_L_KEY_SYS_FILE, mFnLkeyPref.getValue() + "\n");
+        writeFile(Constants.KEYBOARD_EXPOSE_FN_R_KEY_SYS_FILE, mFnRkeyPref.getValue() + "\n");
+    }
+
+    private void doUpdateFxkeyPreference() {
+        writeFile(Constants.KEYBOARD_EXPOSE_FX_KEY_SYS_FILE, mFxkeyPref.getValue() + "\n");
     }
 
     private void doUpdateFastPollPreference() {

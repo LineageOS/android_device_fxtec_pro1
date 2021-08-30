@@ -21,6 +21,9 @@
 
     <string name="keyboard_layout_title">Physical layout</string>
 
+    <string name="keyboard_fnload_title">Enable special FN functions</string>
+    <string name="keyboard_fnload_summary">Allow FN-level to be translated to special functions</string>
+
     <string name="keyboard_keymap_custom_title">Custom keymap</string>
     <string name="keyboard_keymap_custom_summary_enabled">Using user customized keymap</string>
     <string name="keyboard_keymap_custom_summary_disabled">No custom keymap available</string>
@@ -30,6 +33,18 @@
 
     <string name="keyboard_keymap_fnkeys_title">FN + top row sends F1-F12</string>
     <string name="keyboard_keymap_fnkeys_summary">Emulate F1-F12 keys with function and the top row keys</string>
+
+    <string name="keyboard_keymap_pageinsertkeys_title">FN + arrows to PAGE keys and INSERT to DELETE</string>
+    <string name="keyboard_keymap_pageinsertkeys_summary">Emulate PAGE UP/DOWN, HOME/END and DELETE keys for FN modifier</string>
+
+    <string name="keyboard_fn_l_key_title">Expose FN_L key to applications</string>
+    <string name="keyboard_fn_l_key_summary">Choose behaviour of left FN key</string>
+
+    <string name="keyboard_fn_r_key_title">Expose FN_R key to applications</string>
+    <string name="keyboard_fn_r_key_summary">Choose behaviour of right FN key</string>
+
+    <string name="keyboard_fx_key_title">Expose FX key to applications</string>
+    <string name="keyboard_fx_key_summary">Choose behaviour of FX / F(x)tec key</string>
 
     <string name="keyboard_fastpoll_title">Fast poll</string>
     <string name="keyboard_fastpoll_summary">Poll the keyboard at a faster rate (\"Gaming mode\")</string>

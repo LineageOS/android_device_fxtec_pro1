@@ -359,6 +359,14 @@ on boot
     chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap
     chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/poll_interval
     chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/poll_interval
+    chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/load_fn_array
+    chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/load_fn_array
+    chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fn_l
+    chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fn_l
+    chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fn_r
+    chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fn_r
+    chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fx
+    chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/exposed_key_fx
 
     # Touchscreen
     chown system system /sys/goodix/margin_x

@@ -21,6 +21,11 @@
         android:key="keyboard_settings" >
 
         <androidx.preference.SwitchPreference
+            android:key="keyboard_fnload"
+            android:title="@string/keyboard_fnload_title"
+            android:summary="@string/keyboard_fnload_summary"/>
+
+        <androidx.preference.SwitchPreference
             android:key="keyboard_keymap_spacepower"
             android:title="@string/keyboard_keymap_spacepower_title"
             android:summary="@string/keyboard_keymap_spacepower_summary"/>
@@ -29,6 +34,11 @@
             android:key="keyboard_keymap_fnkeys"
             android:title="@string/keyboard_keymap_fnkeys_title"
             android:summary="@string/keyboard_keymap_fnkeys_summary"/>
+
+        <androidx.preference.SwitchPreference
+            android:key="keyboard_keymap_pageinsertkeys"
+            android:title="@string/keyboard_keymap_pageinsertkeys_title"
+            android:summary="@string/keyboard_keymap_pageinsertkeys_summary"/>
 
         <androidx.preference.SwitchPreference
             android:key="keyboard_fastpoll"

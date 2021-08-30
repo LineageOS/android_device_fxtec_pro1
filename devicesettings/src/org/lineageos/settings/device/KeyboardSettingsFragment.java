@@ -27,7 +27,6 @@ import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;

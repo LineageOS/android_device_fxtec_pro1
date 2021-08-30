@@ -93,19 +93,19 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         writeFile(Constants.KEYBOARD_EXPOSE_FX_KEY_SYS_FILE, str + "\n");
     }
 
-    private void setTouchscreenMargin(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        int value = Constants.TOUCHSCREEN_MARGIN_STEP * prefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
-                context.getResources().getInteger(R.integer.touchscreen_margin_default));
-        writeFile(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(value));
-    }
-
     private void setKeyboardPollInterval(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         int value = prefs.getBoolean(Constants.KEYBOARD_FASTPOLL_KEY, false)
                 ? Constants.KEYBOARD_POLL_INTERVAL_FAST
                 : Constants.KEYBOARD_POLL_INTERVAL_SLOW;
         writeFile(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE, Integer.toString(value));
+    }
+
+    private void setTouchscreenMargin(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        int value = Constants.TOUCHSCREEN_MARGIN_STEP * prefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
+                context.getResources().getInteger(R.integer.touchscreen_margin_default));
+        writeFile(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(value));
     }
 
     private String readFile(String filename) {

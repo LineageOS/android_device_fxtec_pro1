@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,14 @@
 package org.lineageos.settings.device;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
@@ -39,6 +42,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = KeyboardSettingsFragment.class.getSimpleName();
+    private static final boolean DEBUG = false;
 
     private ListPreference mLayoutPref;
     private SharedPreferences mPrefs;
@@ -112,37 +116,49 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     private void doUpdateKeymapPreferences() {
         FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_SYS_FILE, mLayoutPref.getValue());
 
+        mKeymapFnKeysPref.setEnabled(true);
+        mKeymapSpacePowerPref.setEnabled(true);
+        mKeymapCustomPref.setEnabled(false);
+        mKeymapCustomPref.setSummary(getResources().getString(
+                R.string.keyboard_keymap_custom_summary_disabled));
+
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
+            if (DEBUG) Log.d(TAG, "Found custom keymap at " +
+                    Constants.KEYBOARD_KEYMAP_CFG_FILE);
+            mKeymapFnKeysPref.setEnabled(false);
+            mKeymapSpacePowerPref.setEnabled(false);
             mKeymapCustomPref.setEnabled(true);
-
-            if (mKeymapCustomPref.isChecked()) {
-                mKeymapFnKeysPref.setEnabled(false);
-                mKeymapSpacePowerPref.setEnabled(false);
-
-                String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
-            }
             mKeymapCustomPref.setSummary(getResources().getString(
-                    R.string.keyboard_keymap_custom_summary_enabled));
-        } else {
-            mKeymapCustomPref.setEnabled(false);
-            mKeymapCustomPref.setChecked(false);
-            mKeymapCustomPref.setSummary(getResources().getString(
-                    R.string.keyboard_keymap_custom_summary_disabled));
-            mKeymapFnKeysPref.setEnabled(true);
-            mKeymapSpacePowerPref.setEnabled(true);
+                    R.string.keyboard_keymap_custom_summary_available));
+        }
 
-            int i;
-            if (mKeymapSpacePowerPref.isChecked()) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
-                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
-                }
+        if (mKeymapCustomPref.isChecked()) {
+            if (CustomKeymap.install()) {
+                mKeymapCustomPref.setSummary(getResources().getString(
+                        R.string.keyboard_keymap_custom_summary_enabled));
+                mKeymapFnKeysPref.setChecked(false);
+                mKeymapSpacePowerPref.setChecked(false);
+            } else {
+                mKeymapCustomPref.setChecked(false);
+                Context context = getContext();
+                Toast.makeText(context, context.getResources().getString(
+                        R.string.keyboard_keymap_custom_failed),
+                        Toast.LENGTH_LONG).show();
             }
-            if (mKeymapFnKeysPref.isChecked()) {
-                for (i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
-                    writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
-                }
+        }
+
+        if (mKeymapFnKeysPref.isChecked()) {
+            for (int i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                        Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
+            }
+        }
+
+        if (mKeymapSpacePowerPref.isChecked()) {
+            for (int i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                        Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
             }
         }
     }

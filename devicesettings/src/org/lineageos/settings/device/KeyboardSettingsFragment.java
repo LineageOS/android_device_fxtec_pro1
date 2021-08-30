@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
+import android.util.Log;
 
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
@@ -39,6 +40,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = KeyboardSettingsFragment.class.getSimpleName();
+    private static final boolean DEBUG = false;
 
     private ListPreference mLayoutPref;
     private SharedPreferences mPrefs;
@@ -114,14 +116,13 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
+            if (DEBUG) Log.d(TAG, "Found custom keymap at " + Constants.KEYBOARD_KEYMAP_CFG_FILE);
             mKeymapCustomPref.setEnabled(true);
 
             if (mKeymapCustomPref.isChecked()) {
                 mKeymapFnKeysPref.setEnabled(false);
                 mKeymapSpacePowerPref.setEnabled(false);
-
-                String text = readFile(Constants.KEYBOARD_KEYMAP_CFG_FILE);
-                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE, text);
+                CustomKeymap.install();
             }
             mKeymapCustomPref.setSummary(getResources().getString(
                     R.string.keyboard_keymap_custom_summary_enabled));

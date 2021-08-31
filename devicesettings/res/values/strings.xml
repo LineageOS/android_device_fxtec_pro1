@@ -23,7 +23,9 @@
 
     <string name="keyboard_keymap_custom_title">Custom keymap</string>
     <string name="keyboard_keymap_custom_summary_enabled">Using user customized keymap</string>
+    <string name="keyboard_keymap_custom_summary_available">Custom keymap available</string>
     <string name="keyboard_keymap_custom_summary_disabled">No custom keymap available</string>
+    <string name="keyboard_keymap_custom_failed">Custom keymap failed to apply</string>
 
     <string name="keyboard_keymap_spacepower_title">FN + SPACE sends POWER</string>
     <string name="keyboard_keymap_spacepower_summary">Emulate power key with function and space keys</string>

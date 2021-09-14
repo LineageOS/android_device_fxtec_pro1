@@ -33,6 +33,9 @@
     <string name="keyboard_keymap_fnkeys_title">FN + top row sends F1-F12</string>
     <string name="keyboard_keymap_fnkeys_summary">Emulate F1-F12 keys with function and the top row keys</string>
 
+    <string name="keyboard_keymap_altgr_title">Right FN key sends AltGr</string>
+    <string name="keyboard_keymap_altgr_summary">Change right-hand diagonal yellow arrow key to AltGr</string>
+
     <string name="keyboard_fastpoll_title">Fast poll</string>
     <string name="keyboard_fastpoll_summary">Poll the keyboard at a faster rate (\"Gaming mode\")</string>
 

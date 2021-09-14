@@ -44,6 +44,10 @@ public class Constants {
         "29:000c:0057",
         "37:000d:0058"
     };
+    public static final String KEYBOARD_KEYMAP_ALTGR_KEY = "keyboard_keymap_altgr";
+    public static final String[] KEYBOARD_KEYMAP_ALTGR_TEXT = {
+        "69:0064:0064"
+    };
     public static final String KEYBOARD_KEYMAP_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap";
 
     // Keyboard poll interval

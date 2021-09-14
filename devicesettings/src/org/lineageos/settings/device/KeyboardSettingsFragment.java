@@ -49,6 +49,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     private SwitchPreference mKeymapCustomPref;
     private SwitchPreference mKeymapSpacePowerPref;
     private SwitchPreference mKeymapFnKeysPref;
+    private SwitchPreference mKeymapAltGrPref;
     private SwitchPreference mFastPollPref;
 
     @Override
@@ -61,6 +62,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         mKeymapCustomPref = findPreference(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY);
         mKeymapSpacePowerPref = findPreference(Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY);
         mKeymapFnKeysPref = findPreference(Constants.KEYBOARD_KEYMAP_FNKEYS_KEY);
+        mKeymapAltGrPref = findPreference(Constants.KEYBOARD_KEYMAP_ALTGR_KEY);
         mFastPollPref = findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
 
         String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
@@ -100,6 +102,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
             case Constants.KEYBOARD_KEYMAP_CUSTOM_KEY:
             case Constants.KEYBOARD_KEYMAP_SPACEPOWER_KEY:
             case Constants.KEYBOARD_KEYMAP_FNKEYS_KEY:
+            case Constants.KEYBOARD_KEYMAP_ALTGR_KEY:
                 doUpdateKeymapPreferences();
                 break;
             case Constants.KEYBOARD_FASTPOLL_KEY:
@@ -118,6 +121,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
         mKeymapFnKeysPref.setEnabled(true);
         mKeymapSpacePowerPref.setEnabled(true);
+        mKeymapAltGrPref.setEnabled(true);
 
         File customKeymapFile = new File(Constants.KEYBOARD_KEYMAP_CFG_FILE);
         if (customKeymapFile.exists()) {
@@ -141,6 +145,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment
                 mKeymapFnKeysPref.setEnabled(false);
                 mKeymapSpacePowerPref.setChecked(false);
                 mKeymapSpacePowerPref.setEnabled(false);
+                mKeymapAltGrPref.setChecked(false);
+                mKeymapAltGrPref.setEnabled(false);
             } else {
                 mKeymapCustomPref.setChecked(false);
                 Context context = getContext();
@@ -162,6 +168,14 @@ public class KeyboardSettingsFragment extends PreferenceFragment
             for (int i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
                 writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
                         Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
+            }
+            mKeymapCustomPref.setChecked(false);
+        }
+
+        if (mKeymapAltGrPref.isChecked()) {
+            for (int i = 0; i < Constants.KEYBOARD_KEYMAP_ALTGR_TEXT.length; ++i) {
+                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                        Constants.KEYBOARD_KEYMAP_ALTGR_TEXT[i] + "\n");
             }
             mKeymapCustomPref.setChecked(false);
         }

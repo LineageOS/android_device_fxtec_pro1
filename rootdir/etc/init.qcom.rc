@@ -119,11 +119,6 @@ on init
 
     write /sys/devices/soc/soc:qcom,mincpubw/devfreq/soc:qcom,mincpubw/governor cpufreq
 
-    # Setup permission for powerHAL
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
-
     # Setup all the sub-system as related
     write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
     write /sys/bus/msm_subsys/devices/subsys1/restart_level RELATED
@@ -259,14 +254,6 @@ on post-fs-data
     # Set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
-
-    # Setup permission for powerHAL
-    chown system system /dev/stune/top-app/schedtune.boost
-    chown system system /dev/cpu_dma_latency
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-    chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB

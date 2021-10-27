@@ -732,7 +732,6 @@ product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-co
 
 # RIL
 system/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
-system/app/datastatusnotification/datastatusnotification.apk:system_ext/app/datastatusnotification/datastatusnotification.apk
 system/app/embms/embms.apk:system_ext/app/embms/embms.apk
 system/etc/permissions/embms.xml:system_ext/etc/permissions/embms.xml
 system/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml

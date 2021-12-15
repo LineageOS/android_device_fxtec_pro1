@@ -107,12 +107,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # ANT+
-PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.dsi.ant.antradio_library.xml
-
 PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library
+    AntHalService
 
 # Audio
 PRODUCT_PACKAGES += \

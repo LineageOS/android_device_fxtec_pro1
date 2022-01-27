@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020 The LineageOS Project
+# Copyright (C) 2017,2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,13 +30,14 @@ PRODUCT_MANUFACTURER := Fxtec
 PRODUCT_BRAND := Fxtec
 PRODUCT_MODEL := QX1000
 
+PRODUCT_SYSTEM_NAME := QX1000_EEA
+PRODUCT_SYSTEM_DEVICE := QX1000
+
 PRODUCT_GMS_CLIENTID_BASE := android-fxtec
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=QX1000 \
-    PRODUCT_NAME=QX1000_EEA
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=QX1000 \
+    TARGET_PRODUCT=QX1000_EEA \
     PRIVATE_BUILD_DESC="QX1000_EEA-user 9 PKQ1.190723.001 05500.20Q202 release-keys"
 
 BUILD_FINGERPRINT := Fxtec/QX1000_EEA/QX1000:9/PKQ1.190723.001/05500.20Q202:user/release-keys

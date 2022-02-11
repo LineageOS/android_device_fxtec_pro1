@@ -313,8 +313,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.pro1
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -481,10 +481,10 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor
 
 # VR
-PRODUCT_PACKAGES += \
-    android.hardware.vr@1.0-impl \
-    android.hardware.vr@1.0-service \
-    vr.msm8998
+#PRODUCT_PACKAGES += \
+#    android.hardware.vr@1.0-impl \
+#    android.hardware.vr@1.0-service \
+#    vr.msm8998
 
 # Weaver
 PRODUCT_PACKAGES += \

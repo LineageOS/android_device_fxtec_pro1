@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020 The LineageOS Project
+# Copyright (C) 2020,2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ PRODUCT_MODEL := QX1000
 PRODUCT_GMS_CLIENTID_BASE := android-fxtec
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=QX1000 \
+    TARGET_DEVICE=QX1000 \
     PRODUCT_NAME=QX1000_EEA
 
 PRODUCT_BUILD_PROP_OVERRIDES += \

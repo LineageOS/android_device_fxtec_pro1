@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021-2022 The LineageOS Project
+     Copyright (C) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,12 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <style name="Theme.SetupWizard" parent="@style/SudDynamicColorThemeGlifV3.Light"/>
-
-    <style name="SpinnerItem">
-        <item name="android:textSize">15sp</item>
-        <item name="android:paddingLeft">@dimen/content_margin_left</item>
-    </style>
+<resources>
+    <!-- Partner customization -->
+    <color name="sud_dynamic_color_accent_glif_v3_light">@color/accent</color>
 </resources>

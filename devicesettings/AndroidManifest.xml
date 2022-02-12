@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2021 The LineageOS Project
+     Copyright (C) 2018-2022 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
-        android:theme="@style/Theme.Main"
+        android:theme="@style/Theme.SubSettingsBase"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true"
         android:persistent="true">
@@ -54,8 +54,7 @@
 
         <activity
             android:name=".KeyboardSettingsActivity"
-            android:label="@string/keyboard_settings_title"
-            android:theme="@style/Theme.Main">
+            android:label="@string/keyboard_settings_title">
             <intent-filter>
                 <action android:name="org.lineageos.settings.device.ADVANCED_KEYBOARD_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -74,8 +73,7 @@
         <activity
             android:name=".TouchscreenSettingsActivity"
             android:label="@string/touchscreen_settings_title"
-            android:icon="@drawable/ic_settings_additional_buttons"
-            android:theme="@style/Theme.Main">
+            android:icon="@drawable/ic_settings_additional_buttons">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>

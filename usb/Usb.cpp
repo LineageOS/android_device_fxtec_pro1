@@ -639,8 +639,7 @@ Usb::Usb()
 /*
  * whitelisting USB device idProduct and idVendor to allow auto suspend.
  */
-static bool canProductAutoSuspend(const std::string &deviceIdVendor,
-        const std::string &deviceIdProduct) {
+static bool canProductAutoSuspend(const std::string &deviceIdVendor) {
     if (deviceIdVendor == USB_VENDOR_ID_STR) {
         return true;
     }
@@ -649,12 +648,10 @@ static bool canProductAutoSuspend(const std::string &deviceIdVendor,
 
 static bool canUsbDeviceAutoSuspend(const std::string &devicePath) {
     std::string deviceIdVendor;
-    std::string deviceIdProduct;
     readFile(devicePath + "/idVendor", deviceIdVendor);
-    readFile(devicePath + "/idProduct", deviceIdProduct);
 
-    // deviceIdVendor and deviceIdProduct will be empty strings if readFile fails
-    return canProductAutoSuspend(deviceIdVendor, deviceIdProduct);
+    // deviceIdVendor will be empty strings if readFile fails
+    return canProductAutoSuspend(deviceIdVendor);
 }
 
 /*

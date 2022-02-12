@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f60e9d33_54b80341",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-02-12T20:11:26Z",
+      "side": 1,
+      "message": "This fixes the pre-device mismatch in the OTA metadata",
+      "revId": "914407a972ac18e4be923dd18c13c06527c6da24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -608,12 +608,6 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.spdaemon /vendor/bin/spdaemon
-    class core
-    user system
-    group system
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.tftp_server /vendor/bin/tftp_server
     class core
     user root

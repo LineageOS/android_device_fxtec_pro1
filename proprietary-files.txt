@@ -957,11 +957,6 @@ vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 
-# Secure Processor SubSystem
-vendor/bin/spdaemon
-vendor/lib/libspcom.so
-vendor/lib64/libspcom.so
-
 # Sensors
 lib/libqmi_cci_system.so
 lib/libsdsprpc_system.so

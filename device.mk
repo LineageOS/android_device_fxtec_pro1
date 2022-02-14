@@ -480,10 +480,10 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor
 
 # VR
-#PRODUCT_PACKAGES += \
-#    android.hardware.vr@1.0-impl \
-#    android.hardware.vr@1.0-service \
-#    vr.msm8998
+PRODUCT_PACKAGES += \
+    android.hardware.vr@1.0-impl \
+    android.hardware.vr@1.0-service \
+    vr.msm8998
 
 # Weaver
 PRODUCT_PACKAGES += \

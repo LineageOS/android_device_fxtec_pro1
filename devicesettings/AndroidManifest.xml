@@ -74,7 +74,6 @@
         <activity
             android:name=".TouchscreenSettingsActivity"
             android:label="@string/touchscreen_settings_title"
-            android:icon="@drawable/ic_settings_additional_buttons"
             android:theme="@style/Theme.Main">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />

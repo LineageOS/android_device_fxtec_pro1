@@ -40,10 +40,10 @@ public class DeviceSettingsSearchIndexablesProvider extends SearchIndexablesProv
     private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
             new SearchIndexableResource(1, R.xml.keyboard_panel,
                     KeyboardSettingsActivity.class.getName(),
-                    R.drawable.ic_settings_additional_buttons),
+                    R.drawable.ic_settings_dummy),
             new SearchIndexableResource(1, R.xml.touchscreen_panel,
                     TouchscreenSettingsActivity.class.getName(),
-                    R.drawable.ic_settings_additional_buttons),
+                    R.drawable.ic_settings_dummy),
     };
 
     @Override

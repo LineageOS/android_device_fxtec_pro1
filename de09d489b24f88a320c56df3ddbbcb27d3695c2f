@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7427afe7_bd112c7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-15T13:54:16Z",
+      "side": 1,
+      "message": "Seems to fit into the rest just fine (actually tested on 18.1)",
+      "revId": "de09d489b24f88a320c56df3ddbbcb27d3695c2f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

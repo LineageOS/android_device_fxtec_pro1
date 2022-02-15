@@ -16,6 +16,24 @@
       "message": "TARGET_PRODUCT",
       "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72efe4db_a4102ac5",
+        "filename": "lineage_pro1.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-02-15T16:40:20Z",
+      "side": 1,
+      "message": "Using TARGET_PRODUCT here instead of TARGET_DEVICE does not change the pre-device value in the OTA metadata.",
+      "parentUuid": "1c052c0b_0b7f0559",
+      "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

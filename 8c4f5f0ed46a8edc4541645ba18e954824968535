@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86d1719f_67bcce60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-15T12:11:00Z",
+      "side": 1,
+      "message": "SuW device-specific page is broken after https://github.com/LineageOS/android_packages_apps_SetupWizard/commit/5e2f7f2dfeeb4d39012afee5a0686b92181cfe56 and https://github.com/LineageOS/android_packages_apps_SetupWizard/commit/44fb45c42187cd66a1e305b8317385c95f1a73a2.",
+      "revId": "8c4f5f0ed46a8edc4541645ba18e954824968535",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

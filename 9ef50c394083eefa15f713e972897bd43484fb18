@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c052c0b_0b7f0559",
+        "filename": "lineage_pro1.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2022-02-15T08:11:42Z",
+      "side": 1,
+      "message": "TARGET_PRODUCT",
+      "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

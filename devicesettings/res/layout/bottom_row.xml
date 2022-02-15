@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021 The LineageOS Project
+     Copyright (C) 2021-2022 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,20 +15,13 @@
      limitations under the License.
 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/sud_navbar_height"
     android:baselineAligned="false"
     android:orientation="horizontal"
     style="@style/NavBarTheme">
-
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:drawableStart="@drawable/ic_chevron_left"
-        android:gravity="start|center_vertical"
-        style="@style/NavBarButtonStyle"/>
 
     <View
         android:layout_width="0dp"
@@ -39,9 +32,8 @@
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:drawableEnd="@drawable/ic_chevron_right"
-        android:gravity="end|center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:text="@string/setupwizard_next"
-        style="@style/NavBarButtonStyle"/>
+        style="@style/SudGlifButton.Primary"/>
 </LinearLayout>

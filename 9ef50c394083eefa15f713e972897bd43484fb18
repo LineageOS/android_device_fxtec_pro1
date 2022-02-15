@@ -52,6 +52,24 @@
       "parentUuid": "72efe4db_a4102ac5",
       "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49a1dd7a_28390452",
+        "filename": "lineage_pro1.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2022-02-15T16:41:58Z",
+      "side": 1,
+      "message": "tbh, you could abandon this and cherry pick that change instead...",
+      "parentUuid": "9dfbd91a_d574167d",
+      "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -34,6 +34,24 @@
       "parentUuid": "1c052c0b_0b7f0559",
       "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dfbd91a_d574167d",
+        "filename": "lineage_pro1.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2022-02-15T16:41:35Z",
+      "side": 1,
+      "message": "but it fixes properties, see https://review.lineageos.org/c/LineageOS/android_device_oneplus_lemonadep/+/322787/2",
+      "parentUuid": "72efe4db_a4102ac5",
+      "revId": "9ef50c394083eefa15f713e972897bd43484fb18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

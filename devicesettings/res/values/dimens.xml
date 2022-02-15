@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021 The LineageOS Project
+     Copyright (C) 2021-2022 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,16 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <dimen name="header_condensed_height">88dp</dimen>
     <dimen name="content_margin_top">26dp</dimen>
     <dimen name="content_margin_left">26dp</dimen>
     <dimen name="content_margin_right">30dp</dimen>
-    <dimen name="summary_margin_bottom">20dp</dimen>
-    <dimen name="setup_line_spacing">3sp</dimen>
-
-    <dimen name="sud_navbar_button_drawable_padding">6dp</dimen>
-    <dimen name="sud_navbar_button_padding_sides">10dp</dimen>
-    <dimen name="sud_navbar_text_size">16sp</dimen>
-    <dimen name="sud_navbar_padding_sides">24dp</dimen>
-    <dimen name="sud_navbar_height">56dp</dimen>
 </resources>

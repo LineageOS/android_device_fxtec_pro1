@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2021 The LineageOS Project
+     Copyright (C) 2018-2022 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +15,8 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
         android:key="keyboard_settings" >
@@ -40,8 +41,4 @@
             android:key="keyboard_keymap_custom"
             android:title="@string/keyboard_keymap_custom_title"/>
     </PreferenceCategory>
-
-    <Preference
-        android:key="continue"
-        android:layout="@layout/bottom_row" />
 </PreferenceScreen>

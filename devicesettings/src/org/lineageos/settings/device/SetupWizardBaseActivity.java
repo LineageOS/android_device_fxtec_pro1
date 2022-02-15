@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,29 +17,27 @@
 package org.lineageos.settings.device;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.android.settingslib.Utils;
+
+import com.google.android.setupdesign.GlifLayout;
 
 import org.lineageos.settings.device.R;
 
 public class SetupWizardBaseActivity extends Activity implements View.OnClickListener {
 
-    private static final int WINDOW_FLAGS = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                                          | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                                          | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                                          | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-
-    private Button mButtonBack;
-    private Button mButtonNext;
+    private static final int WINDOW_FLAGS = View.STATUS_BAR_DISABLE_HOME
+            | View.STATUS_BAR_DISABLE_RECENT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Make it fullscreen, hide the navbar
         getWindow().getDecorView().setSystemUiVisibility(WINDOW_FLAGS);
 
         initLayout();
@@ -47,17 +45,10 @@ public class SetupWizardBaseActivity extends Activity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            // Keep these for navigating purposes
-            case R.id.btn_back:
-                setResult(RESULT_CANCELED, null);
-                finish();
-                break;
-
-            case R.id.btn_next:
-                setResult(RESULT_OK, null);
-                finish();
-                break;
+        // Keep this for navigating purposes
+        if (view.getId() == R.id.btn_next) {
+            setResult(RESULT_OK, null);
+            finish();
         }
     }
 
@@ -66,21 +57,24 @@ public class SetupWizardBaseActivity extends Activity implements View.OnClickLis
             setContentView(getLayoutResId());
         }
         if (getTitleResId() != -1) {
-            TextView title = (TextView) findViewById(android.R.id.title);
-            title.setText(getTitleResId());
+            final CharSequence headerText = TextUtils.expandTemplate(getText(getTitleResId()));
+            getGlifLayout().setHeaderText(headerText);
         }
         if (getIconResId() != -1) {
-            ImageView icon = (ImageView) findViewById(R.id.header_icon);
-            icon.setImageResource(getIconResId());
-            icon.setVisibility(View.VISIBLE);
+            final GlifLayout layout = getGlifLayout();
+            final Drawable icon = getDrawable(getIconResId()).mutate();
+            icon.setTintList(Utils.getColorAccent(layout.getContext()));
+            layout.setIcon(icon);
         }
 
-        mButtonBack = findViewById(R.id.btn_back);
-        mButtonBack.setOnClickListener(this);
-        mButtonNext = findViewById(R.id.btn_next);
-        mButtonNext.setOnClickListener(this);
+        Button buttonNext = findViewById(R.id.btn_next);
+        buttonNext.setOnClickListener(this);
 
         setupPage();
+    }
+
+    protected GlifLayout getGlifLayout() {
+        return requireViewById(R.id.setup_wizard_layout);
     }
 
     protected int getLayoutResId() {

@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bda66b56_094c1be6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-02-16T23:42:21Z",
+      "side": 1,
+      "message": "nah, a lot of devices do this.",
+      "parentUuid": "e9bcb565_2dc9033a",
+      "revId": "65d8b1502a8aeb7902728a415364b3c3b19cd5f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7efb5f5c_ed2e378c",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-02-12T14:09:31Z",
       "side": 1,
       "message": "shouldn\u0027t 2019 just be replaced with 2022? Usually we do so...",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "65d8b1502a8aeb7902728a415364b3c3b19cd5f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af1bbcd3_50190bae",
+        "filename": "devicesettings/src/org/lineageos/settings/device/KeyboardSettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-02-16T23:42:21Z",
+      "side": 1,
+      "message": "nah, a lot of devices do this.",
+      "parentUuid": "7efb5f5c_ed2e378c",
       "range": {
         "startLine": 2,
         "startChar": 22,

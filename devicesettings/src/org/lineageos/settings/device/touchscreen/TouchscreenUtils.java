@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2022 The LineageOS Project
+ * Copyright (C) 2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,22 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.touchscreen;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import org.lineageos.settings.device.keyboard.KeyboardUtils;
-import org.lineageos.settings.device.touchscreen.TouchscreenUtils;
+import org.lineageos.internal.util.FileUtils;
+import org.lineageos.settings.device.R;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
+public class TouchscreenUtils {
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
+    public static void setTouchscreenMargin(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        KeyboardUtils.setKeyboardKeymap(prefs);
-        KeyboardUtils.setKeyboardPollInterval(prefs);
-        TouchscreenUtils.setTouchscreenMargin(context);
+        final int margin = Constants.TOUCHSCREEN_MARGIN_STEP *
+                prefs.getInt(Constants.TOUCHSCREEN_MARGIN_KEY,
+                        context.getResources().getInteger(R.integer.touchscreen_margin_default));
+        FileUtils.writeLine(Constants.TOUCHSCREEN_MARGIN_SYS_FILE, Integer.toString(margin));
     }
 }

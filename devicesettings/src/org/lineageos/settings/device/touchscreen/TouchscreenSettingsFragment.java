@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2020-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,16 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.touchscreen;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.MenuItem;
 
 import androidx.preference.PreferenceFragment;
 
 import org.lineageos.internal.util.FileUtils;
-
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.widget.SeekBarPreference;
 
@@ -41,8 +38,6 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.touchscreen_panel);
-        final ActionBar actionBar = getActivity().getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         mMarginSeekBar = findPreference(Constants.TOUCHSCREEN_MARGIN_KEY);
 
@@ -60,15 +55,6 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
     public void onPause() {
         super.onPause();
         mPrefs.unregisterOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            getActivity().onBackPressed();
-            return true;
-        }
-        return false;
     }
 
     @Override

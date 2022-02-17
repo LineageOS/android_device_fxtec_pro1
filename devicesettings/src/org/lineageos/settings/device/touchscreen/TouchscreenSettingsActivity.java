@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019,2022 The LineageOS Project
+ * Copyright (C) 2020-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.touchscreen;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.collapsingtoolbar.R;
 
-public class KeyboardSettingsActivity extends CollapsingToolbarBaseActivity {
+public class TouchscreenSettingsActivity extends CollapsingToolbarBaseActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new KeyboardSettingsFragment()).commit();
+                new TouchscreenSettingsFragment()).commit();
     }
 }

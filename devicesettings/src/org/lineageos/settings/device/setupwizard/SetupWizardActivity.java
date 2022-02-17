@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.setupwizard;
 
 import android.os.SystemProperties;
 import android.view.View;
@@ -23,7 +23,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 
 import org.lineageos.internal.util.FileUtils;
-
+import org.lineageos.settings.device.keyboard.Constants;
 import org.lineageos.settings.device.R;
 
 import java.util.ArrayList;

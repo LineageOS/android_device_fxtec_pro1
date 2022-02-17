@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.keyboard;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.collapsingtoolbar.R;
 
-public class TouchscreenSettingsActivity extends CollapsingToolbarBaseActivity {
+public class KeyboardSettingsActivity extends CollapsingToolbarBaseActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new TouchscreenSettingsFragment()).commit();
+                new KeyboardSettingsFragment()).commit();
     }
 }

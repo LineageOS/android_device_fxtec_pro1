@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.touchscreen;
 
 import android.app.ActionBar;
 import android.content.Context;
@@ -26,7 +26,6 @@ import android.view.MenuItem;
 import androidx.preference.PreferenceFragment;
 
 import org.lineageos.internal.util.FileUtils;
-
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.widget.SeekBarPreference;
 
@@ -60,15 +59,6 @@ public class TouchscreenSettingsFragment extends PreferenceFragment
     public void onPause() {
         super.onPause();
         mPrefs.unregisterOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            getActivity().onBackPressed();
-            return true;
-        }
-        return false;
     }
 
     @Override

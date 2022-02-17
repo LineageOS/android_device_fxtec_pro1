@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2021 The LineageOS Project
+ * Copyright (C) 2020-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.keyboard;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
-import android.view.MenuItem;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -30,13 +28,10 @@ import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-
 import org.lineageos.internal.util.FileUtils;
-
 import org.lineageos.settings.device.R;
+
+import java.io.File;
 
 public class KeyboardSettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -55,8 +50,6 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.keyboard_panel);
-        final ActionBar actionBar = getActivity().getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         mLayoutPref = findPreference(Constants.KEYBOARD_LAYOUT_KEY);
         mKeymapCustomPref = findPreference(Constants.KEYBOARD_KEYMAP_CUSTOM_KEY);
@@ -82,15 +75,6 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     public void onPause() {
         super.onPause();
         mPrefs.unregisterOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            getActivity().onBackPressed();
-            return true;
-        }
-        return false;
     }
 
     @Override
@@ -138,7 +122,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         }
 
         if (mKeymapCustomPref.isChecked()) {
-            if (CustomKeymap.install()) {
+            if (KeyboardUtils.installCustomKeymap()) {
                 mKeymapCustomPref.setSummary(getResources().getString(
                         R.string.keyboard_keymap_custom_summary_enabled));
                 mKeymapFnKeysPref.setChecked(false);
@@ -158,7 +142,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
         if (mKeymapFnKeysPref.isChecked()) {
             for (int i = 0; i < Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT.length; ++i) {
-                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                KeyboardUtils.writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
                         Constants.KEYBOARD_KEYMAP_FNKEYS_TEXT[i] + "\n");
             }
             mKeymapCustomPref.setChecked(false);
@@ -166,7 +150,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
         if (mKeymapSpacePowerPref.isChecked()) {
             for (int i = 0; i < Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT.length; ++i) {
-                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+                KeyboardUtils.writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
                         Constants.KEYBOARD_KEYMAP_SPACEPOWER_TEXT[i] + "\n");
             }
             mKeymapCustomPref.setChecked(false);
@@ -174,7 +158,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
         if (mKeymapAltGrPref.isChecked()) {
             for (int i = 0; i < Constants.KEYBOARD_KEYMAP_ALTGR_TEXT.length; ++i) {
-                writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
+               KeyboardUtils. writeFile(Constants.KEYBOARD_KEYMAP_SYS_FILE,
                         Constants.KEYBOARD_KEYMAP_ALTGR_TEXT[i] + "\n");
             }
             mKeymapCustomPref.setChecked(false);
@@ -182,33 +166,9 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     }
 
     private void doUpdateFastPollPreference() {
-        int value = mFastPollPref.isChecked()
-                    ? Constants.KEYBOARD_POLL_INTERVAL_FAST
-                    : Constants.KEYBOARD_POLL_INTERVAL_SLOW;
-        writeFile(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE, Integer.toString(value));
-    }
-
-    private String readFile(String filename) {
-        String result = null;
-        try {
-            FileReader reader = new FileReader(filename);
-            char[] buffer = new char[4096];
-            reader.read(buffer);
-            result = new String(buffer);
-        }
-        catch (Exception e) { /* Ignore */ }
-        return result;
-    }
-
-    private boolean writeFile(String filename, String text) {
-        boolean result = false;
-        try {
-            FileWriter writer = new FileWriter(filename);
-            writer.write(text);
-            writer.flush();
-            result = true;
-        }
-        catch (Exception e) { /* Ignore */ }
-        return result;
+        final int interval = mFastPollPref.isChecked() ?
+                Constants.KEYBOARD_POLL_INTERVAL_FAST : Constants.KEYBOARD_POLL_INTERVAL_SLOW;
+        KeyboardUtils.writeFile(Constants.KEYBOARD_POLL_INTERVAL_SYS_FILE,
+                Integer.toString(interval));
     }
 }

@@ -16,11 +16,6 @@
 
 package org.lineageos.settings.device;
 
-import android.database.Cursor;
-import android.database.MatrixCursor;
-import android.provider.SearchIndexableResource;
-import android.provider.SearchIndexablesProvider;
-
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_CLASS_NAME;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_ICON_RESID;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_INTENT_ACTION;
@@ -31,6 +26,14 @@ import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_RES
 import static android.provider.SearchIndexablesContract.INDEXABLES_RAW_COLUMNS;
 import static android.provider.SearchIndexablesContract.INDEXABLES_XML_RES_COLUMNS;
 import static android.provider.SearchIndexablesContract.NON_INDEXABLES_KEYS_COLUMNS;
+
+import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.provider.SearchIndexableResource;
+import android.provider.SearchIndexablesProvider;
+
+import org.lineageos.settings.device.keyboard.KeyboardSettingsActivity;
+import org.lineageos.settings.device.touchscreen.TouchscreenSettingsActivity;
 
 public class DeviceSettingsSearchIndexablesProvider extends SearchIndexablesProvider {
     private static final String TAG = "DeviceSettingsSearchIndexablesProvider";

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.keyboard;
 
 public class Constants {
     // Keyboard layout
     public static final String KEYBOARD_LAYOUT_KEY = "keyboard_layout";
     public static final String KEYBOARD_LAYOUT_PROPERTY = "sys.keyboard.layout";
-    public static final String KEYBOARD_LAYOUT_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout";
+    public static final String KEYBOARD_LAYOUT_SYS_FILE =
+            "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout";
 
     // Keyboard keymap
     public static final String KEYBOARD_KEYMAP_CUSTOM_KEY = "keyboard_keymap_custom";
@@ -48,17 +49,14 @@ public class Constants {
     public static final String[] KEYBOARD_KEYMAP_ALTGR_TEXT = {
         "69:0064:0064"
     };
-    public static final String KEYBOARD_KEYMAP_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap";
+    public static final String KEYBOARD_KEYMAP_SYS_FILE =
+            "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap";
 
     // Keyboard poll interval
     public static final String KEYBOARD_FASTPOLL_KEY = "keyboard_fastpoll";
-    public static final int    KEYBOARD_POLL_INTERVAL_DEFAULT = 40;
-    public static final int    KEYBOARD_POLL_INTERVAL_FAST = 20;
-    public static final int    KEYBOARD_POLL_INTERVAL_SLOW = 40;
-    public static final String KEYBOARD_POLL_INTERVAL_SYS_FILE = "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/poll_interval";
-
-    // Touch screen margin
-    public static final String TOUCHSCREEN_MARGIN_KEY = "touchscreen_margin";
-    public static final int    TOUCHSCREEN_MARGIN_STEP = 16;
-    public static final String TOUCHSCREEN_MARGIN_SYS_FILE = "/sys/goodix/margin_x";
+    public static final int KEYBOARD_POLL_INTERVAL_DEFAULT = 40;
+    public static final int KEYBOARD_POLL_INTERVAL_FAST = 20;
+    public static final int KEYBOARD_POLL_INTERVAL_SLOW = 40;
+    public static final String KEYBOARD_POLL_INTERVAL_SYS_FILE =
+            "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/poll_interval";
 }

@@ -206,10 +206,6 @@ PRODUCT_PACKAGES += \
     libvulkan \
     memtrack.msm8998
 
-# Doze
-PRODUCT_PACKAGES += \
-    Doze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl:64 \

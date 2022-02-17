@@ -19,4 +19,8 @@ android_app {
         "SettingsLib",
         "setupdesign",
     ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
 }

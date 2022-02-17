@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2019,2021 The LineageOS Project
+ *               2017-2019,2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package org.lineageos.settings.device.doze;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,22 +30,10 @@ import androidx.preference.PreferenceManager;
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 
-public final class Utils {
+public final class DozeUtils {
 
     private static final String TAG = "DozeUtils";
     private static final boolean DEBUG = false;
-
-    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
-
-    protected static final String DOZE_ENABLE = "doze_enable";
-
-    protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
-
-    protected static final String CATEG_TILT_SENSOR = "tilt_sensor";
-    protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
-
-    protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
-    protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
     protected static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -90,7 +78,7 @@ public final class Utils {
 
     protected static void launchDozePulse(Context context) {
         if (DEBUG) Log.d(TAG, "Launch doze pulse");
-        context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
+        context.sendBroadcastAsUser(new Intent(Constants.DOZE_INTENT),
                 new UserHandle(UserHandle.USER_CURRENT));
     }
 
@@ -118,11 +106,11 @@ public final class Utils {
     }
 
     protected static boolean isPickUpEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_PICK_UP_KEY);
+        return isGestureEnabled(context, Constants.GESTURE_PICK_UP_KEY);
     }
 
     protected static boolean isPocketGestureEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_POCKET_KEY);
+        return isGestureEnabled(context, Constants.GESTURE_POCKET_KEY);
     }
 
     protected static boolean sensorsEnabled(Context context) {

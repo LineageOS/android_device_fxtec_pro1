@@ -23,6 +23,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import org.lineageos.settings.device.doze.DozeUtils;
 import org.lineageos.settings.device.keyboard.KeyboardUtils;
 import org.lineageos.settings.device.touchscreen.TouchscreenUtils;
 
@@ -37,6 +38,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
+        DozeUtils.checkDozeService(context);
         KeyboardUtils.setKeyboardKeymap(prefs);
         KeyboardUtils.setKeyboardPollInterval(prefs);
         TouchscreenUtils.setTouchscreenMargin(context);

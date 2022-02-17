@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- *               2017-2018 The LineageOS Project
+ *               2017-2018,2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,39 +15,39 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package org.lineageos.settings.device.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.SystemClock;
 import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ProximitySensor implements SensorEventListener {
+public class TiltSensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "ProximitySensor";
+    private static final String TAG = "TiltSensor";
 
-    // Minimum time until the device is considered to have been in the pocket: 2s
-    private static final int POCKET_MIN_DELTA_NS = 2000 * 1000 * 1000;
+    private static final int BATCH_LATENCY_IN_MS = 100;
+    private static final int MIN_PULSE_INTERVAL_MS = 2500;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
 
-    private boolean mSawNear = false;
-    private long mInPocketTime = 0;
+    private long mEntryTimestamp;
 
-    public ProximitySensor(Context context) {
+    public TiltSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -57,24 +57,18 @@ public class ProximitySensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        if (mSawNear && !isNear) {
-            if (shouldPulse(event.timestamp)) {
-                Utils.launchDozePulse(mContext);
-            }
+        if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
+
+        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+        if (delta < MIN_PULSE_INTERVAL_MS) {
+            return;
         } else {
-            mInPocketTime = event.timestamp;
+            mEntryTimestamp = SystemClock.elapsedRealtime();
         }
-        mSawNear = isNear;
-    }
 
-    private boolean shouldPulse(long timestamp) {
-        long delta = timestamp - mInPocketTime;
-
-        if (Utils.isPocketGestureEnabled(mContext)) {
-            return delta >= POCKET_MIN_DELTA_NS;
+        if (event.values[0] == 1) {
+            DozeUtils.launchDozePulse(mContext);
         }
-        return false;
     }
 
     @Override
@@ -86,7 +80,8 @@ public class ProximitySensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
             mSensorManager.registerListener(this, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
+                    SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000);
+            mEntryTimestamp = SystemClock.elapsedRealtime();
         });
     }
 

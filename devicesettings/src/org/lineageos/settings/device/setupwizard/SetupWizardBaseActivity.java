@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.setupwizard;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;

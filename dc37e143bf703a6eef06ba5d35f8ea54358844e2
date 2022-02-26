@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e6dc27c_3dac9efd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-02-26T21:51:13Z",
+      "side": 1,
+      "message": "I sometimes trigger the full lock screen rather than doze from proximity sensor changes, but this is probably a bug elsewhere.",
+      "revId": "dc37e143bf703a6eef06ba5d35f8ea54358844e2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

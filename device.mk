@@ -431,6 +431,10 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
+# Trebuchet
+PRODUCT_PACKAGES += \
+    TrebuchetDeviceOverlay
+
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service

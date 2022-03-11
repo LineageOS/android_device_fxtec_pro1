@@ -16,6 +16,24 @@
       "message": "Is this fine to be in the same folder as the normal overlays?",
       "revId": "1e679cd30aaaf66ba4d292af4ca12da02c13d318",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e311d48_12275719",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29415
+      },
+      "writtenOn": "2022-03-11T19:24:13Z",
+      "side": 1,
+      "message": "He could also make all of the overlays be RRO packages like Google has been moving to, see here; https://github.com/ZenFone8/android_device_asus_sake/tree/lineage-19.0/overlay",
+      "parentUuid": "585cb6f8_10a74046",
+      "revId": "1e679cd30aaaf66ba4d292af4ca12da02c13d318",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

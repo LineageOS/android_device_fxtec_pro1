@@ -16,6 +16,46 @@
       "message": "I would set priority to \"150\" or anything above 100. The intention is that device overlays should override vendor ones (if set).",
       "revId": "84b980ace7bda089e7e2e3c20deccb22185e1f15",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "908933cb_b2a597bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-11T09:12:19Z",
+      "side": 1,
+      "message": "Also, the commit message is kinda misleading. We\u0027re not moving anything, this is a new config.",
+      "revId": "84b980ace7bda089e7e2e3c20deccb22185e1f15",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dad0722e_b1ba3b40",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-11T09:12:19Z",
+      "side": 1,
+      "message": "I would suggest a more generic name here.",
+      "range": {
+        "startLine": 436,
+        "startChar": 4,
+        "endLine": 436,
+        "endChar": 29
+      },
+      "revId": "84b980ace7bda089e7e2e3c20deccb22185e1f15",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

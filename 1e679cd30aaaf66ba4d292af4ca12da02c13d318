@@ -34,6 +34,24 @@
       "parentUuid": "585cb6f8_10a74046",
       "revId": "1e679cd30aaaf66ba4d292af4ca12da02c13d318",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31575df3_e1389203",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-11T19:28:39Z",
+      "side": 1,
+      "message": "I\u0027d prefer that than to have this new folder in the root of the device tree.",
+      "parentUuid": "4e311d48_12275719",
+      "revId": "1e679cd30aaaf66ba4d292af4ca12da02c13d318",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

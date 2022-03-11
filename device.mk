@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020-2021 The LineageOS Open Source Project
+# Copyright (C) 2017,2020-2022 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,6 +36,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
+
+PRODUCT_PACKAGES += \
+    TrebuchetDeviceOverlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal

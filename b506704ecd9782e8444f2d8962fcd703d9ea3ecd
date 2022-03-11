@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d5e1758_74551945",
+        "filename": "device.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-11T17:06:14Z",
+      "side": 1,
+      "message": "Move to overlays section like I had before.",
+      "revId": "b506704ecd9782e8444f2d8962fcd703d9ea3ecd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

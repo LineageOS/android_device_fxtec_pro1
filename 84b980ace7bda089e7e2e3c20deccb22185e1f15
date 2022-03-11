@@ -170,6 +170,30 @@
       },
       "revId": "84b980ace7bda089e7e2e3c20deccb22185e1f15",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "652aadd7_a1b50282",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T16:44:09Z",
+      "side": 1,
+      "message": "No, the problem exists in 19.0 as well",
+      "parentUuid": "c54c4a83_0d01b12f",
+      "range": {
+        "startLine": 436,
+        "startChar": 4,
+        "endLine": 436,
+        "endChar": 29
+      },
+      "revId": "84b980ace7bda089e7e2e3c20deccb22185e1f15",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

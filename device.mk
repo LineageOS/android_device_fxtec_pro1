@@ -296,6 +296,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/Builtin_Keyboard.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Builtin_Keyboard.idc \
     $(LOCAL_PATH)/keychars/Builtin_Keyboard.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Builtin_Keyboard.kcm
 
+# KeyDisabler
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.pro1
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/Builtin_Keyboard.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Builtin_Keyboard.kl \

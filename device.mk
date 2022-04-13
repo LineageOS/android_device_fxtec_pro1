@@ -213,10 +213,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     qcom.fmradio
 
-# For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 # Gatekeeper
 # Note: gatekeeper 4.0 must be blobs to match firmware
 PRODUCT_PACKAGES += \

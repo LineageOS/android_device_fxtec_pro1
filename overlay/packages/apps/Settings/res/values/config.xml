@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Whether to allow gestures with active HW navigation keys -->
+    <bool name="gestures_and_keys">true</bool>
+</resources>

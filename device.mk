@@ -394,10 +394,6 @@ PRODUCT_PACKAGES += \
     libjson \
     libsqlite.vendor:64
 
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \

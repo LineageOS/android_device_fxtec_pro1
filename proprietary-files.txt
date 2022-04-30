@@ -497,7 +497,6 @@ vendor/lib/egl/libq3dtools_esx.so|e88e4771d28af7bd18468edff12d5b97eb402c36
 vendor/lib/libC2D2.so|89650828a7b03f30f6386a071574792357479907
 vendor/lib/libCB.so|377518d6e6aaf18b44d579fa65e2a9881aff1a15
 vendor/lib/libOpenCL.so|3f669614d18c9f83ab63d0cf5bd9a060b2274424
-vendor/lib/libRSDriver_adreno.so|4dd7f88a4bc43a9b508e2be8f8e90337aefd4622
 vendor/lib/libadreno_utils.so|f1b14c5e7447bf189b78b71595580ee72c24bbc0
 vendor/lib/libbccQTI.so|0be327b62b993d09953fc0758fbf19672d58d3ec
 vendor/lib/libc2d30_bltlib.so|39027d65a0cabaa845af395961d812f7c7b60fba
@@ -516,7 +515,6 @@ vendor/lib64/egl/libq3dtools_esx.so|20e518234ac7cdfbda5266c6d7d3379a6552da0f
 vendor/lib64/libC2D2.so|b44aea39f7156a15557b10e4268d77fa847fd521
 vendor/lib64/libCB.so|02cf70a47a8ee676cc823299479d74699e2756ee
 vendor/lib64/libOpenCL.so|378f2c8a0d96cf3cf4e568eef1d165c2e64e94bd
-vendor/lib64/libRSDriver_adreno.so|3741629f99e9aac1bc728b3f9ccbb12182969e8b
 vendor/lib64/libadreno_utils.so|7af87da27077d7ae4280ac75ae02edbdb0eeca8b
 vendor/lib64/libbccQTI.so|42fdea81ea505ccadbf6d24af7ba37cf83760391
 vendor/lib64/libc2d30_bltlib.so|493bd74bddc4b8696e95e25c6f3436d84c45cda2

@@ -552,7 +552,7 @@
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
     <bool name="config_useVideoPauseWorkaround">true</bool>
 
-    <dimen name="status_bar_height_landscape">32.0dp</dimen>
+    <dimen name="status_bar_height_landscape">16.0dp</dimen>
 
     <!-- Indicates whether device has a power button fingerprint sensor. -->
     <bool name="config_is_powerbutton_fps" translatable="false">true</bool>

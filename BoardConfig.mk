@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020-2021 The LineageOS Open Source Project
+# Copyright (C) 2017,2020-2022 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/fxtec/msm8998
 TARGET_KERNEL_CONFIG := lineage-pro1_defconfig
+TARGET_KERNEL_LLVM_BINUTILS := false
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := \

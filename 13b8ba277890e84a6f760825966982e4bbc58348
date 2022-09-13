@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9afd1791_7be86dda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-09-13T20:20:35Z",
+      "side": 1,
+      "message": "ff\u0027d to lineage-20 as well",
+      "revId": "13b8ba277890e84a6f760825966982e4bbc58348",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

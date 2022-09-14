@@ -1,6 +1,0 @@
-cc_library {
-    shared_libs: ["libhidlbase"],
-    name: "android.hidl.base@1.0",
-
-    vendor_available: true,
-}

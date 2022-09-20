@@ -34,6 +34,24 @@
       "parentUuid": "418bc5da_ab318e4c",
       "revId": "ffe473a2b74b245e45d27ed1c9800ea12c776403",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7720e96c_9f49363c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-20T21:35:18Z",
+      "side": 1,
+      "message": "No, it\u0027s more like we are also missing some updates in the 19.1 branch and wanted to avoid diverging so early.",
+      "parentUuid": "bdfe8c98_eb4b2175",
+      "revId": "ffe473a2b74b245e45d27ed1c9800ea12c776403",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

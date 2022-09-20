@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89b6a67d_8fb7e3a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-09-20T15:53:22Z",
+      "side": 1,
+      "message": "https://github.com/vware/android_kernel_oneplus_msm8998/commits/lineage-20",
+      "revId": "4b4241f224846acf2606363eef521281880853ab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -70,6 +70,24 @@
       "parentUuid": "7720e96c_9f49363c",
       "revId": "ffe473a2b74b245e45d27ed1c9800ea12c776403",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2056362_1887bc51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-21T23:15:46Z",
+      "side": 1,
+      "message": "This: https://review.lineageos.org/c/LineageOS/android_device_fxtec_pro1/+/339511. I was planning to push this to 19.1 for some time. Then we just rebase this change and start commiting to 20 branch.",
+      "parentUuid": "4084a02d_9549dae6",
+      "revId": "ffe473a2b74b245e45d27ed1c9800ea12c776403",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

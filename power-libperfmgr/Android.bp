@@ -13,26 +13,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_library {
-    name: "libdisppower",
-    proprietary: true,
-    srcs: [
-        "disp-power/InteractionHandler.cpp",
-    ],
-     shared_libs: [
-        "libbase",
-        "libcutils",
-        "liblog",
-        "libperfmgr",
-        "libutils",
-    ],
-}
-
 cc_binary {
     name: "android.hardware.power-service.pro1-libperfmgr",
     relative_install_path: "hw",
-    init_rc: ["aidl/android.hardware.power-service.pro1-libperfmgr.rc"],
-    vintf_fragments: ["aidl/android.hardware.power-service.pro1.xml"],
+    init_rc: ["android.hardware.power-service.pro1-libperfmgr.rc"],
+    vintf_fragments: ["android.hardware.power-service.pro1.xml"],
     vendor: true,
     shared_libs: [
         "android.hardware.power-V1-ndk_platform",
@@ -41,13 +26,13 @@ cc_binary {
         "liblog",
         "libutils",
         "libbinder_ndk",
-        "libdisppower",
         "libperfmgr",
         "pixel-power-ext-V1-ndk_platform",
     ],
     srcs: [
-        "aidl/service.cpp",
-        "aidl/Power.cpp",
-        "aidl/PowerExt.cpp",
+        "service.cpp",
+        "InteractionHandler.cpp",
+        "Power.cpp",
+        "PowerExt.cpp",
     ],
 }

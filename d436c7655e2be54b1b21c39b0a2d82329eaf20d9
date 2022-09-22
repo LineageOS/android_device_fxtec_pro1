@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55c4437d_0dcd48eb",
+        "filename": "configs/nfc/libnfc-nci.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-09-22T16:48:47Z",
+      "side": 1,
+      "message": "are you sure you want to do this? nfc is pretty chatty...",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 5
+      },
+      "revId": "d436c7655e2be54b1b21c39b0a2d82329eaf20d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

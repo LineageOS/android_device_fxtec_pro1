@@ -113,6 +113,9 @@ vendor.display.perf_hint_window=50
 vendor.vidc.enc.disable.pq=true
 vidc.enc.dcvs.extra-buff-count=2
 
+# Rescue party
+persist.sys.disable_rescue=true
+
 # RIL
 ro.telephony.default_network=22,20
 ro.telephony.use_old_mnc_mcc_format=true

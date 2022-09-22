@@ -380,10 +380,6 @@ PRODUCT_PACKAGES += \
     libjson \
     libjson.vendor
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_fxtec
-
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

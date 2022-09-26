@@ -973,14 +973,8 @@ vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
 
 # Soter
-framework/vendor.qti.hardware.soter-V1.0-java.jar
-lib/vendor.qti.hardware.soter@1.0.so
-lib64/vendor.qti.hardware.soter@1.0.so
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
-vendor/bin/vendor.qti.hardware.soter@1.0-provision
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
-vendor/lib/vendor.qti.hardware.soter@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 

@@ -258,6 +258,7 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
+    libgui_shim \
     libui_shim
 
 # Init

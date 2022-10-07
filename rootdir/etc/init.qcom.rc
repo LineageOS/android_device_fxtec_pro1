@@ -402,12 +402,6 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     group media
     task_profiles ServiceCapacityLow
 
-service vendor.atfwd /vendor/bin/ATFWD-daemon
-    class main
-    user system
-    group system radio
-    task_profiles ServiceCapacityLow
-
 service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system

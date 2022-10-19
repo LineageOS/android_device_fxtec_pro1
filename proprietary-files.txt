@@ -1010,11 +1010,6 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Voiceprint
-framework/vendor.qti.voiceprint-V1.0-java.jar
-vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
-
 # Widevine
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc

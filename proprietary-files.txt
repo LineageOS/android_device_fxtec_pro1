@@ -323,7 +323,7 @@ vendor/lib/libmmcamera_s5k4h7yx.so
 # Charger
 vendor/bin/hvdcp_opti
 
-# CNE - from jasmine - V11.0.15.0.QDIMIXM
+# CNE - from jasmine - V11.0.28.0.QDIMIXM
 etc/cne/Nexus/ATT/ATT_profiles.xml|a0039cb3a4c5a4ca1adf897904b61c91e32d06f7|33e568627fd3f94dc45bca1c01ad10e6d8fb5b52
 etc/cne/Nexus/ROW/ROW_profiles.xml|e3907ff71cbbe0f1073ec1bf0223d26c8282aa35|238e785e9674b27c4b2365958d127533d7293132
 etc/cne/Nexus/VZW/VZW_profiles.xml|0d35b3266ea656d8868ae8f5d7e938f4859e9b0a|0f63b632e3a3f114def7aeadaabd13851c8ceec5
@@ -391,7 +391,7 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# DPM - from jasmine - V11.0.15.0.QDIMIXM
+# DPM - from jasmine - V11.0.28.0.QDIMIXM
 product/bin/dpmd:system_ext/bin/dpmd|49caa8e7d8af8055efdd7ebc0d7f7d67bc600041
 product/etc/dpm/dpm.conf:system_ext/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
 product/etc/init/dpmd.rc:system_ext/etc/init/dpmd.rc|7f95195a89fddce06b93006a737701270e91f669|f061bb76ae844f6df04c1d78caf00cf29a41b112
@@ -636,7 +636,7 @@ vendor/lib64/libsdm-diag.so|6eb99b83036f917070393fa067eaebc50a5ff307
 vendor/lib64/libsdmextension.so|264c00a0920d291700b2948b9337037684986921
 vendor/lib64/libtinyxml2_1.so|ba981e332895a053a67fc54a8190365a3ad37f2d
 
-# IMS - from jasmine - V11.0.15.0.QDIMIXM
+# IMS - from jasmine - V11.0.28.0.QDIMIXM
 product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|fe11b3fe75a52e586ca6390adbd1b234f4f565ed
 product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
 product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc3658261ea3c909f03018eea4398f84e
@@ -804,7 +804,7 @@ vendor/lib/libpn553_fw.so
 vendor/bin/energy-awareness
 vendor/bin/msm_irqbalance
 
-# Peripheral manager - from jasmine - V11.0.15.0.QDIMIXM
+# Peripheral manager - from jasmine - V11.0.28.0.QDIMIXM
 vendor/bin/pm-proxy|bc4e972e3fe595b973197efe5114da8ff4339a59
 vendor/bin/pm-service|b0f77edfe04a3cc6284738196c0044e676d5eeb3
 vendor/lib/libperipheral_client.so|836411f7b88afe296b3f3090aab70fc5700ba434
@@ -868,7 +868,7 @@ vendor/bin/qrtr-ns
 vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
 
-# RIL - from jasmine - V11.0.15.0.QDIMIXM
+# RIL - from jasmine - V11.0.28.0.QDIMIXM
 product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|5b1c23ce0d42e1b666d387eedde3444dd07e61bc
 
 # RIL

@@ -753,10 +753,6 @@ vendor/lib/libgcs-ipc.so
 vendor/lib/libgcs-osal.so
 
 # Media
-lib/libmmosal.so
-lib/vendor.qti.hardware.vpp@1.1.so
-lib64/libmmosal.so
-lib64/vendor.qti.hardware.vpp@1.1.so
 -vendor/lib/libgpustats.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libvpplibrary.so
@@ -776,7 +772,6 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvqzip.so
-vendor/lib/vendor.qti.hardware.vpp@1.1.so
 -vendor/lib64/libgpustats.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
@@ -795,7 +790,6 @@ vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libvpphvx.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
 
 # NFC firmware
 vendor/lib/libpn553_fw.so

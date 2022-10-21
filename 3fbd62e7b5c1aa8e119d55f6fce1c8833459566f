@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7255fe9_630da819",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-21T21:35:24Z",
+      "side": 1,
+      "message": "Not necessary with https://review.lineageos.org/q/topic:13-legacy-RIL-fixes.",
+      "revId": "3fbd62e7b5c1aa8e119d55f6fce1c8833459566f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

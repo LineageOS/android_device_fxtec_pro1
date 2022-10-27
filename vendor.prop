@@ -114,6 +114,7 @@ vendor.vidc.enc.disable.pq=true
 vidc.enc.dcvs.extra-buff-count=2
 
 # RIL
+ro.telephony.block_binder_thread_on_incoming_calls=false
 ro.telephony.default_network=22,20
 ro.telephony.use_old_mnc_mcc_format=true
 persist.radio.multisim.config=dsds

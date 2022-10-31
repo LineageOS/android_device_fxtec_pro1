@@ -95,6 +95,7 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 persist.vendor.camera.HAL3.enabled=1
+vendor.camera.aux.packagelist=org.lineageos.aperture,org.lineageos.aperture.dev
 
 # CNE
 persist.vendor.cne.feature=1

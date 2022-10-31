@@ -16,6 +16,24 @@
       "message": "talked to Mike - move to product instead?",
       "revId": "3f6e4116c2fbfab940959912c1ac0d9fd281184c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6f8d8a6_03e3d473",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-31T19:41:43Z",
+      "side": 1,
+      "message": "Pointless for us.",
+      "parentUuid": "bec8413f_d85bb744",
+      "revId": "3f6e4116c2fbfab940959912c1ac0d9fd281184c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

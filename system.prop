@@ -23,8 +23,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # Gboard
 ro.com.google.ime.kb_pad_port_l=10
 ro.com.google.ime.kb_pad_port_r=10
-ro.com.google.ime.key_border=true
-ro.com.google.ime.bs_theme=true
 
 # Graphics
 debug.hwui.use_buffer_age=false

@@ -20,6 +20,7 @@
     <string name="keyboard_settings_title">Advanced keyboard settings</string>
 
     <string name="keyboard_layout_title">Physical layout</string>
+    <string name="keyboard_layout_default">/vendor/etc/keyboard/QWERTY_keymap</string>
 
     <string name="keyboard_keymap_custom_title">Custom keymap</string>
     <string name="keyboard_keymap_custom_summary_enabled">Using user customized keymap</string>

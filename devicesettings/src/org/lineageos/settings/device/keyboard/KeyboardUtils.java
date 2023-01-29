@@ -36,7 +36,11 @@ public class KeyboardUtils {
     private static final boolean DEBUG = false;
 
     public static boolean installCustomKeymap() {
-        if (DEBUG) Log.d(TAG, "Installing custom keymap");
+	 return installKeymap(Constants.KEYBOARD_KEYMAP_CFG_FILE);
+    }
+
+    public static boolean installKeymap(String keymap) {
+        if (DEBUG) Log.d(TAG, "Installing keymap: " + keymap);
         BufferedReader in = null;
         BufferedWriter out = null;
 
@@ -44,11 +48,11 @@ public class KeyboardUtils {
             in = new BufferedReader(
                 new InputStreamReader(
                     new FileInputStream(
-                        new File(Constants.KEYBOARD_KEYMAP_CFG_FILE)
+                        new File(keymap)
                     )
                 )
             );
-            if (DEBUG) Log.d(TAG, "Opened input: " + Constants.KEYBOARD_KEYMAP_CFG_FILE);
+            if (DEBUG) Log.d(TAG, "Opened input: " + keymap);
 
             out = new BufferedWriter(
                 new OutputStreamWriter(
@@ -79,7 +83,7 @@ public class KeyboardUtils {
             }
         }
 
-        if (DEBUG) Log.d(TAG, "Wrote custom keymap to kernel");
+        if (DEBUG) Log.d(TAG, "Wrote keymap to kernel");
         return true;
     }
 

@@ -20,8 +20,6 @@ public class Constants {
     // Keyboard layout
     public static final String KEYBOARD_LAYOUT_KEY = "keyboard_layout";
     public static final String KEYBOARD_LAYOUT_PROPERTY = "sys.keyboard.layout";
-    public static final String KEYBOARD_LAYOUT_SYS_FILE =
-            "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout";
 
     // Keyboard keymap
     public static final String KEYBOARD_KEYMAP_CUSTOM_KEY = "keyboard_keymap_custom";

@@ -280,6 +280,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Keyboard
+PRODUCT_PACKAGES += \
+    QWERTY_keymap \
+    QWERTZ_keymap
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/Builtin_Keyboard.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Builtin_Keyboard.idc \
     $(LOCAL_PATH)/keychars/Builtin_Keyboard.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Builtin_Keyboard.kcm

@@ -58,8 +58,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment
         mKeymapAltGrPref = findPreference(Constants.KEYBOARD_KEYMAP_ALTGR_KEY);
         mFastPollPref = findPreference(Constants.KEYBOARD_FASTPOLL_KEY);
 
-        String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
-        mLayoutPref.setValue(value.substring(0, 6));
+        mLayoutPref.setValue(SystemProperties.get(Constants.KEYBOARD_LAYOUT_PROPERTY,
+                    getResources().getString(R.string.keyboard_layout_default)));
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         doUpdateKeymapPreferences();
@@ -101,7 +101,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment
     }
 
     private void doUpdateKeymapPreferences() {
-        FileUtils.writeLine(Constants.KEYBOARD_LAYOUT_SYS_FILE, mLayoutPref.getValue());
+        String value = mLayoutPref.getValue();
+        KeyboardUtils.installKeymap(value);
 
         mKeymapFnKeysPref.setEnabled(true);
         mKeymapSpacePowerPref.setEnabled(true);

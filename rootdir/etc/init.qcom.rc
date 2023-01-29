@@ -341,8 +341,6 @@ on boot
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
     # Keyboard
-    chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout
-    chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/layout
     chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap
     chmod 0660 /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap
     chown system system /sys/devices/soc/c17a000.i2c/i2c-6/6-0058/poll_interval

@@ -3,4 +3,5 @@ allow system_app sysfs_touchpanel:file w_file_perms;
 allow system_app system_data_file:file r_file_perms;
 allow system_app system_data_file:dir search;
 
+r_dir_file(system_app, vendor_keylayout_file)
 r_dir_file(system_app, sysfs_touchpanel)

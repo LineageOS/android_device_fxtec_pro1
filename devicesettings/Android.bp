@@ -24,3 +24,17 @@ android_app {
         proguard_flags_files: ["proguard.flags"],
     },
 }
+
+prebuilt_etc {
+    name: "QWERTY_keymap",
+    vendor: true,
+    src: "QWERTY_keymap",
+    relative_install_path: "keyboard",
+}
+
+prebuilt_etc {
+    name: "QWERTZ_keymap",
+    vendor: true,
+    src: "QWERTZ_keymap",
+    relative_install_path: "keyboard",
+}

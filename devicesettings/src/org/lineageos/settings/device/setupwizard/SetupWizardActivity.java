@@ -90,8 +90,8 @@ public class SetupWizardActivity extends SetupWizardBaseActivity {
     }
 
     private int getSelectedIndex() {
-        String value = FileUtils.readOneLine(Constants.KEYBOARD_LAYOUT_SYS_FILE);
-        value = value.substring(0, 6);
+        String value = SystemProperties.get(Constants.KEYBOARD_LAYOUT_PROPERTY,
+                getResources().getString(R.string.keyboard_layout_default));
         String[] values = getResources().getStringArray(R.array.keyboard_layout_values);
         for (int i = 0; i < values.length; i++) {
             if (values[i].equals(value)) {

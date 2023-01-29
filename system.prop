@@ -25,7 +25,6 @@ ro.com.google.ime.kb_pad_port_l=10
 ro.com.google.ime.kb_pad_port_r=10
 
 # Graphics
-debug.hwui.use_buffer_age=false
 debug.sf.early_app_phase_offset_ns=1500000
 debug.sf.early_phase_offset_ns=1500000
 debug.sf.early_gl_app_phase_offset_ns=15000000

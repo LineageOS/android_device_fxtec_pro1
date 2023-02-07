@@ -49,6 +49,10 @@ public class Constants {
     public static final String[] KEYBOARD_KEYMAP_ALTGR_TEXT = {
         "69:0064:0064"
     };
+    public static final String KEYBOARD_KEYMAP_MISSING_KEY_KEY = "keyboard_keymap_missing_key";
+    public static final String[] KEYBOARD_KEYMAP_MISSING_KEY_TEXT = {
+        "21:0035:0035"
+    };
     public static final String KEYBOARD_KEYMAP_SYS_FILE =
             "/sys/devices/soc/c17a000.i2c/i2c-6/6-0058/keymap";
 

@@ -478,6 +478,7 @@ key ESCAPE {
 }
 
 key DEL {
+    shift:                              replace FORWARD_DEL
     ctrl+alt:                           fallback BACK
 }
 

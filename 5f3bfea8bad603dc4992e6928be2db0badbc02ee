@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20feb920_297a53cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2023-02-08T17:13:00Z",
+      "side": 1,
+      "message": "PS3 resets LineageSettings.System.FORCE_SHOW_NAVBAR one time. This is a workaround for builds without KeyDisabler setting the incorrect default value.",
+      "revId": "5f3bfea8bad603dc4992e6928be2db0badbc02ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

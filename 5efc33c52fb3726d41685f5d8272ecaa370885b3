@@ -50,6 +50,23 @@
       "message": "core/res/res/values/config.xml:    \u003cbool name\u003d\"config_carrier_volte_tty_supported\"\u003etrue\u003c/bool\u003e\n\ncommit msg issue it looks like",
       "revId": "5efc33c52fb3726d41685f5d8272ecaa370885b3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d2b5158_e0b61432",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-04-12T19:53:17Z",
+      "side": 1,
+      "message": "yup, messed up the commit msg, fixed original commit. sorry for the confusion",
+      "revId": "5efc33c52fb3726d41685f5d8272ecaa370885b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

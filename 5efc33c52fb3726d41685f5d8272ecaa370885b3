@@ -33,6 +33,23 @@
       "message": "yeah, agree",
       "revId": "5efc33c52fb3726d41685f5d8272ecaa370885b3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a361ab7e_db11474a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-04-12T19:19:45Z",
+      "side": 1,
+      "message": "core/res/res/values/config.xml:    \u003cbool name\u003d\"config_carrier_volte_tty_supported\"\u003etrue\u003c/bool\u003e\n\ncommit msg issue it looks like",
+      "revId": "5efc33c52fb3726d41685f5d8272ecaa370885b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

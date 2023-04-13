@@ -89,10 +89,6 @@
     <!-- For high brightness mode -->
     <integer name="config_outdoorAmbientLux">20000</integer>
 
-    <!-- Disable this by default, since it's actually using the QC FOSS algorithm for
-         OLED displays and can cause a bit of discoloration. Reinvestigate after tuning -->
-    <bool name="config_defaultCABC">false</bool>
-
     <!-- Defines the actions shown in advanced reboot submenu -->
     <string-array name="config_restartActionsList">
         <item>restart</item>

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d65eae5_70efb2bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-04-18T18:53:17Z",
+      "side": 1,
+      "message": "You can apply this to other devices that picked https://review.lineageos.org/q/Ifa079488db642c8a470e40cb585c08e9c85d7cf4.",
+      "revId": "f82f2ceed310ee4d6fe31b9946cbc15bd30b937b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

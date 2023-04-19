@@ -33,6 +33,24 @@
       "message": "Hold on a bit. I need to push a new patchset.",
       "revId": "5b716982621e5a5be44a0089ac9c78b1e983aff2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91c3fbaf_a721eeee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-04-19T13:03:52Z",
+      "side": 1,
+      "message": "Okay, you can go ahead and pick it to cheryl.",
+      "parentUuid": "372b1173_22ed92f4",
+      "revId": "5b716982621e5a5be44a0089ac9c78b1e983aff2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

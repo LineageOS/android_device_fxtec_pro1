@@ -517,6 +517,9 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     group gps
     writepid /dev/cpuset/system-background/tasks
 
+on property:persist.sys.xtra-daemon.enabled=*
+    restart vendor.loc_launcher
+
 service vendor.macplugin /vendor/bin/macplugin
     class main
     user root

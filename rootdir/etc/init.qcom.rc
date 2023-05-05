@@ -449,6 +449,7 @@ on property:sys.shutdown.requested=*
     write /sys/kernel/shutdown_wlan/shutdown 1
     stop vendor.cnss-daemon
 
+
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
@@ -516,6 +517,9 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
     writepid /dev/cpuset/system-background/tasks
+
+on property:persist.sys.xtra-daemon.enabled=*
+    restart vendor.loc_launcher
 
 service vendor.macplugin /vendor/bin/macplugin
     class main

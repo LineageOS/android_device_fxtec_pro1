@@ -481,7 +481,7 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
+    android.hardware.wifi@1.0-service.legacy \
     hostapd \
     hostapd_cli \
     libwifi-hal-qcom \

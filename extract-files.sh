@@ -55,6 +55,9 @@ function blob_fixup() {
         vendor/lib/hw/camera.msm8998.so)
             sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
             ;;
+        vendor/lib/libxapi_bokeh.so|vendor/lib/libxapi_mfe.so)
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
     esac
 }
 

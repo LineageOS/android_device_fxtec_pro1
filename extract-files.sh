@@ -26,6 +26,9 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
+        system/lib64/com.qualcomm.qti.ant@1.0.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
         system_ext/etc/init/dpmd.rc)
             sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
             ;;
@@ -51,8 +54,14 @@ function blob_fixup() {
             grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
+        system_ext/lib64/lib-imsvt.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
+            ;;
+        vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|vendor/bin/hw/btlfpserver|vendor/bin/hw/vendor.display.color@1.0-service|vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|vendor/bin/hw/vendor.qti.gnss@1.0-service|vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|vendor/bin/ATFWD-daemon|vendor/bin/cnd|vendor/bin/ims_rtp_daemon|vendor/bin/imsrcsd|vendor/bin/netmgrd)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/pm-service)
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
@@ -62,6 +71,9 @@ function blob_fixup() {
             ;;
         vendor/lib/libxapi_bokeh.so|vendor/lib/libxapi_mfe.so)
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
+        vendor/lib64/hw/fingerprint.msm8998.so|vendor/lib64/libcne.so|vendor/lib64/libcneapiclient.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib64/libsecureui.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
     esac
 }

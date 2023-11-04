@@ -202,7 +202,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.pro1
+    android.hardware.biometrics.fingerprint@2.1-service.pro1 \
+    libhidlbase_shim
 
 # FM Radio
 PRODUCT_PACKAGES += \

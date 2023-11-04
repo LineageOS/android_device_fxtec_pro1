@@ -70,7 +70,10 @@ function blob_fixup() {
         vendor/lib/libxapi_bokeh.so|vendor/lib/libxapi_mfe.so)
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
-        vendor/lib64/hw/fingerprint.msm8998.so|vendor/lib64/libcne.so|vendor/lib64/libcneapiclient.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib64/libsecureui.so)
+        vendor/lib64/hw/fingerprint.msm8998.so)
+            sed -i "s/libhidltransport.so/libhidlbase_shim.so/" "${2}"
+            ;;
+        vendor/lib64/libcne.so|vendor/lib64/libcneapiclient.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib64/libsecureui.so)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
     esac

@@ -34,8 +34,8 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 # ANT+
 system/lib64/com.qualcomm.qti.ant@1.0.so
 -system/lib64/libantradio.so
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Audio ACDB
 vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Bluetooth_cal.acdb
@@ -51,7 +51,6 @@ vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_workspaceFi
 # Audio
 system/lib64/libldacBT_abr.so:vendor/lib64/libldacBT_abr.so
 system/lib64/libldacBT_enc.so:vendor/lib64/libldacBT_enc.so
-vendor/lib/soundfx/libasphere.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -59,6 +58,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
+vendor/lib/soundfx/libasphere.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -409,8 +409,8 @@ vendor/lib64/libbl_fp_algo.so
 vendor/lib64/libxuFPAlg.so
 
 # Fingerprint sensor
-vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so
 vendor/lib64/hw/blestech.fingerprint.default.so
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so
 
 # Fingerprint sensor firmware
 vendor/firmware/btlap64.b00
@@ -442,8 +442,8 @@ vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
-vendor/etc/init/vendor.qti.gnss@1.0-service.rc
 vendor/etc/cacert_location.pem
+vendor/etc/init/vendor.qti.gnss@1.0-service.rc
 vendor/etc/xtra_root_cert.pem
 vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib64/libDRPlugin.so
@@ -741,8 +741,8 @@ system/framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephon
 system/framework/embmslibrary.jar:system_ext/framework/embmslibrary.jar
 system/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
 system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/hw/qcrild
 vendor/bin/ATFWD-daemon
+vendor/bin/hw/qcrild
 vendor/bin/netmgrd
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
@@ -787,12 +787,12 @@ vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
-vendor/radio/qcril_database/qcril.db
 
 # Sensors
 vendor/bin/sensors.qti

@@ -394,8 +394,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.0.vendor \
     librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
+    libxml2
 
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \

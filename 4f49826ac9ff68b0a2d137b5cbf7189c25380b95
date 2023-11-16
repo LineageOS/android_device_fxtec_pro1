@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54fe8103_c8e385be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-11-16T23:03:42Z",
+      "side": 1,
+      "message": "pls check hotspot with this, moto 8998 and op 8998 both needed legacy wifi Hal instead",
+      "revId": "4f49826ac9ff68b0a2d137b5cbf7189c25380b95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

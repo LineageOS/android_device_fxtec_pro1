@@ -37,8 +37,6 @@ function blob_fixup() {
         system_ext/etc/permissions/embms.xml)
             ;&
         system_ext/etc/permissions/qcrilhook.xml)
-            ;&
-        system_ext/etc/permissions/telephonyservice.xml)
             sed -i "s/\/system\/framework\//\/system\/system_ext\/framework\//g" "${2}"
             ;;
         system_ext/etc/permissions/qti_libpermissions.xml)

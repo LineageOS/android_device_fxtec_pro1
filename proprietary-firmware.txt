@@ -1,0 +1,15 @@
+abl.elf:abl.img;AB
+BTFM.bin:bluetooth.img;AB
+cmnlib.mbn:cmnlib.img;AB
+cmnlib64.mbn:cmnlib64.img;AB
+devcfg.mbn:devcfg.img;AB
+adspso.bin:dsp.img;AB
+hyp.mbn:hyp.img;AB
+km4.mbn:keymaster.img;AB
+mdtp.img;AB
+mdtpsecapp.mbn:mdtpsecapp.img;AB
+NON-HLOS.bin:modem.img;AB
+pmic.elf:pmic.img;AB
+rpm.mbn:rpm.img;AB
+tz.mbn:tz.img;AB
+xbl.elf:xbl.img;AB

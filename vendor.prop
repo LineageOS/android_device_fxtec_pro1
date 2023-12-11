@@ -100,6 +100,7 @@ persist.vendor.camera.HAL3.enabled=1
 persist.vendor.cne.feature=1
 
 # Graphics
+ro.hardware.egl=adreno
 ro.opengles.version=196610
 vendor.gralloc.enable_fb_ubwc=1
 vendor.gralloc.disable_wb_ubwc=1

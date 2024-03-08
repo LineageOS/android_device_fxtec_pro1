@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.internal.util.FileUtils;
 import org.lineageos.settings.device.R;
@@ -43,11 +43,11 @@ public class KeyboardSettingsFragment extends PreferenceFragment
 
     private ListPreference mLayoutPref;
     private SharedPreferences mPrefs;
-    private SwitchPreference mKeymapCustomPref;
-    private SwitchPreference mKeymapSpacePowerPref;
-    private SwitchPreference mKeymapFnKeysPref;
-    private SwitchPreference mKeymapAltGrPref;
-    private SwitchPreference mFastPollPref;
+    private SwitchPreferenceCompat mKeymapCustomPref;
+    private SwitchPreferenceCompat mKeymapSpacePowerPref;
+    private SwitchPreferenceCompat mKeymapFnKeysPref;
+    private SwitchPreferenceCompat mKeymapAltGrPref;
+    private SwitchPreferenceCompat mFastPollPref;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

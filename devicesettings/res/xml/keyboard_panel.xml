@@ -27,26 +27,26 @@
         android:entryValues="@array/keyboard_layout_values"
         android:summary="%s" />
 
-    <androidx.preference.SwitchPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="keyboard_keymap_altgr"
         android:title="@string/keyboard_keymap_altgr_title"
         android:summary="@string/keyboard_keymap_altgr_summary"/>
 
-    <androidx.preference.SwitchPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="keyboard_keymap_spacepower"
         android:title="@string/keyboard_keymap_spacepower_title"
         android:summary="@string/keyboard_keymap_spacepower_summary"/>
 
-    <androidx.preference.SwitchPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="keyboard_keymap_fnkeys"
         android:title="@string/keyboard_keymap_fnkeys_title"
         android:summary="@string/keyboard_keymap_fnkeys_summary"/>
 
-    <androidx.preference.SwitchPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="keyboard_keymap_custom"
         android:title="@string/keyboard_keymap_custom_title"/>
 
-    <androidx.preference.SwitchPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="keyboard_fastpoll"
         android:title="@string/keyboard_fastpoll_title"
         android:summary="@string/keyboard_fastpoll_summary"/>

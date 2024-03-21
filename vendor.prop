@@ -129,5 +129,9 @@ vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8998
 
+# USB
+vendor.usb.controller=a800000.dwc3
+vendor.usb.device=a800000.ssusb
+
 # WLAN
 wifi.interface=wlan0

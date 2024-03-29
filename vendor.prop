@@ -130,8 +130,10 @@ ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8998
 
 # USB
+persist.vendor.usb.config.extra=none
 vendor.usb.controller=a800000.dwc3
 vendor.usb.device=a800000.ssusb
+vendor.usb.product_string=FxTec Pro1
 
 # WLAN
 wifi.interface=wlan0

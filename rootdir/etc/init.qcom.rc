@@ -199,10 +199,6 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    # create netmgr log dir
-    mkdir /data/vendor/netmgr 0770 radio radio
-    chmod 0770 /data/vendor/netmgr
-
     # Create the directories used by CnE subsystem
     mkdir /data/vendor/connectivity 0771 radio radio
     chown radio radio /data/vendor/connectivity
@@ -310,14 +306,6 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    #Create NETMGR daemon socket area
-    mkdir /dev/socket/netmgr 0750 radio radio
-
-    # Assign TCP buffer thresholds to be ceiling value of technology maximums
-    # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  16777216
-    write /proc/sys/net/core/wmem_max  8388608
-
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
     # the connection they belong to.
@@ -352,6 +340,9 @@ on boot
     chmod 0660 /sys/goodix/margin_y
 
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
+
+    start vendor.qcrild
+    start vendor.qcrild2
 
 on property:sys.boot_completed=1
     # Enable ZRAM
@@ -452,44 +443,6 @@ on property:init.svc.vendor.charger=running
     start vendor.power_off_alarm
     setprop sys.usb.configfs 1
 
-service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-    class main
-    user radio
-    group radio vendor_qti_diag inet log
-    task_profiles ServiceCapacityLow
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
-
-on property:sys.shutdown.requested=*
-    stop vendor.ims_rtp_daemon
-
-# imsdatadaemon starts with root and UID will be downgraded to RADIO.
-service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
-    class main
-    user radio
-    socket ims_datad stream 0660 system radio
-    group radio wifi inet log vendor_qti_diag
-    task_profiles ServiceCapacityLow
-    disabled
-
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
-
-# imsdatadaemon starts with root and UID will be downgraded to RADIO.
-service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
-    class main
-    user radio
-    socket ims_qmid stream 0660 system radio
-    group radio log vendor_qti_diag
-    task_profiles ServiceCapacityLow
-
-service vendor.imsrcsservice /vendor/bin/imsrcsd
-    class main
-    user radio
-    group radio vendor_qti_diag inet log wakelock
-    task_profiles ServiceCapacityLow
-
 service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
@@ -515,10 +468,6 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
     class main
     user root
     group root
-    task_profiles ServiceCapacityLow
-
-service vendor.netmgrd /vendor/bin/netmgrd
-    class main
     task_profiles ServiceCapacityLow
 
 service vendor.pd_mapper /vendor/bin/pd-mapper
@@ -584,28 +533,10 @@ service vendor.qseecomd /vendor/bin/qseecomd
     group root
     task_profiles ServiceCapacityLow
 
-service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
-    class main
-    user radio
-    group radio cache inet misc audio log readproc wakelock oem_2901
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-service vendor.rmt_storage /vendor/bin/rmt_storage
-    class core
-    user root
-    shutdown critical
-    ioprio rt 0
-    task_profiles ServiceCapacityLow
-
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
     group system
-    task_profiles ServiceCapacityLow
-
-service vendor.tftp_server /vendor/bin/tftp_server
-    class core
-    user root
     task_profiles ServiceCapacityLow
 
 service vendor.thermal-engine /vendor/bin/thermal-engine

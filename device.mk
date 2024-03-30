@@ -322,6 +322,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor
+
 # Netd
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
@@ -387,10 +390,10 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio.config@1.0.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
     librmnetctl \
     libxml2
 

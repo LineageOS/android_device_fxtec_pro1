@@ -124,6 +124,9 @@ TARGET_RECOVERY_UI_MARGIN_STATUSBAR := 48
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
 

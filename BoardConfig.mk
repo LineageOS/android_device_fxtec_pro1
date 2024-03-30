@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017,2020-2022 The LineageOS Project
+# Copyright (C) 2017,2020-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -123,6 +123,9 @@ TARGET_RECOVERY_UI_MARGIN_STATUSBAR := 48
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
 
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist

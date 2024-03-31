@@ -453,7 +453,11 @@ vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/etc/cacert_location.pem
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
+vendor/etc/izat.conf
+vendor/etc/lowi.conf
+vendor/etc/sap.conf
 vendor/etc/xtra_root_cert.pem
+vendor/etc/xtwifi.conf
 vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib64/libDRPlugin.so
 vendor/lib64/libalarmservice_jni.so

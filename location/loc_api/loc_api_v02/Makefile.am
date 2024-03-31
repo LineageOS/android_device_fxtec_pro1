@@ -2,8 +2,7 @@ AM_CFLAGS = \
     -I. \
     $(LOCPLA_CFLAGS) \
     $(GPSUTILS_CFLAGS) \
-    $(LOC_CORE_CFLAGS) \
-    $(LOCDS_CFLAGS) \
+    $(LOCCORE_CFLAGS) \
     $(QMIFW_CFLAGS) \
     -fno-short-enums \
     -D__func__=__PRETTY_FUNCTION__ \
@@ -11,23 +10,23 @@ AM_CFLAGS = \
 
 libloc_api_v02_la_SOURCES = \
     LocApiV02.cpp \
-    loc_api_v02_log.c \
-    loc_api_v02_client.c \
-    loc_api_sync_req.c \
+    loc_api_v02_log.cpp \
+    loc_api_v02_client.cpp \
+    loc_api_sync_req.cpp \
     location_service_v02.c
 
 if USE_GLIB
 libloc_api_v02_la_CFLAGS = -DUSE_GLIB $(AM_CFLAGS) @GLIB_CFLAGS@
-libloc_api_v02_la_LDFLAGS = -lstdc++ -Wl,-z,defs @GLIB_LIBS@ -shared -version-info 1:0:0
+libloc_api_v02_la_LDFLAGS = -lstdc++ -Wl,-z,defs -lpthread -lcutils @GLIB_LIBS@ -shared -version-info 1:0:0
 libloc_api_v02_la_CPPFLAGS = -DUSE_GLIB $(AM_CFLAGS) $(AM_CPPFLAGS) @GLIB_CFLAGS@
 else
 libloc_api_v02_la_CFLAGS = $(AM_CFLAGS)
-libloc_api_v02_la_LDFLAGS = -lstdc++ -Wl,-z,defs -shared -version-info 1:0:0
+libloc_api_v02_la_LDFLAGS = -lstdc++ -Wl,-z,defs -lpthread -lcutils -shared -version-info 1:0:0
 libloc_api_v02_la_CPPFLAGS = $(AM_CFLAGS) $(AM_CPPFLAGS)
 endif
 
 libloc_api_v02_la_CXXFLAGS = -std=c++0x
-libloc_api_v02_la_LIBADD = -lstdc++ -ldl -lutils $(QMIFW_LIBS) $(GPSUTILS_LIBS) $(LOC_CORE_LIBS)
+libloc_api_v02_la_LIBADD = -lstdc++ -ldl -lutils $(QMIFW_LIBS) $(GPSUTILS_LIBS) $(LOCCORE_LIBS)
 
 library_include_HEADERS = \
     location_service_v02.h \

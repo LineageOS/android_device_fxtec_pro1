@@ -1,4 +1,4 @@
-/* Copyright (c) 2011, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011, 2018 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -30,17 +30,18 @@
 #ifndef LOC_API_V02_LOG_H
 #define LOC_API_V02_LOG_H
 
+#include <loc_log.h>
+#include <loc_api_v02_client.h>
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include <loc_log.h>
-#include <loc_api_v02_client.h>
-
 const char* loc_get_v02_event_name(uint32_t event);
 const char* loc_get_v02_client_status_name(locClientStatusEnumType status);
 const char* loc_get_v02_qmi_status_name(qmiLocStatusEnumT_v02 status);
+const char* loc_get_v02_qmi_reg_mk_status_name(qmiLocRegisterMasterClientStatusEnumT_v02 status);
 
 
 #ifdef __cplusplus

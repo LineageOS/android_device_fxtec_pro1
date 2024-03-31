@@ -1,3 +1,6 @@
 LOCAL_PATH := $(call my-dir)
-include $(LOCAL_PATH)/build/target_specific_features.mk
+
+GNSS_SANITIZE_DIAG := cfi bounds null unreachable integer address
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
+

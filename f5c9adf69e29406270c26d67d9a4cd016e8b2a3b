@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b1a310d_f372c1e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32181
+      },
+      "writtenOn": "2024-04-28T10:29:06Z",
+      "side": 1,
+      "message": "https://github.com/Nanhumly/proprietary_vendor_fxtec_pro1/commit/90379a5fd5099b262e0e75fcdb04e981d93c30d1",
+      "revId": "f5c9adf69e29406270c26d67d9a4cd016e8b2a3b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

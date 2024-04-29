@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7db95ad_99a1349a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-04-29T03:35:00Z",
+      "side": 1,
+      "message": "Nanhumly, added extract-file.sh entry to auto-patch, and because these are already kanged blobs, you pin the OG file (what we extract from), and then additionally pin the changed SHA1 post blob_fixup.\n\nThx for the contribution.",
+      "revId": "8bc021c1152493f75ec4c2db95790ced4a4a4e68",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

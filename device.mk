@@ -364,8 +364,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
-    android.hardware.power-service.pro1-libperfmgr
+    android.hardware.power-service.lineage-libperfmgr \
+    android.hardware.power@1.2.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
@@ -429,7 +429,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    hardware/lineage/interfaces/power-libperfmgr
 
 # Shipping API
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)

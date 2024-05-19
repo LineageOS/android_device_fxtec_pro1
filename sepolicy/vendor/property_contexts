@@ -12,8 +12,6 @@ sdm.disable_hdr_lut_gen                u:object_r:vendor_display_prop:s0
 
 vendor.bluetooth.soc                   u:object_r:vendor_bluetooth_prop:s0
 
-vendor.powerhal.                       u:object_r:vendor_power_prop:s0
-
 vendor.qcom.devup                      u:object_r:vendor_device_prop:s0
 
 vidc.enc.dcvs.extra-buff-count         u:object_r:vendor_default_prop:s0

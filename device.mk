@@ -304,7 +304,8 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 # Note: keymaster 4.0 must be blobs to match firmware
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0.vendor
+    android.hardware.keymaster@4.0.vendor \
+    libion.vendor:64
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -390,7 +391,8 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libsqlite.vendor:64
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \

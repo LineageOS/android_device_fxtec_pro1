@@ -220,7 +220,8 @@ PRODUCT_PACKAGES += \
 # Gatekeeper
 # Note: gatekeeper 4.0 must be blobs to match firmware
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
+    android.hardware.gatekeeper@1.0.vendor \
+    libion.vendor:64
 
 # GMS
 ifeq ($(WITH_GMS),true)
@@ -390,7 +391,8 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libsqlite.vendor:64
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \

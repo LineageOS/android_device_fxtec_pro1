@@ -49,8 +49,6 @@ vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Speaker_cal
 vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_workspaceFile.qwsp
 
 # Audio
-system/lib64/libldacBT_abr.so:vendor/lib64/libldacBT_abr.so
-system/lib64/libldacBT_enc.so:vendor/lib64/libldacBT_enc.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so

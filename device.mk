@@ -108,8 +108,7 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService \
-    libhidlbase-v32
+    AntHalService
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -149,11 +148,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0 \
-    android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth.audio-impl \
-    audio.bluetooth.default \
-    libhidlbase-v32.vendor
+    audio.bluetooth.default
 
 # Boot
 PRODUCT_PACKAGES += \
@@ -165,14 +161,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.5:64 \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.6:64 \
     camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    libion.vendor:32 \
-    vendor.qti.hardware.camera.device@1.0:64
+    camera.device@3.2-impl
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -184,7 +176,6 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
@@ -192,16 +183,12 @@ PRODUCT_PACKAGES += \
     gralloc.msm8998 \
     hwcomposer.qcom \
     libdisplayconfig \
-    libqdMetaData.system \
-    libtinyxml \
     libvulkan \
     vendor.qti.hardware.memtrack-service
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.1.vendor \
-    android.hardware.drm-service.clearkey \
-    libcrypto_shim.vendor
+    android.hardware.drm-service.clearkey
 
 # Fastboot
 TARGET_BOARD_FASTBOOT_INFO_FILE := $(LOCAL_PATH)/fastboot-info.txt
@@ -211,18 +198,12 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.pro1 \
-    libhidlbase_shim
+    android.hardware.biometrics.fingerprint@2.1-service.pro1
 
 # FM Radio
 PRODUCT_PACKAGES += \
     FM2 \
     qcom.fmradio
-
-# Gatekeeper
-# Note: gatekeeper 4.0 must be blobs to match firmware
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
 
 # GMS
 ifeq ($(WITH_GMS),true)
@@ -241,9 +222,6 @@ PRODUCT_PACKAGES += \
     libgeofencing \
     libgnss \
     libgnsspps \
-    libgps.utils \
-    liblocation_api \
-    libloc_core \
     libsynergy_loc_api
 
 # GNSS configs
@@ -255,22 +233,6 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.allocator@1.0.vendor \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
-    android.hidl.memory@1.0.vendor \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
-
-# IMS
-PRODUCT_PACKAGES += \
-    libgui_shim \
-    libui_shim
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -303,12 +265,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/Builtin_Keyboard.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Builtin_Keyboard.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
-# Keymaster
-# Note: keymaster 4.0 must be blobs to match firmware
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0.vendor \
-    libion.vendor:64
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.pro1
@@ -332,13 +288,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
-
-PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor
-
-# Netd
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -372,34 +321,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
-
 # QCOM
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml
 
-# QMI
-PRODUCT_PACKAGES += \
-    libjson \
-    libsqlite.vendor:64
-
 # RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
-    librmnetctl \
-    libxml2
-
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     ims-ext-common \
@@ -419,10 +349,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service \
-    libpower.vendor \
     libsensorndkbridge
 
 # Soong namespaces
@@ -457,11 +385,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
-
-# Update this list with what each blob is actually for
-# libstdc++: camera.msm8998
-PRODUCT_PACKAGES += \
-    libstdc++_vendor
 
 # VR
 PRODUCT_PACKAGES += \

@@ -31,7 +31,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 write_headers "pro1"
 
 # The standard blobs
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
+write_makefiles "${MY_DIR}/proprietary-files.txt"
 
 append_firmware_calls_to_makefiles "${MY_DIR}/proprietary-firmware.txt"
 

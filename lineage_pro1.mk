@@ -35,7 +35,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-fxtec
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="QX1000_EEA-user 9 PKQ1.190723.001 05500.20Q202 release-keys" \
     BuildFingerprint=Fxtec/QX1000_EEA/QX1000:9/PKQ1.190723.001/05500.20Q202:user/release-keys \
-    DeviceName=QX1000 \
     DeviceProduct=QX1000_EEA \
     SystemDevice=QX1000 \
     SystemName=QX1000_EEA

@@ -151,7 +151,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth.audio-impl \
-    audio.bluetooth.default
+    audio.bluetooth.default \
+    libhidlbase-v32 \
+    libhidlbase-v32.vendor
 
 # Boot
 PRODUCT_PACKAGES += \
@@ -461,11 +463,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
-
-# VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libhidlbase-v32.so \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlbase-v32.so
 
 # Update this list with what each blob is actually for
 # libstdc++: camera.msm8998

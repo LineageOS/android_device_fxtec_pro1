@@ -108,7 +108,8 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService
+    AntHalService \
+    libhidlbase-v32
 
 # Audio
 PRODUCT_PACKAGES += \

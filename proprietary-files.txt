@@ -1,3 +1,6 @@
+## All proprietary files from this list, unless pinned and noted otherwise, are
+## from FxTec Pro1 Fxtec/QX1000_EEA/QX1000:9/PKQ1.190723.001/05500.20Q202:user/release-keys.
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so

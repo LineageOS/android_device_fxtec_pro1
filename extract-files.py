@@ -38,6 +38,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libqdMetaData.so', 'libqdMetaData.system.so'),
     ('vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti', 'vendor/bin/hw/btlfpserver', 'vendor/bin/hw/vendor.display.color@1.0-service', 'vendor/bin/hw/vendor.qti.esepowermanager@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti', 'vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.soter@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti', 'vendor/lib64/libsecureui.so'): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
+    'vendor/bin/hw/android.hardware.drm@1.1-service.widevine': blob_fixup()
+        .replace_needed('libhidltransport.so', 'libhidlbase.so')
+        .remove_needed('libhwbinder.so'),
     'vendor/etc/izat.conf': blob_fixup()
         .patch_file('gps/0001-gps-izat-Disable-slim_daemon.patch'),
     ('vendor/lib/libxapi_bokeh.so', 'vendor/lib/libxapi_mfe.so'): blob_fixup()

@@ -2,8 +2,11 @@
 ## from FxTec Pro1 Fxtec/QX1000_EEA/QX1000:9/PKQ1.190723.001/05500.20Q202:user/release-keys.
 
 # Current blobs with ELF checks disabled:
+# libOmxVideoDSMode depend on libOmxCore, which is a gnu makefile target
 # libOmxVpp depends on libmm-omxcore, which is a gnu makefile target
+# libantradio depends on unresolved symbol jniThrowException@LIBNATIVEHELPER_1
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
+# libmmcamera2_cpp_module, libmmcamera2_iface_modules, libmmcamera_interface, libmmcamera2_is, libmmcamera2_isp_modules, libmmcamera2_mct, libmmcamera2_stats_algorithm, libmmcamera2_stats_lib, libmmcamera2_stats_modules depend on intrinsic symbols which changed namespacs such as __aeabi_uldivmod, __aeabi_ldivmod, which are difficult to shim (TODO)
 
 # ADSP
 vendor/bin/adsprpcd
@@ -40,7 +43,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # ANT+
 system/lib64/com.qualcomm.qti.ant@1.0.so
-system/lib64/libantradio.so
+system/lib64/libantradio.so;DISABLE_CHECKELF
 vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
@@ -82,21 +85,21 @@ vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmm-qcamera.so
 vendor/lib/libmmcamera2_c2d_module.so
-vendor/lib/libmmcamera2_cpp_module.so
+vendor/lib/libmmcamera2_cpp_module.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera2_frame_algorithm.so
-vendor/lib/libmmcamera2_iface_modules.so
+vendor/lib/libmmcamera2_iface_modules.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera2_imglib_modules.so
-vendor/lib/libmmcamera2_is.so
-vendor/lib/libmmcamera2_isp_modules.so
-vendor/lib/libmmcamera2_mct.so
+vendor/lib/libmmcamera2_is.so;DISABLE_CHECKELF
+vendor/lib/libmmcamera2_isp_modules.so;DISABLE_CHECKELF
+vendor/lib/libmmcamera2_mct.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera2_mct_shimlayer.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_pproc_modules.so
-vendor/lib/libmmcamera2_q3a_core.so
+vendor/lib/libmmcamera2_q3a_core.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera2_sensor_modules.so
-vendor/lib/libmmcamera2_stats_algorithm.so
-vendor/lib/libmmcamera2_stats_lib.so
-vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmcamera2_stats_algorithm.so;DISABLE_CHECKELF
+vendor/lib/libmmcamera2_stats_lib.so;DISABLE_CHECKELF
+vendor/lib/libmmcamera2_stats_modules.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera_bokeh.so
 vendor/lib/libmmcamera_dbg.so
 vendor/lib/libmmcamera_depth_map.so
@@ -112,7 +115,7 @@ vendor/lib/libmmcamera_hvx_add_constant.so
 vendor/lib/libmmcamera_hvx_grid_sum.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_imglib_faceproc_adspstub.so
-vendor/lib/libmmcamera_interface.so
+vendor/lib/libmmcamera_interface.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
@@ -654,7 +657,7 @@ vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
 
 # Media
-vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libOmxVideoDSMode.so;DISABLE_CHECKELF
 vendor/lib/libOmxVpp.so;DISABLE_CHECKELF
 vendor/lib/libgpustats.so
 vendor/lib/libmmosal_proprietary.so

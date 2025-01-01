@@ -81,9 +81,6 @@ BOARD_USES_ALSA_AUDIO := true
 
 # Display
 TARGET_SCREEN_DENSITY := 420
-TARGET_USES_HWC2 := true
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_ION := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/config.fs
@@ -103,6 +100,9 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_fxtec_msm8998
+
+# Media
+TARGET_USES_ION := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000

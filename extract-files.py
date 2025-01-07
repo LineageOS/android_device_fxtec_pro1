@@ -64,6 +64,11 @@ blob_fixups: blob_fixups_user_type = {
         .remove_needed('libhwbinder.so'),
     'vendor/etc/izat.conf': blob_fixup()
         .patch_file('gps/0001-gps-izat-Disable-slim_daemon.patch'),
+    'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
+        .patchelf_version('0_18')
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
     ('vendor/lib/libxapi_bokeh.so', 'vendor/lib/libxapi_mfe.so'): blob_fixup()
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'vendor/lib/hw/camera.msm8998.so': blob_fixup()

@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-import extract_utils.tools
-extract_utils.tools.DEFAULT_PATCHELF_VERSION = '0_9'
-
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -69,7 +66,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/izat.conf': blob_fixup()
         .patch_file('gps/0001-gps-izat-Disable-slim_daemon.patch'),
     'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
-        .patchelf_version('0_18')
         .clear_symbol_version('__aeabi_memcpy')
         .clear_symbol_version('__aeabi_memset')
         .clear_symbol_version('__gnu_Unwind_Find_exidx'),
@@ -78,7 +74,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/hw/camera.msm8998.so': blob_fixup()
         .binary_regex_replace(b'\x73\x65\x72\x76\x69\x63\x65\x2E\x62\x6F\x6F\x74\x61\x6E\x69\x6D\x2E\x65\x78\x69\x74', b'\x73\x65\x72\x76\x69\x63\x65\x2E\x62\x6F\x6F\x74\x61\x6E\x69\x6D\x2E\x7a\x7a\x7a\x7a'),
     'vendor/lib64/hw/fingerprint.msm8998.so': blob_fixup()
-        .patchelf_version('0_18')
         .replace_needed('libhidltransport.so', 'libhidlbase_shim.so')
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()

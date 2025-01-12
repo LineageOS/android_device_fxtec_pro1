@@ -661,6 +661,8 @@ vendor/lib/libmmosal_proprietary.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
+vendor/lib/libwfdcommonutils_proprietary.so
+vendor/lib/libwfdmmservice.so
 vendor/lib64/libOmxVpp.so;DISABLE_CHECKELF
 vendor/lib64/libgpustats.so
 vendor/lib64/libmmosal_proprietary.so

@@ -78,6 +78,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/hw/camera.msm8998.so': blob_fixup()
         .binary_regex_replace(b'\x73\x65\x72\x76\x69\x63\x65\x2E\x62\x6F\x6F\x74\x61\x6E\x69\x6D\x2E\x65\x78\x69\x74', b'\x73\x65\x72\x76\x69\x63\x65\x2E\x62\x6F\x6F\x74\x61\x6E\x69\x6D\x2E\x7a\x7a\x7a\x7a'),
     'vendor/lib64/hw/fingerprint.msm8998.so': blob_fixup()
+        .patchelf_version('0_18')
         .replace_needed('libhidltransport.so', 'libhidlbase_shim.so')
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()

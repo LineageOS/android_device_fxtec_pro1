@@ -59,7 +59,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libgui_shim.so')
         .add_needed('libui_shim.so')
         .replace_needed('libqdMetaData.so', 'libqdMetaData.system.so'),
-    ('vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti', 'vendor/bin/hw/btlfpserver', 'vendor/bin/hw/vendor.display.color@1.0-service', 'vendor/bin/hw/vendor.qti.esepowermanager@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti', 'vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.soter@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti', 'vendor/lib64/libsecureui.so'): blob_fixup()
+    ('vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti', 'vendor/bin/hw/btlfpserver', 'vendor/bin/hw/vendor.display.color@1.0-service', 'vendor/bin/hw/vendor.qti.esepowermanager@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti', 'vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.soter@1.0-service', 'vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti', 'vendor/lib64/com.qualcomm.qti.ant@1.0.so', 'vendor/lib64/libsecureui.so', 'vendor/lib64/vendor.display.color@1.0.so', 'vendor/lib64/vendor.display.postproc@1.0.so', 'vendor/lib64/vendor.qti.hardware.fm@1.0.so', 'vendor/lib64/vendor.qti.hardware.soter@1.0.so', 'vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so', 'vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so', 'vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so', 'vendor/lib64/vendor.qti.esepowermanager@1.0.so', 'vendor/lib64/hw/blestech.fingerprint.default.so'): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/bin/hw/android.hardware.drm@1.1-service.widevine': blob_fixup()
         .replace_needed('libhidltransport.so', 'libhidlbase.so')
@@ -76,7 +76,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/hw/camera.msm8998.so': blob_fixup()
         .binary_regex_replace(b'\x73\x65\x72\x76\x69\x63\x65\x2E\x62\x6F\x6F\x74\x61\x6E\x69\x6D\x2E\x65\x78\x69\x74', b'\x73\x65\x72\x76\x69\x63\x65\x2E\x62\x6F\x6F\x74\x61\x6E\x69\x6D\x2E\x7a\x7a\x7a\x7a'),
     'vendor/lib64/hw/fingerprint.msm8998.so': blob_fixup()
-        .replace_needed('libhidltransport.so', 'libhidlbase_shim.so'),
+        .replace_needed('libhidltransport.so', 'libhidlbase_shim.so')
+        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
 }  # fmt: skip

@@ -173,6 +173,8 @@ PRODUCT_PACKAGES += \
     bootctrl.msm8998 \
     bootctrl.msm8998.recovery
 
+$(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl:32 \

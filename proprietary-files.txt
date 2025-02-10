@@ -654,7 +654,6 @@ vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
 
 # Media
-vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libgpustats.so
 vendor/lib/libmmosal_proprietary.so

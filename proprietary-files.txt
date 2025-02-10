@@ -2,8 +2,6 @@
 ## from FxTec Pro1 Fxtec/QX1000_EEA/QX1000:9/PKQ1.190723.001/05500.20Q202:user/release-keys.
 
 # Current blobs with ELF checks disabled:
-# libOmxVideoDSMode depend on libOmxCore, which is a gnu makefile target
-# libOmxVpp depends on libmm-omxcore, which is a gnu makefile target
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
 # libmmcamera2_cpp_module, libmmcamera2_iface_modules, libmmcamera_interface, libmmcamera2_is, libmmcamera2_isp_modules, libmmcamera2_mct, libmmcamera2_stats_algorithm, libmmcamera2_stats_lib, libmmcamera2_stats_modules depend on intrinsic symbols which changed namespacs such as __aeabi_uldivmod, __aeabi_ldivmod, which are difficult to shim (TODO)
 
@@ -656,8 +654,8 @@ vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
 
 # Media
-vendor/lib/libOmxVideoDSMode.so;DISABLE_CHECKELF
-vendor/lib/libOmxVpp.so;DISABLE_CHECKELF
+vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libOmxVpp.so
 vendor/lib/libgpustats.so
 vendor/lib/libmmosal_proprietary.so
 vendor/lib/libvpphvx.so
@@ -665,7 +663,7 @@ vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdmmservice.so
-vendor/lib64/libOmxVpp.so;DISABLE_CHECKELF
+vendor/lib64/libOmxVpp.so
 vendor/lib64/libgpustats.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libvpphvx.so

@@ -153,7 +153,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 
 
 # inherit from the proprietary version
 include vendor/fxtec/pro1/BoardConfigVendor.mk

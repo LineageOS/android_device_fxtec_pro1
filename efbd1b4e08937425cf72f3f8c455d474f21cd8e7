@@ -16,6 +16,23 @@
       "message": "Meant to -2.\n\nWe /can/ do this but might make more sense to just bite the bullet and do this like other devices do... why didn\u0027t we in the first place?",
       "revId": "efbd1b4e08937425cf72f3f8c455d474f21cd8e7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89ff0723_dce4b7ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-22T08:02:38Z",
+      "side": 1,
+      "message": "nevermind, we already properly mount BT firmware, we just need the additional symlinks. Verified:\n\nOn device on old build:\n\nlrw-r--r--  1 root root    38 2008-12-31 19:00 apbtfw10.tlv -\u003e /vendor/bt_firmware/image/apbtfw10.tlv\nlrw-r--r--  1 root root    36 2008-12-31 19:00 apnv10.bin -\u003e /vendor/bt_firmware/image/apnv10.bin\nlrw-r--r--  1 root root    38 2008-12-31 19:00 crbtfw11.tlv -\u003e /vendor/bt_firmware/image/crbtfw11.tlv\nlrw-r--r--  1 root root    38 2008-12-31 19:00 crbtfw20.tlv -\u003e /vendor/bt_firmware/image/crbtfw20.tlv\nlrw-r--r--  1 root root    38 2008-12-31 19:00 crbtfw21.tlv -\u003e /vendor/bt_firmware/image/crbtfw21.tlv\nlrw-r--r--  1 root root    36 2008-12-31 19:00 crnv11.bin -\u003e /vendor/bt_firmware/image/crnv11.bin\nlrw-r--r--  1 root root    36 2008-12-31 19:00 crnv20.bin -\u003e /vendor/bt_firmware/image/crnv20.bin\nlrw-r--r--  1 root root    36 2008-12-31 19:00 crnv21.bin -\u003e /vendor/bt_firmware/image/crnv21.bin\n\n\nIn new build:\nlrw-r--r--  1 root root    38 2008-12-31 19:00 apbtfw10.tlv -\u003e /vendor/bt_firmware/image/apbtfw10.tlv\nlrw-r--r--  1 root root    36 2008-12-31 19:00 apnv10.bin -\u003e /vendor/bt_firmware/image/apnv10.bin\nlrw-r--r--  1 root root    38 2008-12-31 19:00 crbtfw11.tlv -\u003e /vendor/bt_firmware/image/crbtfw11.tlv\nlrw-r--r--  1 root root    38 2008-12-31 19:00 crbtfw20.tlv -\u003e /vendor/bt_firmware/image/crbtfw20.tlv\nlrw-r--r--  1 root root    38 2008-12-31 19:00 crbtfw21.tlv -\u003e /vendor/bt_firmware/image/crbtfw21.tlv\nlrw-r--r--  1 root root    36 2008-12-31 19:00 crnv11.bin -\u003e /vendor/bt_firmware/image/crnv11.bin\nlrw-r--r--  1 root root    36 2008-12-31 19:00 crnv20.bin -\u003e /vendor/bt_firmware/image/crnv20.bin\nlrw-r--r--  1 root root    36 2008-12-31 19:00 crnv21.bin -\u003e /vendor/bt_firmware/image/crnv21.bin",
+      "revId": "efbd1b4e08937425cf72f3f8c455d474f21cd8e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []

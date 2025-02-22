@@ -155,6 +155,16 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default
 
+PRODUCT_PACKAGES += \
+    firmware_apbtfw10.tlv_symlink \
+    firmware_apnv10.bin_symlink \
+    firmware_crbtfw11.tlv_symlink \
+    firmware_crbtfw20.tlv_symlink \
+    firmware_crbtfw21.tlv_symlink \
+    firmware_crnv11.bin_symlink \
+    firmware_crnv20.bin_symlink \
+    firmware_crnv21.bin_symlink
+
 # Boot
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl:64 \

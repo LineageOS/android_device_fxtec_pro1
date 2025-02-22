@@ -20,3 +20,59 @@ install_symlink {
     installed_location: "firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini",
     symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
 }
+
+install_symlink {
+    name: "firmware_apbtfw10.tlv_symlink",
+    vendor: true,
+    installed_location: "firmware/apbtfw10.tlv",
+    symlink_target: "/vendor/bt_firmware/image/apbtfw10.tlv",
+}
+
+install_symlink {
+    name: "firmware_apnv10.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/apnv10.bin",
+    symlink_target: "/vendor/bt_firmware/image/apnv10.bin",
+}
+
+install_symlink {
+    name: "firmware_crbtfw11.tlv_symlink",
+    vendor: true,
+    installed_location: "firmware/crbtfw11.tlv",
+    symlink_target: "/vendor/bt_firmware/image/crbtfw11.tlv",
+}
+
+install_symlink {
+    name: "firmware_crbtfw20.tlv_symlink",
+    vendor: true,
+    installed_location: "firmware/crbtfw20.tlv",
+    symlink_target: "/vendor/bt_firmware/image/crbtfw20.tlv",
+}
+
+install_symlink {
+    name: "firmware_crbtfw21.tlv_symlink",
+    vendor: true,
+    installed_location: "firmware/crbtfw21.tlv",
+    symlink_target: "/vendor/bt_firmware/image/crbtfw21.tlv",
+}
+
+install_symlink {
+    name: "firmware_crnv11.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/crnv11.bin",
+    symlink_target: "/vendor/bt_firmware/image/crnv11.bin",
+}
+
+install_symlink {
+    name: "firmware_crnv20.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/crnv20.bin",
+    symlink_target: "/vendor/bt_firmware/image/crnv20.bin",
+}
+
+install_symlink {
+    name: "firmware_crnv21.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/crnv21.bin",
+    symlink_target: "/vendor/bt_firmware/image/crnv21.bin",
+}

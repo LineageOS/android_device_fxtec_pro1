@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b3e1365_97b282b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-22T08:13:21Z",
+      "side": 1,
+      "message": "Support is in frameworks, and our LED still works!\n\nhttps://review.lineageos.org/c/LineageOS/android_device_fxtec_pro1/+/291005",
+      "revId": "3c12b07dee40103f14e1ede72540c24babe52038",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

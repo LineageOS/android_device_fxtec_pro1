@@ -41,11 +41,6 @@ on init
     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 0
     write /sys/module/lpm_levels/parameters/sleep_disabled Y
 
-    # Set up schedtune
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 10
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-
     # disable thermal hotplug for configuration
     write /sys/module/msm_thermal/core_control/enabled 0
 

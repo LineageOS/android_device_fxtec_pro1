@@ -215,8 +215,7 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-    FM2 \
-    qcom.fmradio
+    FM2
 
 # GMS
 ifeq ($(WITH_GMS),true)

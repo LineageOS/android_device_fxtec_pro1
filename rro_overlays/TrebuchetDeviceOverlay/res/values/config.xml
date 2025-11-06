@@ -1,4 +1,4 @@
 <resources>
-    <!-- Allow home screen rotation by default -->
-    <bool name="allow_rotation">true</bool>
+    <!-- Allow rotation by default -->
+    <bool name="config_allowRotation">true</bool>
 </resources>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2022 The LineageOS Project
+ * Copyright (C) 2020-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+
+import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.device.doze.DozeUtils;
 import org.lineageos.settings.device.keyboard.KeyboardUtils;

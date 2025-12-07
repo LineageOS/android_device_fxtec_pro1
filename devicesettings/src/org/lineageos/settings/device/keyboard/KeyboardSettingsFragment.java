@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2022 The LineageOS Project
+ * Copyright (C) 2020-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,12 @@ import android.hardware.input.InputDeviceIdentifier;
 import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.os.SystemProperties;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.internal.util.FileUtils;
